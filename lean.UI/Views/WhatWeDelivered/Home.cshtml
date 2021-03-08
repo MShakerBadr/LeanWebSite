@@ -1,0 +1,21 @@
+﻿@model WhatWeDeliveredViewModel
+@{
+    ViewBag.Title = "WhatWeDelivered";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="~/Content/js/pages/whatwedelivered.js?v=@DateTime.Now.Day"></script>
+
+<div class="row">
+    <div class="col-12">
+        <div id="whatWeDeliveredFilter">
+            @Html.Partial("~/Views/WhatWeDelivered/Partial/WhatWeDeliveredFilter.cshtml", Model.Filter)
+        </div>
+    </div>
+    <div class="col-12">
+        <div id="WhatWeDeliveredsList">
+            @Html.Partial("~/Views/WhatWeDelivered/Partial/WhatWeDeliveredList.cshtml", Model.List)
+        </div>
+    </div>
+</div>
+

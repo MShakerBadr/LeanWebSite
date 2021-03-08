@@ -1,0 +1,41 @@
+﻿@model UserRegisterDTO
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+
+    <link href="~/Content/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/Login.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm("Register", "Authorize"))
+    {
+        <div class="container d-flex justify-content-center">
+            <div class="login-box">
+                <div class="form-group text-center">
+                    <label class="text-danger font-weight-bold">@ViewBag.LoginErrors</label>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.FullName)
+                    @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.UserName)
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Password)
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success form-control" value="Register" />
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

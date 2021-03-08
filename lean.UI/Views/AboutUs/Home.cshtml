@@ -1,0 +1,21 @@
+﻿@model AboutUsViewModel
+@{
+    ViewBag.Title = "AbouT Us ";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="~/Content/js/pages/AboutUs.js?v=@DateTime.Now.Day"></script>
+
+<div class="row">
+    <div class="col-12">
+        <div id="whatWeDeliveredFilter">
+            @Html.Partial("~/Views/AboutUs/Partial/AboutUsFilter.cshtml", Model.Filter)
+        </div>
+    </div>
+    <div class="col-12">
+        <div id="AboutUsList">
+            @Html.Partial("~/Views/AboutUs/Partial/AboutUsList.cshtml", Model.List)
+        </div>
+    </div>
+</div>
+

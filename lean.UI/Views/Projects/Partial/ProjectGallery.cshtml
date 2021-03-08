@@ -1,0 +1,50 @@
+﻿@model List<ProjectGallery>
+@using GeneralResources = lean.UI.LocalResources.Resource;
+
+
+<div class="table-responsive mb-3 shadow">
+    <table id="tblProjectGallerys" class="table table-hover">
+        <thead>
+            <tr>
+                <th><a href="javascript:void(0)" class="plus" onclick="AppendProjectGalleryRow()"><i class="fa fa-plus-circle"></i></a></th>
+                <th>@GeneralResources.Photo</th>
+                <th>@GeneralResources.TabOrder</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int i = 0;}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <span class="row-index">1</span>
+                        <input type="hidden" name="ProjectGallery[@i].Id" value="@item.Id" />
+                        <input type="hidden" name="ProjectGallery[@i].ProjectId" value="@item.ProjectId" />
+                    </td>
+                    <td>
+                        <div class="img-collection d-flex justify-content-around">
+                            <div>
+                                <input type="hidden" name="ProjectGallery[@i].IsImgChanged" value="@(item.IsImgChanged ? "True" : "False")" />
+                                <input type="hidden" name="ProjectGallery[@i].ImageUrl" value="@item.ImageUrl" />
+                                <img width="110" height="100" class="img circular" src="@item.ImageUrl" accept=".jpg,.jpeg,.png" capture />
+                            </div>
+                            <div class="mt-5">
+                                <input type="file" id="ImageUrlUpload_@i" name="ProjectGalleryAttachments" onchange="readURL(this); updateFlag(this);" hidden />
+                                <label for="ImageUrlUpload_@i" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadPhoto</label>
+                                <label class="btn btn-danger" onclick=" RemoveProjectGalleryRow(this); updateFlag(this);"><i class="fa fa-times-circle" style=""></i>&nbsp;@GeneralResources.RemovePhoto</label>  @*RemoveImage(this);*@
+
+
+
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control required" name="ProjectGallery[@i].TabOrder" value="@(item.TabOrder <= 0 ? i+1: item.TabOrder )" />
+                    </td>
+                </tr>
+                i++;
+            }
+        </tbody>
+    </table>
+</div>
+

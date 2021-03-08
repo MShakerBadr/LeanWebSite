@@ -1,0 +1,21 @@
+﻿@model WhyUsViewModel
+@{
+    ViewBag.Title = "WhyUs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="~/Content/js/pages/whyUs.js?v=@DateTime.Now.Day"></script>
+
+<div class="row">
+    <div class="col-12">
+        <div id="whatWeDeliveredFilter">
+            @Html.Partial("~/Views/WhyUs/Partial/WhatWeDeliveredFilter.cshtml", Model.Filter)
+        </div>
+    </div>
+    <div class="col-12">
+        <div id="WhatWeDeliveredsList">
+            @Html.Partial("~/Views/WhyUs/Partial/WhatWeDeliveredList.cshtml", Model.List)
+        </div>
+    </div>
+</div>
+

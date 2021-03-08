@@ -1,0 +1,198 @@
+﻿
+/* Loading  */
+.loading-ok .loading {
+    display: flex;
+    justify-content: center;
+}
+
+.loading-ok {
+    overflow: hidden;
+}
+
+.loading {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background: #2125299c;
+    top: 0;
+    z-index: 100000000000;
+}
+
+.cursor-pointer:hover {
+    cursor: pointer !important;
+}
+
+.border-top-left-radius {
+    border-top-left-radius: 30px;
+}
+
+.border-bottom-right-radius {
+    border-bottom-right-radius: 30px;
+}
+
+.tem-member-social .social {
+    display: inline-block;
+    padding: 5px;
+    font-size: 18px;
+}
+
+
+    .tem-member-social .social:hover {
+        cursor: pointer;
+    }
+
+
+
+.flex-parent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-child {
+    flex: 1 0 21%;
+    margin: 10px !important;
+}
+
+
+#map {
+    height: 100%;
+}
+
+
+.zahabia {
+    text-shadow: 2px 2px 2px var(--yellow);
+}
+
+
+.basic-text-shadow {
+    text-shadow: 2px 2px 2px #000;
+}
+
+
+#mainNav .action-items .nav-item {
+    margin: 0px 7px !important;
+}
+
+    #mainNav .action-items .nav-item .search-input {
+        position: relative;
+    }
+
+        #mainNav .action-items .nav-item .search-input input {
+            color: white;
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            width: 150px;
+            padding: 0px 20px;
+        }
+
+        #mainNav .action-items .nav-item .search-input i {
+            color: white;
+            position: absolute;
+            right: unset;
+            left: 2px;
+        }
+
+.intro-heading-search {
+    font-size: 44px !important;
+}
+
+
+.download-app {
+    display: none !important;
+}
+
+
+
+/* Medium devices (tablets, less than 992px) */
+@media only screen and (max-width: 991.98px) {
+    #map {
+        height: 300px;
+        margin: 30px 0px;
+    }
+
+    .flex-child {
+        flex: 1 0 30%;
+    }
+
+    #clients .clients-item .clients-link img {
+        height: 90px;
+    }
+
+    .download-app {
+        display: inline !important;
+    }
+
+    .icon-web {
+        display: none;
+    }
+}
+
+
+/* Small devices (landscape phones, less than 768px)*/
+@media only screen and (max-width: 768px) {
+    #map {
+        height: 300px;
+        margin: 30px 0px;
+    }
+
+    .flex-child {
+        flex: 1 0 40%;
+    }
+
+
+    .inner-menue {
+        display: block !important;
+    }
+
+    #mainNav {
+        padding: 7px 0px;
+    }
+
+        #mainNav .inner-menue .navbar-brand {
+            font-size: 14px;
+        }
+
+            #mainNav .inner-menue .navbar-brand img {
+                width: 33px !important;
+                height: 33px !important;
+            }
+
+        #mainNav .inner-menue .collapsed-nav-action {
+            height: 45px;
+            display: inline;
+            width: 35px;
+            float: right;
+            text-align: center;
+        }
+
+        #mainNav .inner-menue .navbar-toggler-right a, #mainNav .action-items .nav-item .search-input i {
+            color: black;
+        }
+
+        #mainNav .action-items {
+            display: none;
+        }
+
+    .intro-heading-search {
+        font-size: 22px !important;
+    }
+
+    .bottom-menue {
+        display: inline !important;
+    }
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
+    #map {
+        height: 300px;
+        margin: 30px 0px;
+    }
+
+    .flex-child {
+        flex: 1 0 40%;
+    }
+}

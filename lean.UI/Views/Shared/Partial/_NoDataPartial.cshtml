@@ -1,0 +1,14 @@
+﻿@model string
+@using GeneralResources = lean.UI.LocalResources.Resource;
+
+<div class="shadow-bordered-div text-center">
+    <h5>
+        <p class="pb-2">@GeneralResources.ThereIsNoData&nbsp;</p>
+        @if (!string.IsNullOrEmpty(Model))
+        {
+            <a href="#" class="btn btn-primary" onclick="@Model">@GeneralResources.ClickToAdd</a>
+            <a href="" class="btn btn-secondary"><i class="fa fa-redo-alt fa-spin"></i></a>
+        }
+    </h5>
+</div>
+

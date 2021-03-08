@@ -1,0 +1,1206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ABOUTTHELANDDEVELOPERS" xml:space="preserve">
+    <value>عن ذي لاند ديفلوبرس</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>معلومات عنا</value>
+  </data>
+  <data name="AboutUsBannerPhotoUrl" xml:space="preserve">
+    <value>صورة غلاف صفحة معلومات عنا</value>
+  </data>
+  <data name="AboutUsBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>صورة غلاف صفحة معلومات عنا مطلوبة</value>
+  </data>
+  <data name="AboutUsIsRequired" xml:space="preserve">
+    <value>من نحن مطلوب</value>
+  </data>
+  <data name="AboutUsPhotoUrlIsRequired" xml:space="preserve">
+    <value>صوره معلومات عنا مطلوبه</value>
+  </data>
+  <data name="AboutUstAr" xml:space="preserve">
+    <value>من نحن باللغة العربية</value>
+  </data>
+  <data name="AboutUstEn" xml:space="preserve">
+    <value>من نحن باللغة الانجليزية</value>
+  </data>
+  <data name="AboutUstPhotoUrl" xml:space="preserve">
+    <value>صوره معلومات عنا </value>
+  </data>
+  <data name="AddNewProject" xml:space="preserve">
+    <value>اضف مشروع جديد</value>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>DownTwon القطامية</value>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>  ب  الدور الثالثS1 عمارات </value>
+  </data>
+  <data name="Address3" xml:space="preserve">
+    <value>القاهرة الجديدة</value>
+  </data>
+  <data name="Address4" xml:space="preserve">
+    <value>محافظة القاهرة</value>
+  </data>
+  <data name="Address5" xml:space="preserve">
+    <value>11865</value>
+  </data>
+  <data name="AddVideo" xml:space="preserve">
+    <value>إضافة لينك الفيديوا</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>الكل</value>
+  </data>
+  <data name="AllAppliedJobRequests" xml:space="preserve">
+    <value>عدد طلبات التوظيف</value>
+  </data>
+  <data name="AllContactUsReasons" xml:space="preserve">
+    <value>كل اسباب التواصل</value>
+  </data>
+  <data name="AllContactUsRequestsProjectsCount" xml:space="preserve">
+    <value>عدد طلبات التواصل</value>
+  </data>
+  <data name="AllJobRequests" xml:space="preserve">
+    <value>كل طلبات الوظائف</value>
+  </data>
+  <data name="AllLocations" xml:space="preserve">
+    <value>كل المواقع</value>
+  </data>
+  <data name="AllProjectsCount" xml:space="preserve">
+    <value>كل المشاريع</value>
+  </data>
+  <data name="AllProjectTypes" xml:space="preserve">
+    <value>كل انواع المشاريع</value>
+  </data>
+  <data name="AllPropertyTypes" xml:space="preserve">
+    <value>كل انواع الملكية</value>
+  </data>
+  <data name="AllUnitTypes" xml:space="preserve">
+    <value>كل انواع الوحدات</value>
+  </data>
+  <data name="AMENITIES" xml:space="preserve">
+    <value>وسائل الراحة</value>
+  </data>
+  <data name="ApplyForAJob" xml:space="preserve">
+    <value>التقديم لوظيفة</value>
+  </data>
+  <data name="ARCHITECTURE" xml:space="preserve">
+    <value>هندسة معمارية</value>
+  </data>
+  <data name="AREWE" xml:space="preserve">
+    <value>نحن</value>
+  </data>
+  <data name="AttachmentUrl" xml:space="preserve">
+    <value>لينك الملف المرفق</value>
+  </data>
+  <data name="AttachmentUrlIsRequired" xml:space="preserve">
+    <value>الملف المرفق مطلوب</value>
+  </data>
+  <data name="AttchmentDescriptionAr" xml:space="preserve">
+    <value>تفاصيل المرفق بالعربية</value>
+  </data>
+  <data name="AttchmentDescriptionEn" xml:space="preserve">
+    <value>تفاصيل المرفق بالإنجليزية</value>
+  </data>
+  <data name="AttchmentNameAr" xml:space="preserve">
+    <value>الملف الموفق باللغة الانجليزية</value>
+  </data>
+  <data name="AttchmentNameEn" xml:space="preserve">
+    <value>الملف الموفق باللغة الانجليزية </value>
+  </data>
+  <data name="AttchmentNameIsRequired" xml:space="preserve">
+    <value>الملف المرفق مطلوب</value>
+  </data>
+  <data name="AttchmentUrl" xml:space="preserve">
+    <value>لينك الملف المرفق</value>
+  </data>
+  <data name="AttchmentUrlIsRequired" xml:space="preserve">
+    <value>لينك الملف المرفق مطلوب</value>
+  </data>
+  <data name="AvailableJobs" xml:space="preserve">
+    <value>الوظائف المتاحة</value>
+  </data>
+  <data name="AvilableJob" xml:space="preserve">
+    <value>الوظائف المتاحة</value>
+  </data>
+  <data name="AWORDFROMTHECHAIRMAN" xml:space="preserve">
+    <value>كلمة رئيس مجلس الإدارة</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>الرجوع الى القائمة</value>
+  </data>
+  <data name="Banners" xml:space="preserve">
+    <value>صور الغلاف</value>
+  </data>
+  <data name="basicdata" xml:space="preserve">
+    <value>البيانات الرئيسية</value>
+  </data>
+  <data name="BeUpdated" xml:space="preserve">
+    <value>تابعوا أخر أخبارنا</value>
+  </data>
+  <data name="BeUpdatedWithoutLatestProjects" xml:space="preserve">
+    <value>كن على اطلاع بآخر مشاريعنا وأخبارنا</value>
+  </data>
+  <data name="Careers" xml:space="preserve">
+    <value>وظائف</value>
+  </data>
+  <data name="ChairMan" xml:space="preserve">
+    <value>الرئيس</value>
+  </data>
+  <data name="ChairManNameAr" xml:space="preserve">
+    <value>اسم المدير التنفيذى باللغة العربية</value>
+  </data>
+  <data name="ChairManNameEn" xml:space="preserve">
+    <value>اسم المدير التنفيذى باللغة الانجليزية</value>
+  </data>
+  <data name="ChairManNameIsRequired" xml:space="preserve">
+    <value>اسم المدير التنفيذى مطلوب</value>
+  </data>
+  <data name="ChairManPhotoUrl" xml:space="preserve">
+    <value>صوره المدير التنفيذى</value>
+  </data>
+  <data name="ChairManPhotoUrlIsRequired" xml:space="preserve">
+    <value>صورة المدير التنفيذى مطلوبه</value>
+  </data>
+  <data name="ChairManWordAr" xml:space="preserve">
+    <value>كلمة المدير التنفيذى باللغة العربية</value>
+  </data>
+  <data name="ChairManWordEn" xml:space="preserve">
+    <value>كلمة المدير التنفيذى بالغة الانجليزية</value>
+  </data>
+  <data name="ChairManWordIsRequired" xml:space="preserve">
+    <value>كلمة المدير التنفيذى مطلوبه</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>تغيير الرقم السرى</value>
+  </data>
+  <data name="ChangeUsername" xml:space="preserve">
+    <value>تغيير إسم المستخدم</value>
+  </data>
+  <data name="CheckOut" xml:space="preserve">
+    <value>CheckOut</value>
+  </data>
+  <data name="ClickToAdd" xml:space="preserve">
+    <value>اضغط للاضافة</value>
+  </data>
+  <data name="Clients" xml:space="preserve">
+    <value>العملاء</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="Commercial" xml:space="preserve">
+    <value>تجاري</value>
+  </data>
+  <data name="COMMERCIALpro" xml:space="preserve">
+    <value>تجارية</value>
+  </data>
+  <data name="CommercialProjectDescriptionAr" xml:space="preserve">
+    <value>وصف المشروع التجارى باللغة العربية</value>
+  </data>
+  <data name="CommercialProjectDescriptionEn" xml:space="preserve">
+    <value>وصف المشروع التجارى باللغة الانجليزية</value>
+  </data>
+  <data name="CommercialProjectDescriptionIsRequired" xml:space="preserve">
+    <value>وصف المشروع التجارى مطلوب</value>
+  </data>
+  <data name="CommercialProjects" xml:space="preserve">
+    <value>المشاريع التجارية</value>
+  </data>
+  <data name="CommercialProjectsCount" xml:space="preserve">
+    <value>عدد المشاريع التجارية</value>
+  </data>
+  <data name="CompanyAddress" xml:space="preserve">
+    <value>عنوان الشركة</value>
+  </data>
+  <data name="CompanyLocationMapUrl" xml:space="preserve">
+    <value>موقع الشركة على الخريطة</value>
+  </data>
+  <data name="CompanyLocationMapUrlIsRequired" xml:space="preserve">
+    <value>موقع الشركة مطلوب</value>
+  </data>
+  <data name="Concept" xml:space="preserve">
+    <value>مفهوم</value>
+  </data>
+  <data name="ConceptAr" xml:space="preserve">
+    <value>المفهوم بالعربية</value>
+  </data>
+  <data name="ConceptEn" xml:space="preserve">
+    <value>المفهموم بالإنجليزية</value>
+  </data>
+  <data name="ConceptImageUrl" xml:space="preserve">
+    <value>صورة المفهوم</value>
+  </data>
+  <data name="ConceptIsRequired" xml:space="preserve">
+    <value>المفهوم مطلوب</value>
+  </data>
+  <data name="ConfirmChangePassword" xml:space="preserve">
+    <value>تأكيد تغيير الرقم السرى</value>
+  </data>
+  <data name="ConfirmChangeUsername" xml:space="preserve">
+    <value>تأكيد تغيير إسم المستخدم</value>
+  </data>
+  <data name="CONSTRUCTIONUPDATES" xml:space="preserve">
+    <value>متابعة الإنشاءات</value>
+  </data>
+  <data name="ConstructionUpdatesDirectionUrl" xml:space="preserve">
+    <value>لينك اتجاهات الانشاءات الجديدة</value>
+  </data>
+  <data name="ConstructionUpdatesDirectionUrlIsRequired" xml:space="preserve">
+    <value>لينك انجاهات الانشاءات الجديدة مطلوب</value>
+  </data>
+  <data name="ConstructionUpdatesText" xml:space="preserve">
+    <value>مستجدات الانشاء</value>
+  </data>
+  <data name="ConstructionUpdatesTextAr" xml:space="preserve">
+    <value>مستجدات الانشاء بالعربية</value>
+  </data>
+  <data name="ConstructionUpdatesTextEn" xml:space="preserve">
+    <value>مستجدات الانشاء بالانجليزية</value>
+  </data>
+  <data name="ConstructionUpdatesTextIsRequired" xml:space="preserve">
+    <value>مستجدات الانشاء مطلوبه</value>
+  </data>
+  <data name="CONTACT" xml:space="preserve">
+    <value>اتصل</value>
+  </data>
+  <data name="ContactBannerPhotoUrl" xml:space="preserve">
+    <value>صورة غلاف صفحة التواصل</value>
+  </data>
+  <data name="ContactBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>صورة غلاف صفحة التواصل مطلوبة</value>
+  </data>
+  <data name="ContactMethods" xml:space="preserve">
+    <value>وسائل التواصل</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="ContactUsReason" xml:space="preserve">
+    <value>سبب التواصل</value>
+  </data>
+  <data name="ContactUsRequest" xml:space="preserve">
+    <value>طلبات التواصل</value>
+  </data>
+  <data name="ContentManagment" xml:space="preserve">
+    <value>إدارة المحتوى</value>
+  </data>
+  <data name="ConvenientLocation" xml:space="preserve">
+    <value>موقع ملائم</value>
+  </data>
+  <data name="ConvenientLocationDirectionUrl" xml:space="preserve">
+    <value>لينك اتجاهات الموقع المناسب</value>
+  </data>
+  <data name="ConvenientLocationDirectionUrlIsRequired" xml:space="preserve">
+    <value>لينك اتجاهات الموقع مطلوب</value>
+  </data>
+  <data name="ConvenientLocationTextAr" xml:space="preserve">
+    <value>الموقع المناسب بالعربية</value>
+  </data>
+  <data name="ConvenientLocationTextEn" xml:space="preserve">
+    <value>الموقع المناسب بالإنجليزية</value>
+  </data>
+  <data name="ConvenientLocationTextIsRequired" xml:space="preserve">
+    <value>الموقع مطلوب</value>
+  </data>
+  <data name="CoverUrl" xml:space="preserve">
+    <value>صورة المشروع</value>
+  </data>
+  <data name="CoverUrlIsRequired" xml:space="preserve">
+    <value>صورة اللمشروع مطلوبه</value>
+  </data>
+  <data name="CvUrl" xml:space="preserve">
+    <value>لينك السيره الذاتية</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="DeletedSuccessfully" xml:space="preserve">
+    <value>تم الحذف بنجاح</value>
+  </data>
+  <data name="Delivered" xml:space="preserve">
+    <value>قدمناه</value>
+  </data>
+  <data name="DeliveredBannerPhotoUrl" xml:space="preserve">
+    <value>صورة غلاف صفحة ما قدمناه</value>
+  </data>
+  <data name="DeliveredBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>صورة غلاف صفحة ما قدمناه مطلوبة</value>
+  </data>
+  <data name="Deliveringtrust" xml:space="preserve">
+    <value>تقديم الثقة والجودة</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفاصيل</value>
+  </data>
+  <data name="DescriptionAr" xml:space="preserve">
+    <value>الوصف باللغة العربية</value>
+  </data>
+  <data name="DescriptionEn" xml:space="preserve">
+    <value>الوصف باللغة الانجليزيه</value>
+  </data>
+  <data name="DescriptionIsRequired" xml:space="preserve">
+    <value>الوصف مطلوب</value>
+  </data>
+  <data name="Dir" xml:space="preserve">
+    <value>rtl</value>
+  </data>
+  <data name="DontHesiate" xml:space="preserve">
+    <value>لا تتردد بالأتصال بنا في أي وقت</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>تنزيل</value>
+  </data>
+  <data name="DropdownMenuDir" xml:space="preserve">
+    <value>dropdown-menu-left</value>
+  </data>
+  <data name="Dwebsite" xml:space="preserve">
+    <value>موقع ويب ثلاثى الأبعاد</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الإلكترونى</value>
+  </data>
+  <data name="EmailIsRequired" xml:space="preserve">
+    <value>البريد الإلكترونى مطلوب</value>
+  </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>ادخل بريدك الالكترونى</value>
+  </data>
+  <data name="ErrorsOccurred" xml:space="preserve">
+    <value>حدث خطأ</value>
+  </data>
+  <data name="ErrorWhenSendRequest" xml:space="preserve">
+    <value>خطأ عند إرسال طلب</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>حدث </value>
+  </data>
+  <data name="EVENTS" xml:space="preserve">
+    <value>الأحداث</value>
+  </data>
+  <data name="Event_New" xml:space="preserve">
+    <value>حدث /  خبر</value>
+  </data>
+  <data name="Explore" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="FaceBookUrl" xml:space="preserve">
+    <value>لينك FaceBook</value>
+  </data>
+  <data name="FaceBookUrlIsRequired" xml:space="preserve">
+    <value>لينك FaceBook مطلوب</value>
+  </data>
+  <data name="FAQs" xml:space="preserve">
+    <value>أسئلة وأجوبة</value>
+  </data>
+  <data name="FeaturedProjects" xml:space="preserve">
+    <value>المشاريع المميزة</value>
+  </data>
+  <data name="FeaturedProjectsCount" xml:space="preserve">
+    <value>عدد المشاريع المميزة</value>
+  </data>
+  <data name="FindOur" xml:space="preserve">
+    <value>ابحث لدينا عن</value>
+  </data>
+  <data name="FloorPlans" xml:space="preserve">
+    <value>خطط المبني</value>
+  </data>
+  <data name="followUs" xml:space="preserve">
+    <value>تابعنا علي</value>
+  </data>
+  <data name="Footer" xml:space="preserve">
+    <value>الفوتر</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>لمزيد من الإستفسارات أدخل بياناتك وسوف نتواصل معك</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>الاسم بالكامل</value>
+  </data>
+  <data name="GALLERY" xml:space="preserve">
+    <value>المعرض</value>
+  </data>
+  <data name="GalleryBannerPhotoUrl" xml:space="preserve">
+    <value>صورة غلاف صفحة المعرض</value>
+  </data>
+  <data name="GalleryBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>صورة غلاف المعروض مطلوبه</value>
+  </data>
+  <data name="GetAQuot" xml:space="preserve">
+    <value>إقتبس</value>
+  </data>
+  <data name="GETDIRECTIONS" xml:space="preserve">
+    <value>احصل على الإتجاهات</value>
+  </data>
+  <data name="GetIn" xml:space="preserve">
+    <value>ابقي علي</value>
+  </data>
+  <data name="GetinTouch" xml:space="preserve">
+    <value>ابقى على تواصل</value>
+  </data>
+  <data name="Getnotifications" xml:space="preserve">
+    <value>أحصل على الاشعارات عن المتجر , التحديثات والمنشورات</value>
+  </data>
+  <data name="Header" xml:space="preserve">
+    <value>الهيدر</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="HomeConceptAr" xml:space="preserve">
+    <value>المفهوم فى الرئيسية باللغة العربية</value>
+  </data>
+  <data name="HomeConceptEn" xml:space="preserve">
+    <value>المفهوم فى الرئيسيةباللغة الانجليزية</value>
+  </data>
+  <data name="HowWeProvide" xml:space="preserve">
+    <value>كيف نقدم </value>
+  </data>
+  <data name="ImageUrl" xml:space="preserve">
+    <value>لينك الصوره</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="InstagramUrl" xml:space="preserve">
+    <value>لينك instagram</value>
+  </data>
+  <data name="InstagramUrlIsRequired" xml:space="preserve">
+    <value>لينك Instagram مطلوب</value>
+  </data>
+  <data name="Interseted" xml:space="preserve">
+    <value>هل أنت مهتم بمناقشة فكرتك؟</value>
+  </data>
+  <data name="IsEvent" xml:space="preserve">
+    <value>حدث ؟</value>
+  </data>
+  <data name="IsFooter" xml:space="preserve">
+    <value>Is Footer</value>
+  </data>
+  <data name="IsHeader" xml:space="preserve">
+    <value>Is Header</value>
+  </data>
+  <data name="IsHidden" xml:space="preserve">
+    <value>مخفى</value>
+  </data>
+  <data name="IsShow" xml:space="preserve">
+    <value>إظهار</value>
+  </data>
+  <data name="IsSpecialProject" xml:space="preserve">
+    <value>مشروع متميز</value>
+  </data>
+  <data name="IsVideo" xml:space="preserve">
+    <value>فيديو</value>
+  </data>
+  <data name="Job" xml:space="preserve">
+    <value>الوظيفة</value>
+  </data>
+  <data name="JobIsRequired" xml:space="preserve">
+    <value>الوظيفة مطلوبه</value>
+  </data>
+  <data name="JobRequests" xml:space="preserve">
+    <value>طلبات الوظائف</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>ar</value>
+  </data>
+  <data name="LATESTEVENTS" xml:space="preserve">
+    <value>الأحداث الأخيرة</value>
+  </data>
+  <data name="LATESTNEWS" xml:space="preserve">
+    <value>اخر الأخبار</value>
+  </data>
+  <data name="LinkedInUrl" xml:space="preserve">
+    <value>لينك LinkedIn</value>
+  </data>
+  <data name="LinkedInUrlIsRequired" xml:space="preserve">
+    <value>لينك linkedIn مطلوب</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="LocationAr" xml:space="preserve">
+    <value>الموقع باللغة العربية</value>
+  </data>
+  <data name="LocationEn" xml:space="preserve">
+    <value>الموقع باللغة الانجليزية</value>
+  </data>
+  <data name="LocationId" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="LocationIsRequired" xml:space="preserve">
+    <value>الموقع مطلوب</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+  <data name="Lookups" xml:space="preserve">
+    <value>عمليات البحث</value>
+  </data>
+  <data name="Mail" xml:space="preserve">
+    <value>البريد الإلكترونى</value>
+  </data>
+  <data name="MaillIsRequired" xml:space="preserve">
+    <value>البريد الالكترونى مطلوب</value>
+  </data>
+  <data name="Managment" xml:space="preserve">
+    <value>الإدارة</value>
+  </data>
+  <data name="MasterPlan" xml:space="preserve">
+    <value>الخطة الرئيسية</value>
+  </data>
+  <data name="MasterPlanAr" xml:space="preserve">
+    <value>الخطة الرئيسية بالعربية</value>
+  </data>
+  <data name="MasterPlanEn" xml:space="preserve">
+    <value>الخطة الرئيسية بالإنجليزية</value>
+  </data>
+  <data name="MasterPlanImageUrl" xml:space="preserve">
+    <value>صورة الخطة الرئيسية</value>
+  </data>
+  <data name="MasterPlanImageUrlIsRequired" xml:space="preserve">
+    <value>صورة الخطة الرئيسية مطلوبه</value>
+  </data>
+  <data name="MasterPlanIsRequired" xml:space="preserve">
+    <value>الخطة الرئيسية مطلوبة</value>
+  </data>
+  <data name="Media" xml:space="preserve">
+    <value>المعرض</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="Mission" xml:space="preserve">
+    <value>المهمة</value>
+  </data>
+  <data name="MissionAr" xml:space="preserve">
+    <value>مهمتنا باللغة العربية</value>
+  </data>
+  <data name="MissionEn" xml:space="preserve">
+    <value>مهمتنا باللغة الانجليزية</value>
+  </data>
+  <data name="MissionIsRequired" xml:space="preserve">
+    <value>مهمتنا مطلوبه</value>
+  </data>
+  <data name="MobileNumber" xml:space="preserve">
+    <value>رقم الموبايل</value>
+  </data>
+  <data name="MobileNumberIsRequired" xml:space="preserve">
+    <value>رقم الموبايل مطلوب</value>
+  </data>
+  <data name="MOREEVENTS" xml:space="preserve">
+    <value>أحداث أكثر</value>
+  </data>
+  <data name="MORENews" xml:space="preserve">
+    <value>أخبار أكثر</value>
+  </data>
+  <data name="MustGreatPlacesforSummer" xml:space="preserve">
+    <value>يجب أن تكون أماكان رائعة لفصل الصيف</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="NameAr" xml:space="preserve">
+    <value>الاسم باللغة العربية</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>الاسم باللغة الانجليزية</value>
+  </data>
+  <data name="NameIsRequired" xml:space="preserve">
+    <value>الإسم مطلوب</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>خبر</value>
+  </data>
+  <data name="NewAppliedJobRequests" xml:space="preserve">
+    <value>عدد طلبات التوظيف الجديدة</value>
+  </data>
+  <data name="NewcontactUsRequestsProjectsCount" xml:space="preserve">
+    <value>عدد طلبات التواصل الجديدة</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>الرقم السرى الجديد</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>الأخبار و الاحداث</value>
+  </data>
+  <data name="NewsAndEvents" xml:space="preserve">
+    <value>الأخبار والأحداث</value>
+  </data>
+  <data name="NewsBannerPhotoUrl" xml:space="preserve">
+    <value>صورة غلاف صفحة الأخبار والأحداث</value>
+  </data>
+  <data name="NewsBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>صورة غلاف صفحة الأخبار مطلوبة</value>
+  </data>
+  <data name="NEWSEventes" xml:space="preserve">
+    <value>الأخبار </value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>النشرة الإخبارية</value>
+  </data>
+  <data name="NewsSubscrib" xml:space="preserve">
+    <value>اشترك في نشرتنا الإخبارية</value>
+  </data>
+  <data name="NewUsername" xml:space="preserve">
+    <value>إسم المستخدم الجديد</value>
+  </data>
+  <data name="Objectives" xml:space="preserve">
+    <value>الاهداف</value>
+  </data>
+  <data name="ObjectivesAr" xml:space="preserve">
+    <value>اهدافنا باللغة العربية</value>
+  </data>
+  <data name="ObjectivesEn" xml:space="preserve">
+    <value>اهدافنا باللغة الانجليزية</value>
+  </data>
+  <data name="ObjectivesIsRequired" xml:space="preserve">
+    <value>اهدافنا مطلوبه</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>الرقم السرى القديم</value>
+  </data>
+  <data name="OldPasswordNotCorrect" xml:space="preserve">
+    <value>الرقم السرى القديم ليس صحيح</value>
+  </data>
+  <data name="OldUsername" xml:space="preserve">
+    <value>إسم المستخدم القديم</value>
+  </data>
+  <data name="OldUsernameNotCorrect" xml:space="preserve">
+    <value>إسم المستخدم القديم ليس صحيح</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>اخرى</value>
+  </data>
+  <data name="Our" xml:space="preserve">
+    <value>Our</value>
+  </data>
+  <data name="OurCareValue" xml:space="preserve">
+    <value>القيم الأساسية</value>
+  </data>
+  <data name="OurManagement" xml:space="preserve">
+    <value>فريقنا الأداري</value>
+  </data>
+  <data name="OURMISSION" xml:space="preserve">
+    <value>رسالتنا</value>
+  </data>
+  <data name="OurNewLuxuriousDevelopmentsDeliveredtoYourInbox" xml:space="preserve">
+    <value>تسليم تطوراتنا الفاخرة الجديدة إلى بريدك الوارد</value>
+  </data>
+  <data name="OurObjectives" xml:space="preserve">
+    <value>القيم الجوهرية</value>
+  </data>
+  <data name="OURVISION" xml:space="preserve">
+    <value>رؤيتنا</value>
+  </data>
+  <data name="Pages" xml:space="preserve">
+    <value>الصفحات</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="PasswordChangedSuccessfully" xml:space="preserve">
+    <value>تم تغيير الرقم السرى بنجاح</value>
+  </data>
+  <data name="PasswordIsRequired" xml:space="preserve">
+    <value>الرقم السرى مطلوب</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="PhoneRIsequired" xml:space="preserve">
+    <value>رقم الهاتف مطلوب</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>الصورة</value>
+  </data>
+  <data name="PhotoGallery" xml:space="preserve">
+    <value>معرض الصور</value>
+  </data>
+  <data name="PhotoIsRequired" xml:space="preserve">
+    <value>الصوره مطلوبه</value>
+  </data>
+  <data name="PhotoUrl" xml:space="preserve">
+    <value>لينك الصوره</value>
+  </data>
+  <data name="Portfolio" xml:space="preserve">
+    <value>Portfolio</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>المنصب</value>
+  </data>
+  <data name="PositionAr" xml:space="preserve">
+    <value>المنصب باللغة العربية</value>
+  </data>
+  <data name="PositionEn" xml:space="preserve">
+    <value>المنصب باللغة الانجليزية</value>
+  </data>
+  <data name="PositionIsRequired" xml:space="preserve">
+    <value>المنصب مطلوب</value>
+  </data>
+  <data name="PRIVACYPOLICY" xml:space="preserve">
+    <value>سياسة الخصوصية</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>منتجات</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>المشاريع</value>
+  </data>
+  <data name="ProjectAmenities" xml:space="preserve">
+    <value>وسائل الراحة فى المشروع</value>
+  </data>
+  <data name="ProjectBannerPhotoUrl" xml:space="preserve">
+    <value>صورة غلاف صفحة المشاريع</value>
+  </data>
+  <data name="ProjectBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>صوره غلاف صفحة المشاريع مطلوبة</value>
+  </data>
+  <data name="ProjectDetailsBannerPhotoUrl" xml:space="preserve">
+    <value>صورة غلاف صفحة تفاصيل المشروع</value>
+  </data>
+  <data name="ProjectDetailsBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>صورة غلاف صفحة تفاصيل المشروع مطلوبة</value>
+  </data>
+  <data name="ProjectGallery" xml:space="preserve">
+    <value>معرض صور المشروع</value>
+  </data>
+  <data name="ProjectPlans" xml:space="preserve">
+    <value>خطط المشروع</value>
+  </data>
+  <data name="PROJECTS" xml:space="preserve">
+    <value>مشاريع</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>نوع المشروع</value>
+  </data>
+  <data name="ProjectTypeId" xml:space="preserve">
+    <value>نوع الملكية</value>
+  </data>
+  <data name="ProjectTypeIsRequired" xml:space="preserve">
+    <value>نوع الملكية مطلوب</value>
+  </data>
+  <data name="ProjectTypes" xml:space="preserve">
+    <value>انواع المشاريع</value>
+  </data>
+  <data name="PropertyType" xml:space="preserve">
+    <value>نوع الملكية</value>
+  </data>
+  <data name="PropertyTypeId" xml:space="preserve">
+    <value>نوع العقار</value>
+  </data>
+  <data name="PropertyTypeIdIsRequired" xml:space="preserve">
+    <value>نوع العقار مطلوب</value>
+  </data>
+  <data name="READMORE" xml:space="preserve">
+    <value>اقرأ أكثر</value>
+  </data>
+  <data name="REALESTATE" xml:space="preserve">
+    <value>العقارات</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>السبب</value>
+  </data>
+  <data name="ReasonIsRequired" xml:space="preserve">
+    <value>السبب مطلوب</value>
+  </data>
+  <data name="RemovePhoto" xml:space="preserve">
+    <value>حذف صورة</value>
+  </data>
+  <data name="RemoveVideo" xml:space="preserve">
+    <value>حذف فيديو</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>طلب</value>
+  </data>
+  <data name="Request Form" xml:space="preserve">
+    <value>نوذج الطلب</value>
+  </data>
+  <data name="RequestDate" xml:space="preserve">
+    <value>تاريخ الطلب</value>
+  </data>
+  <data name="RequestDateIsRequired" xml:space="preserve">
+    <value>تاريخ الطلب مطلوب</value>
+  </data>
+  <data name="RequestForm" xml:space="preserve">
+    <value>نموذج طلب</value>
+  </data>
+  <data name="Requests" xml:space="preserve">
+    <value>الطلبات</value>
+  </data>
+  <data name="ResdentialProjectsCount" xml:space="preserve">
+    <value>عدد المشاريع السكنية</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>تصفية</value>
+  </data>
+  <data name="RESIDENTIAL" xml:space="preserve">
+    <value>سكني</value>
+  </data>
+  <data name="ResidentialProjectDescriptionAr" xml:space="preserve">
+    <value>وصف المشروع السكنى باللغة العربية</value>
+  </data>
+  <data name="ResidentialProjectDescriptionEn" xml:space="preserve">
+    <value>وصف المشروع السكنى باللغة الانجليزية</value>
+  </data>
+  <data name="ResidentialProjectDescriptionIsRequired" xml:space="preserve">
+    <value>وصف المشروع السكنى مطلوب</value>
+  </data>
+  <data name="ResidentialProjects" xml:space="preserve">
+    <value>المشاريع السكنية</value>
+  </data>
+  <data name="Residentials" xml:space="preserve">
+    <value>المشاريع السكنية</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>الوظيفة</value>
+  </data>
+  <data name="SandSuccessfully" xml:space="preserve">
+    <value>شكراً على تواصلكم معنا تم إرسال الطلب بنجاح </value>
+  </data>
+  <data name="SatCustomerDesc" xml:space="preserve">
+    <value>تأسست شركة The LEAN Solutions في مصر ، وهي شركة استشارات برمجيات من الدرجة الأولى ومتعددة الاستخدامات ، تشتهر بتصميم الويب المبتكر وأفضل تقنيات تطوير الويب</value>
+  </data>
+  <data name="SatisfiedCustomers" xml:space="preserve">
+    <value>زبائن يشعرون بالرضى</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="SavedSuccessfully" xml:space="preserve">
+    <value>تم الحفظ بنجاح</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="SEEMORE" xml:space="preserve">
+    <value>رؤية المزيد</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>اختر</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>خدمات</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>اظهار</value>
+  </data>
+  <data name="ShowCommercialSection" xml:space="preserve">
+    <value>إظهار المشاريع التجارية</value>
+  </data>
+  <data name="ShowConstructionUpdates" xml:space="preserve">
+    <value>عرض تحديثات البناء</value>
+  </data>
+  <data name="ShowConvenientLocation" xml:space="preserve">
+    <value>عرض الموقع المناسب</value>
+  </data>
+  <data name="ShowFeaturedProjects" xml:space="preserve">
+    <value>عرض المشاريع المميزة</value>
+  </data>
+  <data name="ShowLocalization" xml:space="preserve">
+    <value>إظهار تغيير اللغة</value>
+  </data>
+  <data name="ShowMission" xml:space="preserve">
+    <value>عرض قسم مهمتنا</value>
+  </data>
+  <data name="ShowObjectives" xml:space="preserve">
+    <value>عرض قسم أهدافنا</value>
+  </data>
+  <data name="ShowResdentialSection" xml:space="preserve">
+    <value>إظهار المشاريع السكنية</value>
+  </data>
+  <data name="ShowVision" xml:space="preserve">
+    <value>عرض قسم رؤيتنا</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>الحجم</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>السلايدر</value>
+  </data>
+  <data name="SOCIALMEDIA" xml:space="preserve">
+    <value>التواصل الإجتماعى</value>
+  </data>
+  <data name="Special" xml:space="preserve">
+    <value>مميز</value>
+  </data>
+  <data name="Special_Other" xml:space="preserve">
+    <value>مميز / اخرى</value>
+  </data>
+  <data name="StaticContent" xml:space="preserve">
+    <value>المحتوى الثابت</value>
+  </data>
+  <data name="STRUCTURE" xml:space="preserve">
+    <value>بناء</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>إشترك</value>
+  </data>
+  <data name="Subscription" xml:space="preserve">
+    <value>إشتراك</value>
+  </data>
+  <data name="TabOrder" xml:space="preserve">
+    <value>الترتيب</value>
+  </data>
+  <data name="TabOrderIsRequired" xml:space="preserve">
+    <value>الترتيب مطلوب</value>
+  </data>
+  <data name="TabUrl" xml:space="preserve">
+    <value>اللينك</value>
+  </data>
+  <data name="TabUrlIsRequired" xml:space="preserve">
+    <value>اللينك مطلوب</value>
+  </data>
+  <data name="TermsandConditions" xml:space="preserve">
+    <value>الشروط و الأحكام</value>
+  </data>
+  <data name="TextAr" xml:space="preserve">
+    <value>النص باللغة العربية</value>
+  </data>
+  <data name="TextEn" xml:space="preserve">
+    <value>النص باللغة الانجليزية</value>
+  </data>
+  <data name="TextIsRequired" xml:space="preserve">
+    <value>النص مطلوب</value>
+  </data>
+  <data name="theLeanDesc" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ThereIsNoData" xml:space="preserve">
+    <value>لا يوجد بيانات</value>
+  </data>
+  <data name="TitleAr" xml:space="preserve">
+    <value>إسم المشروع بالعربية</value>
+  </data>
+  <data name="TitleArIsRequired" xml:space="preserve">
+    <value>إسم المشروع مطلوب</value>
+  </data>
+  <data name="TitleEn" xml:space="preserve">
+    <value>إسم المشروع بالإنجليزية</value>
+  </data>
+  <data name="TitleEnIsRequired" xml:space="preserve">
+    <value>إسم المشروع مطلوب</value>
+  </data>
+  <data name="Touch" xml:space="preserve">
+    <value>تواصل</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="UnitType" xml:space="preserve">
+    <value>نوع الوحدة</value>
+  </data>
+  <data name="UnitTypeId" xml:space="preserve">
+    <value>نوع الوحدة</value>
+  </data>
+  <data name="UploadNewsAndEventsgalleyImages" xml:space="preserve">
+    <value>رفع صور الخبر / الحدث</value>
+  </data>
+  <data name="UploadPhoto" xml:space="preserve">
+    <value>رفع صورة</value>
+  </data>
+  <data name="UploadVideo" xml:space="preserve">
+    <value>رفع فيديو</value>
+  </data>
+  <data name="US" xml:space="preserve">
+    <value>بنا</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="UsernameChangedSuccessfully" xml:space="preserve">
+    <value>تم تغيير إسم المستخدم بنجاح</value>
+  </data>
+  <data name="UsernameIsRequired" xml:space="preserve">
+    <value>إسم المستخدم مطلوب</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>فيديو</value>
+  </data>
+  <data name="VideoGallery" xml:space="preserve">
+    <value>معرض الفيديو</value>
+  </data>
+  <data name="Video_Photo" xml:space="preserve">
+    <value>فيديو / صورة</value>
+  </data>
+  <data name="VIEW" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="Vision" xml:space="preserve">
+    <value>الرؤية</value>
+  </data>
+  <data name="VisionAr" xml:space="preserve">
+    <value>رؤيتنا باللغة العربية</value>
+  </data>
+  <data name="VisionEn" xml:space="preserve">
+    <value>رؤيتنا باللغة الانجليزية</value>
+  </data>
+  <data name="VisionIsRequired" xml:space="preserve">
+    <value>رؤيتنا مطلوبه</value>
+  </data>
+  <data name="WanttoRequestAUnitItsAClickAway" xml:space="preserve">
+    <value>تريد أن تطلب وحدة؟ بنقرة واحدة!</value>
+  </data>
+  <data name="WeAre" xml:space="preserve">
+    <value>نحن</value>
+  </data>
+  <data name="WebsiteUrl3D" xml:space="preserve">
+    <value>لينك الموقع 3D</value>
+  </data>
+  <data name="WebsiteUrl3DIsRequired" xml:space="preserve">
+    <value>لينك الموقع مطلوب</value>
+  </data>
+  <data name="WhatWe" xml:space="preserve">
+    <value>ما</value>
+  </data>
+  <data name="WhatWeDelivered" xml:space="preserve">
+    <value>ما قدمناه</value>
+  </data>
+  <data name="WhatWeDeliveredAr" xml:space="preserve">
+    <value>ماذا نقدم باللغة العربية</value>
+  </data>
+  <data name="WhatWeDeliveredEn" xml:space="preserve">
+    <value>ماذا نقدم باللغة الانجليزية</value>
+  </data>
+  <data name="WhatWeDeliveredIsRequired" xml:space="preserve">
+    <value>ماذا نقدم مطلوب</value>
+  </data>
+  <data name="WHO" xml:space="preserve">
+    <value>من </value>
+  </data>
+  <data name="Whyus" xml:space="preserve">
+    <value> لماذا نحن</value>
+  </data>
+  <data name="YourRequestSentSuccessfully" xml:space="preserve">
+    <value>لقد تم إرسال طلبك بنجاح</value>
+  </data>
+</root>

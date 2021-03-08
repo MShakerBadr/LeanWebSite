@@ -1,0 +1,91 @@
+﻿@model DashBoardDTO
+@using GeneralResources = lean.UI.LocalResources.Resource;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<style>
+    .hvr-grow a {
+        text-decoration: none;
+        color: black;
+    }
+</style>
+
+
+<div class="row">
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 hvr-grow">
+        <a href="javascript:void(0)" class="">
+            <div class="shadow-bordered-div text-center">
+                <i class="fa-2x fa fa-chart-line"></i>
+                <h5>@GeneralResources.AllProjectsCount</h5>
+                <h3>@Model.AllProjectsCount</h3>
+            </div>
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 hvr-grow">
+        <a href="javascript:void(0)" class="">
+            <div class="shadow-bordered-div text-center">
+                <i class="fa-2x fa fa-chart-line"></i>
+                <h5>@GeneralResources.FeaturedProjectsCount</h5>
+                <h3>@Model.FeaturedProjectsCount</h3>
+            </div>
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 hvr-grow">
+        <a href="javascript:void(0)" class="">
+            <div class="shadow-bordered-div text-center">
+                <i class="fa-2x fa fa-chart-line"></i>
+                <h5>@GeneralResources.CommercialProjectsCount</h5>
+                <h3>@Model.CommercialProjectsCount</h3>
+            </div>
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 hvr-grow">
+        <a href="javascript:void(0)" class="">
+            <div class="shadow-bordered-div text-center">
+                <i class="fa-2x fa fa-chart-line"></i>
+                <h5>@GeneralResources.ResdentialProjectsCount</h5>
+                <h3>@Model.ResdentialProjectsCount</h3>
+            </div>
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 hvr-grow">
+        <a href="javascript:void(0)" class="">
+            <div class="shadow-bordered-div text-center">
+                <i class="fa-2x fa fa-chart-line"></i>
+                <h5>@GeneralResources.AllContactUsRequestsProjectsCount</h5>
+                <h3>@Model.AllContactUsRequestsProjectsCount</h3>
+            </div>
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 hvr-grow">
+        <a href="javascript:void(0)" class="">
+            <div class="shadow-bordered-div text-center">
+                <i class="fa-2x fa fa-chart-line"></i>
+                <h5>@GeneralResources.NewcontactUsRequestsProjectsCount</h5>
+                <h3>@Model.NewcontactUsRequestsProjectsCount</h3>
+            </div>
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 hvr-grow">
+        <a href="javascript:void(0)" class="">
+            <div class="shadow-bordered-div text-center">
+                <i class="fa-2x fa fa-chart-line"></i>
+                <h5>@GeneralResources.AllAppliedJobRequests</h5>
+                <h3>@Model.AllAppliedJobRequests</h3>
+            </div>
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 hvr-grow">
+        <a href="javascript:void(0)" class="">
+            <div class="shadow-bordered-div text-center">
+                <i class="fa-2x fa fa-chart-line"></i>
+                <h5>@GeneralResources.NewAppliedJobRequests</h5>
+                <h3>@Model.NewAppliedJobRequests</h3>
+            </div>
+        </a>
+    </div>
+</div>
+

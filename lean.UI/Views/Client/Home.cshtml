@@ -1,0 +1,21 @@
+﻿@model ClientViewModel
+@{
+    ViewBag.Title = "Clients";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="~/Content/js/pages/clients.js?v=@DateTime.Now.Day"></script>
+
+<div class="row">
+    <div class="col-12">
+        <div id="whatWeDeliveredFilter">
+            @Html.Partial("~/Views/Client/Partial/ClientFilter.cshtml", Model.Filter)
+        </div>
+    </div>
+    <div class="col-12">
+        <div id="WhatWeDeliveredsList">
+            @Html.Partial("~/Views/Client/Partial/ClientList.cshtml", Model.List)
+        </div>
+    </div>
+</div>
+

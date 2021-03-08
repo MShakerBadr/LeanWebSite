@@ -1,0 +1,80 @@
+﻿@using lean.UI.LocalResources
+@{
+    ViewBag.Title = "Content Management";
+}
+
+<!DOCTYPE html>
+<html lang="@Resource.Language" dir="@Resource.Dir">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" type="image/png" href="~/Assets/imgs/logo.jpg" />
+    @Html.Partial("~/Views/Shared/Partial/_GlobalVariables.cshtml")
+    @Html.Partial("~/Views/Shared/Partial/_ResourcePartial.cshtml")
+</head>
+<body class="sb-nav-fixed">
+    <div class="loading"><img src="~/Assets/imgs/loading.svg" /></div>
+    <!-- Navbar-->
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        @Html.Partial("~/Views/Shared/Partial/_Navbar.cshtml")
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            @Html.Partial("~/Views/Shared/Partial/_Menue.cshtml")
+        </div>
+        <div id="layoutSidenav_content">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid d-flex align-items-center justify-content-between">
+                    <div class="text-muted"><b>&copy;@System.DateTime.Now.ToString("yyyy")</b></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <!-- GENERAL MODAL -->
+    <div class="modal" id="GeneralModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- body -->
+                <div class="modal-body"></div>
+                <!-- footer -->
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GENERAL LARGE MODAL -->
+    <div class="modal" id="GeneralLargeModal">
+        <div class="modal-dialog" style="max-width:1000px!important;">
+            <div class="modal-content">
+                <!-- Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- body -->
+                <div class="modal-body"></div>
+                <!-- footer -->
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- THEME SPAdmin -->
+    <script src="~/Content/SPAdmin/dist/js/scripts.js"></script>
+    
+</body>
+</html>

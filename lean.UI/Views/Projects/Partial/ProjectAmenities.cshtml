@@ -1,0 +1,60 @@
+﻿@model List<ProjectAmenitie>
+@using GeneralResources = lean.UI.LocalResources.Resource;
+
+
+<div class="table-responsive mb-3 shadow">
+    <table id="tblProjectAmenities" class="table table-hover">
+        <thead>
+            <tr>
+                <th><a href="javascript:void(0)" class="plus" onclick="AppendProjectAmenitieRow()"><i class="fa fa-plus-circle"></i></a></th>
+                <th>@GeneralResources.Photo</th>
+                <th>@GeneralResources.NameAr</th>
+                <th>@GeneralResources.NameEn</th>
+                <th>@GeneralResources.DescriptionAr</th>
+                <th>@GeneralResources.DescriptionEn</th>
+                <th>@GeneralResources.TabOrder</th>
+                <th>@GeneralResources.Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int i = 0;}
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    <span class="row-index">1</span>
+                    <input type="hidden" name="ProjectAmenitie[@i].Id" value="@item.Id" />
+                    <input type="hidden" name="ProjectAmenitie[@i].ProjectId" value="@item.ProjectId" />
+                </td>
+                <td>
+                    <div class="img-collection">
+                        <div>
+                            <input type="hidden" name="ProjectAmenitie[@i].IsImgChanged" value="@(item.IsImgChanged ? "True" : "False")" />
+                            <input type="hidden" name="ProjectAmenitie[@i].AttachmentUrl" value="@item.AttachmentUrl" />
+                            <img width="110" height="100" class="img circular" src="@item.AttachmentUrl" accept=".jpg,.jpeg,.png" capture />
+                        </div>
+                        <div class="mt-2">
+                            <input type="file" id="AttachmentUrlUpload_@i" name="AmenitieAttachmentUrlUpload" onchange="readURL(this); updateFlag(this);" hidden />
+                            <label for="AttachmentUrlUpload_@i" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadPhoto</label>
+                            <label class="btn btn-danger" onclick="RemoveImage(this); updateFlag(this);"><i class="fa fa-times-circle" style=""></i>&nbsp;@GeneralResources.RemovePhoto</label>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="text" class="form-control required" name="ProjectAmenitie[@i].TextAr" value="@item.TextAr" /></td>
+                <td><input type="text" class="form-control required" name="ProjectAmenitie[@i].TextEn" value="@item.TextEn" /></td>
+                <td><textarea type="text" class="form-control" name="ProjectAmenitie[@i].DescriptionAr">@item.DescriptionAr</textarea></td>
+                <td><textarea type="text" class="form-control" name="ProjectAmenitie[@i].DescriptionEn">@item.DescriptionEn</textarea></td>
+                <td>
+                    <input type="text" class="form-control required" name="ProjectAmenitie[@i].TabOrder" value="@(item.TabOrder <= 0 ? i+1: item.TabOrder )" />
+                </td>
+                <td class="td-small">
+                    <button type="button" class="btn btn-danger" onclick="RemoveProjectAmenitieRow(this);"><i class="fa fa-trash"></i></button>
+                </td>
+            </tr>
+                i++;
+            }
+        </tbody>
+    </table>
+</div>
+
+

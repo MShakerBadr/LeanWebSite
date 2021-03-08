@@ -1,0 +1,89 @@
+﻿@using GeneralResource = lean.UI.LocalResources.Resource;
+@{
+    ViewBag.Title = "About";
+    StaticContent content = ViewBag.AboutUs != null ? (StaticContent)ViewBag.AboutUs : new StaticContent();
+    List<AboutUs> aboutUsData = ViewBag.AboutUsData != null ? ViewBag.AboutUsData as List<AboutUs> : new List<AboutUs>();
+}
+<div class="intro-section-2 services-page-intro" style="background-image: url(../assets/img/SS.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="intro-title">
+                    <h2 class="title">
+                        @GeneralResource.WHO
+                        <span>
+                            @GeneralResource.AREWE
+                        </span>
+                        
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end  intro-section-2 -->
+<!-- about-us-page -->
+<div class="about-us-page paddin-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="../assets/img/ssss.png" alt="" class="img-fluid" />
+            </div>
+            <div class="col-md-6 d-flex" style="align-items: center;">
+                <div class="about-us-content">
+                    <h3 class="about-us-title">
+                        @GeneralResource.GetIn
+                        <span>
+                            @GeneralResource.Touch
+                        </span>
+                    </h3>
+                    <p class="prag2">
+                        @content.AboutUst
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- about-us-page -->
+
+<div class="provide-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="provide-content">
+                    <h3 class="provide-title">@GeneralResource.HowWeProvide<span> @GeneralResource.Our @GeneralResource.Services</span></h3>
+                    <p class="prag2">
+                       @content.Objectives
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in aboutUsData)
+            {
+
+                <div class="col-lg-6 col-md-12">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="img-provide-box">
+                                <img src="@item.ImgPath.Replace(@"\",@"/")" alt="" class="img-fluid" />
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <h2 class="provide-title-st">
+                                @item.Title
+                            </h2>
+
+                            <p class="prag2">
+                                @item.Desc
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+          
+        </div>
+    </div>
+</div>

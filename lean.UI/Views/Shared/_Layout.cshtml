@@ -1,0 +1,461 @@
+﻿@using Lean = lean.UI;
+@using LangResource = lean.UI.LocalResources;
+@{
+
+    var context = new Lean.Context.LeanDbContext();
+    List<Lean.Models.Entities.HeaderFooterPages> Pages = context.HeaderFooterPages.Where(x => x.Show).ToList();
+    List<Lean.Models.Entities.HeaderFooterPages> HeaderPages = Pages.Where(x => x.IsHeader == true).OrderBy(x => x.TabOrder).ToList();
+    List<Lean.Models.Entities.HeaderFooterPages> FooterPages = Pages.Where(x => x.IsHeader == false).OrderBy(x => x.TabOrder).ToList();
+    var _contactReasons = context.ContactUsReasons.ToList().ToSelectList<ContactUsReason>();
+}
+
+<!DOCTYPE html>
+<html lang="@LangResource.Resource.Language" dir="@LangResource.Resource.Dir">
+<head>
+
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#fff" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/css/nice-select.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+    @if (MySession.IsArabic)
+    {
+        <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css" integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous" />
+    }
+    <title>The Lean</title>
+
+</head>
+
+<body>
+    <div id="page" class="hfeed site">
+
+        <!-- Start Header -->
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <div class="nav-bar">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-4 dis-col">
+                                <div class="menu-icone-box">
+                                    <i class="fas fa-bars"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-4 col-4">
+                                <div class="logo-box">
+                                    <a href="#" class="logo-link">
+                                        <img src="~/assets/img/logo.png" alt="" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-11 col-md-4 col-4">
+                                <div class="nav-ul">
+                                    <!-- Menu-->
+                                    <ul class="list-unstyled navBar-ul">
+
+                                        @foreach (var header in HeaderPages)
+                                        {
+                                            <li>
+                                                <a href="@header.TabUrl">
+                                                    @header.Name
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                    <!--End Menu-->
+                                    <!-- Serarch-->
+                                    <div class="search-box">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <!-- End Search-->
+                                    <!-- Social Menu-->
+                                    <div class="social-box">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="fab fa-linkedin-in"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="fab fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- End Social Menu-->
+                                    <!-- Language Menu-->
+                                    <div class="lang-box">
+                                        <a href="@Url.Action("ChangeLanguage", "Base", new { language = MyConstants.CurrrentLanguage == "en-US" ? MyConstants.ArabicLanguage  : MyConstants.EnglishLanguage})">
+                                            @{ if (MyConstants.CurrrentLanguage == "en-US")
+                                                {
+                                                    <span> Ar</span>
+                                                }
+                                                else if (MyConstants.CurrrentLanguage == "ar-EG")
+                                                {
+                                                    <span> En</span>
+                                                }
+                                                else
+                                                {
+                                                    <span> Ar</span>
+                                                }
+                                            }
+                                        </a>
+
+                                    </div>
+                                    <!-- End Language Menu-->
+                                </div>
+
+                                <div class="search-box-pop">
+                                    <div class="search-box-pop-form">
+                                        <form class="search-form" action="">
+                                            <div class="form-group">
+                                                <input type="search" name="search-input" id="search-input" class="form-control" placeholder="Search" aria-describedby="helpId" />
+                                                <button type="submit" class="search-form-button"><i class="fas fa-search"></i></button>
+                                            </div>
+                                        </form>
+                                        <div class="close-pop-botton">
+                                            <span>
+                                               @LangResource.Resource.Close
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="over-lay"></div>
+                                <div class="mobile-menu">
+                                    <div class="close-menu">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                    <ul class="list-unstyled main-mobile-menu">
+                                        @foreach (var header in HeaderPages)
+                                        {
+                                            <li>
+                                                <a href="@header.TabUrl">
+                                                    @header.Name
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                    <ul class="list-unstyled sochile-ul">
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <i class="fab fa-linkedin-in"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="mobile-lang-box">
+                                        <a href="@Url.Action("ChangeLanguage", "Base", new { language = MyConstants.CurrrentLanguage == "en-US" ? MyConstants.ArabicLanguage  : MyConstants.EnglishLanguage})">
+                                            @{ if (MyConstants.CurrrentLanguage == "en-US")
+                                                {
+                                                    <span> Ar</span>
+                                                }
+                                                else if (MyConstants.CurrrentLanguage == "ar-EG")
+                                                {
+                                                    <span> En</span>
+                                                }
+                                                else
+                                                {
+                                                    <span> Ar</span>
+                                                }
+                                            }
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <!-- End Header-->
+        <!-- Content-->
+        <div class="main-container">
+            <main class="main wrapper">
+                @RenderBody()
+            </main>
+        </div>
+        <!-- End Content-->
+        <!-- Footer-->
+        <div class="footer-container">
+            <footer class="wrapper">
+                <div class="footer-section paddin-60">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-3">
+                                <div class="right-box">
+                                    <div class="logo-box">
+                                        <a href="#" class="logo-link">
+                                            <img src="~/assets/img/Layer 0 1.png" alt="" class="img-fluid" />
+                                        </a>
+                                    </div>
+                                    <div class="ul-footer">
+                                        <ul class="list-unstyled">
+                                            @foreach (var footer in FooterPages)
+                                            {
+                                                <li>
+                                                    <a href="@footer.TabUrl">
+                                                        @footer.Name
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4">
+                                <div class="footer-title">
+                                    <h5 class="title">
+                                        @LangResource.Resource.Interseted
+                                    </h5>
+                                    <h5 class="title">
+                                        @LangResource.Resource.GetAQuot
+                                    </h5>
+                                </div>
+                                <div class="footer-form-box">
+                                    @using (Ajax.BeginForm("AddContactUsRequest", "ContactUsRequest", null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "successAddingContactRequest" }
+                                    , new { @id = "formAddContactRequest", @class = "footer-form" }))
+                                    {
+                                        <div class="form-group">
+                                            <input type="text" data-val="true"
+                                                   id="Name"
+                                                   name="Name"
+                                                   data-val-required="@LangResource.Resource.NameIsRequired"
+                                                   placeholder="@LangResource.Resource.Name"
+                                                   class="form-control" />
+                                            @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input data-val="true"
+                                                   type="email"
+                                                   name="Email"
+                                                   pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+                                                   id="Email"
+                                                   data-val-required="@LangResource.Resource.NameIsRequired"
+                                                   class="form-control"
+                                                   placeholder="@LangResource.Resource.Email" />
+                                            @Html.ValidationMessage("Email", "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <input data-val="true"
+                                                       type="text"
+                                                       name="MobileNumber"
+                                                       id="MobileNumber"
+                                                       data-val-required="@LangResource.Resource.MobileNumberIsRequired"
+                                                       class="form-control"
+                                                       placeholder="@LangResource.Resource.Phone"
+                                                       aria-describedby="helpId" />
+                                                @Html.ValidationMessage("MobileNumber", "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.DropDownList("ContactUsReasonId", _contactReasons as SelectList
+                                                        , new
+                                                             {
+                                                                 @class = "select-box"
+                                                                ,
+                                                                 @data_val_required = LangResource.Resource.EmailIsRequired
+                                                                ,
+                                                                 @data_val = "true"
+                                                             })
+                                            @Html.ValidationMessage("ContactUsReasonId", "", new { @class = "text-danger", @Id = "ContactUsReasonIdValidation" })
+                                        </div>
+                                        <button class="footer-submit" type="submit">@LangResource.Resource.Send</button>
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-1"></div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="footer-title">
+                                    <h5 class="title">
+                                        @LangResource.Resource.NewsSubscrib
+                                    </h5>
+                                    <h5 class="title">
+                                        @LangResource.Resource.BeUpdatedWithoutLatestProjects
+                                    </h5>
+                                </div>
+
+                                <div class="footer-form-box footer-form2">
+                                    @using (@Html.BeginForm("AddEmailNotificationRequest"
+                                                                    , "ContactUsRequest"
+                                                                    , FormMethod.Post, new { @class = "footer-form" }))
+                                    {
+
+                                        <div class="form-group">
+                                            <input type="email" name="Email" placeholder="@LangResource.Resource.EnterEmail" />
+                                            <button class="footer-submit" type="submit">@LangResource.Resource.Subscribe</button>
+                                        </div>
+                                    }
+                                </div>
+
+                                <div class="socile-box">
+                                    <h5 class="title">
+                                        @LangResource.Resource.followUs
+                                    </h5>
+
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <i class="fab fa-linkedin-in"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="footer-ul-2">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="#">
+                                                @LangResource.Resource.FAQs
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                               @LangResource.Resource.PRIVACYPOLICY
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                @LangResource.Resource.TermsandConditions
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="footer-copy">
+                                    <p class="prag">
+                                        Copyright  @@ 2020. All Rights
+                                        <a href="#"> Reserved By Thelean. </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </footer>
+        </div>
+        <!-- End Footer-->
+
+
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/Content/lib/jquery.unobtrusive-ajax/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/assets/js/jquery.nice-select.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <script src="~/assets/js/script.js"></script>
+    <script src="~/Content/js/site.js"></script>
+    <script src="~/Content/lib/toastr/toastr.min.js"></script>
+    
+    
+    
+    <script>
+    $(document).ready(function () {
+        $('#formAddContactRequest').attr('action', '/ContactUsRequest/AddContactUsRequest');
+    })
+
+
+        $('#formAddContactRequest').on('submit', function () {
+
+        $("#ContactUsReasonIdValidation").html("");
+        if ($(this).valid() && $("#ContactUsReasonId").val() !== "0") {
+            return true;
+        } else {
+            if ($("#ContactUsReasonId").val() === "0") {
+                $("#ContactUsReasonIdValidation").html('@LangResource.Resource.ContactUsReason')
+            }
+            return false;
+        }
+    });
+
+    $("#ContactUsReasonId").change(function () {
+        if ($(this).val() !== '0')
+            $("#ContactUsReasonIdValidation").html("");
+        else
+            $("#ContactUsReasonIdValidation").html('@LangResource.Resource.ContactUsReason');
+    });
+        function successAddingContactRequest(data) {
+            debugger;
+            if (data.Success) {
+                Success(data);
+            } else {
+                alert('!ERROR!');
+            }
+        }
+    </script>
+
+
+
+</body>
+</html>

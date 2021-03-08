@@ -1,0 +1,34 @@
+﻿@model ContactUsReason
+@using GeneralResources = lean.UI.LocalResources.Resource;
+
+@using (Ajax.BeginForm("Save", "ContactUsReason", new AjaxOptions { HttpMethod = "POST", OnSuccess = "successSavingContactUsReason" }, new { }))
+{
+    @Html.HiddenFor(x => x.Id)
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.NameAr)
+                @Html.ValidationMessageFor(x => x.NameAr, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(x => x.NameAr, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.NameEn)
+                @Html.ValidationMessageFor(x => x.NameEn, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(x => x.NameEn, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-12">
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end border-top">
+        <button type="submit" class="btn btn-secondary m-1">@GeneralResources.Save</button>
+        <button type="button" class="btn btn-danger m-1" data-dismiss="modal">@GeneralResources.Close</button>
+    </div>
+}
+
+@Html.Partial("~/Views/Shared/Partial/_JQValidationPartial.cshtml")

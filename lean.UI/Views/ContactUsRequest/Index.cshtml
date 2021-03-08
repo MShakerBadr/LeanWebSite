@@ -1,0 +1,22 @@
+﻿@model ContactUsRequestViewModel
+
+@{
+    ViewBag.Title = "ContactUsRequest";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div id="contactUsRequestFilter">
+            @Html.Partial("~/Views/ContactUsRequest/Partial/ContactUsRequestFilter.cshtml", Model.Filter)
+        </div>
+    </div>
+    <div class="col-12">
+        <div id="contactUsRequestList">
+            @Html.Partial("~/Views/ContactUsRequest/Partial/ContactUsRequestList.cshtml", Model.List)
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Content/js/pages/contactusrequest.js?v=@DateTime.Now.Day"></script>

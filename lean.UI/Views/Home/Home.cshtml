@@ -1,0 +1,302 @@
+﻿@using lang = lean.UI.LocalResources
+@{
+    ViewBag.Title = "Home Page";
+
+    List<WhatWeDelivered> services = ViewBag.WhatWeDeliver != null ? ViewBag.WhatWeDeliver as List<WhatWeDelivered> : new List<WhatWeDelivered>();
+    List<Project> potfolio = ViewBag.Portfolio != null ? ViewBag.Portfolio as List<Project> : new List<Project>();
+    List<WhyUS> WhyUs = ViewBag.WhyUs != null ? ViewBag.WhyUs as List<WhyUS> : new List<WhyUS>();
+    List<Clients> clients = ViewBag.Clients != null ? ViewBag.Clients as List<Clients> : new List<Clients>();
+}
+
+
+
+<!-- start intro-section -->
+
+<div class="intro-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="intro-slider margi-0">
+                    <div class="intro-slider-item">
+                        <video autoplay muted loop class="myVideo">
+                            <source src="~/assets/vedio.mp4" type="video/mp4">
+                        </video>
+                        <div class="slider-content" data-aos="fade-up">
+                            <h2 class="intro-title">
+                                @lang.Resource.WeAre
+                                <span>THE LEAN</span>
+                            </h2>
+                            <p class="prag">
+                                @lang.Resource.theLeanDesc
+                            </p>
+                        </div>
+                    </div>
+                    <div class="intro-slider-item">
+                        <video autoplay muted loop class="myVideo">
+                            <source src="~/assets/vedio.mp4" type="video/mp4">
+                        </video>
+                        <div class="slider-content" data-aos="fade-up">
+                            <h2 class="intro-title">
+                                @lang.Resource.WeAre
+                                <span>THE LEAN</span>
+                            </h2>
+                            <p class="prag">
+                                @lang.Resource.theLeanDesc
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end intro-section -->
+<!-- start whatWeDo-section -->
+
+<div class="whatWeDo-section paddin-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title1" data-aos="fade-up">
+                    <h3 class="title">
+                        @lang.Resource.WhatWeDelivered
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            @foreach (var item in services)
+            {
+                <div class="col-lg-4 col-md-6 col-6">
+                    <div class="what-box">
+                        <h6 class="boxwhat-title">
+                            @item.Name
+                        </h6>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="img-what-box" data-aos="fade-down">
+                                    <img src="@item.ImageUrl" class="img-fluid" alt="img" />
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <p class="prag">
+                                    @item.Description
+                                </p>
+                                @*<div data-aos="zoom-in" class="button-link1">
+                                        <a href="#">
+                                            Details
+                                        </a>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div data-aos="zoom-in" class="button-link1 see-more-button">
+                    <a href="#">
+                        @lang.Resource.SEEMORE
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end whatWeDo-section -->
+<!-- start portfolio-section -->
+
+<div class="portfolio-section paddin-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title3">
+                    <h4 class="title">
+                        @lang.Resource.Our
+                        <span>@lang.Resource.Portfolio</span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        @for (int i = 0; i < potfolio.Count; i += 4)
+        {
+            var prot = potfolio[i] as Project;
+            var prot1 = potfolio[i + 1] as Project;
+            var prot2 = potfolio[i + 2] as Project;
+            var prot3 = potfolio[i + 3] as Project;
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-11 col-md-12">
+                    <div class="portfolio-box">
+                        <div class="portfolio-pop-box" data-aos="fade-up">
+                            <a class="fancy-img-box vedioGallery-popup" data-fancybox="gallery" href="@prot.CoverUrl.Replace(@"\", @"/")" tabindex="0">
+                                <div class="portfolio-pimg" style="background-image: url('@prot.CoverUrl.Replace(@"\", @"/")');">
+                                    <h5 class="project-title">
+                                        @prot.Title
+                                    </h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="portfolio-pop-box" data-aos="fade-up">
+                            <a class="fancy-img-box vedioGallery-popup" data-fancybox="gallery" href="@prot1.CoverUrl.Replace(@"\", @"/")" tabindex="0">
+                                <div class="portfolio-pimg" style="background-image: url('@prot1.CoverUrl.Replace(@"\", @"/")');">
+                                    <h5 class="project-title">
+                                        @prot1.Title
+                                    </h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="portfolio-pop-box" data-aos="fade-up">
+                            <a class="fancy-img-box vedioGallery-popup" data-fancybox="gallery" href="@prot2.CoverUrl.Replace(@"\", @"/")" tabindex="0">
+                                <div class="portfolio-pimg" style="background-image: url('@prot2.CoverUrl.Replace(@"\", @"/")');">
+                                    <h5 class="project-title">
+                                        @prot2.Title
+                                    </h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="portfolio-pop-box" data-aos="fade-up">
+                            <a class="fancy-img-box vedioGallery-popup" data-fancybox="gallery" href="@prot3.CoverUrl.Replace(@"\", @"/")" tabindex="0">
+                                <div class="portfolio-pimg" style="background-image: url('@prot3.CoverUrl.Replace(@"\", @"/")');">
+                                    <h5 class="project-title">
+                                        @prot3.Title
+                                    </h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div data-aos="zoom-in" class="button-link1 see-more-button">
+                    <a href="#">
+                        @lang.Resource.SEEMORE
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end portfolio-section -->
+<!-- start why-us-section -->
+<div class="why-us-section paddin-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title1" data-aos="fade-up">
+                    <h3 class="title">
+                        @lang.Resource.Whyus
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in WhyUs)
+            {
+                <div class="col-md-6">
+                    <div class="why-box" data-aos="zoom-in">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="@item.ImgUrl" alt="" class="img-fluid" />
+                            </div>
+                            <div class="col-8">
+                                <div class="why-box-content">
+                                    <h4 class="why-title">
+                                        @item.Title
+                                    </h4>
+                                    <p class="prag2">
+                                        @item.Description
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+<!-- end why-us-section -->
+<!-- satrt clients-section -->
+<div class="clients-section paddin-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title3">
+                    <h4 class="title">
+                        @{ if (!MySession.IsArabic) {
+
+                                @lang.Resource.Our
+                                      }
+                        }
+                        <span>@lang.Resource.Clients</span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 d-flex" style="align-items: center;">
+                <div class="clients-title-box">
+                    <h2 class="titleclients">
+                        @lang.Resource.SatisfiedCustomers
+                    </h2>
+                    <p class="prag2">
+                        @lang.Resource.SatCustomerDesc
+                    </p>
+                </div>
+            </div>
+            @for (int i = 0; i < clients.Count; i += 2)
+            {
+                var item = i <= clients.Count ? clients[i] as Clients : null;
+                var item2 = i + 1 < clients.Count ? clients[i + 1] as Clients : null;
+                <div class="col-lg-2 col-md-6">
+
+                    @if (item != null)
+                    {
+                        <div data-aos="fade-up" class="img-clint-box clint-box-1 ro1">
+                            <img src="@item.imgUrl" alt="img" class="img-fluid" />
+                        </div>
+                    }
+
+                    @if (item2 != null)
+                    {
+                        <div data-aos="fade-up" class="img-clint-box clint-box-2">
+                            <img src="@item2.imgUrl" alt="img" class="img-fluid" />
+                        </div>
+                    }
+
+                </div>
+            }
+
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div data-aos="zoom-in" class="button-link1 see-more-button">
+                    <a href="#">
+                        @lang.Resource.SEEMORE
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end clients-section -->

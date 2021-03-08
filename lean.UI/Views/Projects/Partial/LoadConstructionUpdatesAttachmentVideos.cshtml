@@ -1,0 +1,10 @@
+﻿@model IEnumerable<ConstructionUpdatesGallery>
+
+@foreach (var item in Model)
+{
+    <div class="video-item">
+        <iframe width="200" height="150" src="@item.AttachmentUrl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <i class="fa fa-times-circle remove" data-video-id="@item.Id" data-attachment-id="@item.ConstructionUpdatesId" onclick="DeleteConstructionUpdatesVideo(this)" style="z-index:1;"></i>
+    </div>
+}
+

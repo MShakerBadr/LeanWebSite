@@ -1,0 +1,44 @@
+﻿@using GeneralResources = lean.UI.LocalResources.Resource;
+
+@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<script src="~/Content/js/pages/admin-Settings.js"></script>
+
+
+<div class="container pt-5">
+    <div id="dvChangeUsername" class="shadow-bordered-div text-center">
+        @using (Ajax.BeginForm("ChangeUsername", "Admin", new AjaxOptions { HttpMethod = "POST", OnSuccess = "successChangeUsername" }))
+        {
+            <h4>@GeneralResources.ChangeUsername</h4>
+            <div class="form-group">
+                <input type="text" name="OldUsername" class="form-control" placeholder="@GeneralResources.OldUsername" required />
+            </div>
+            <div class="form-group">
+                <input type="text" name="NewUsername" class="form-control" placeholder="@GeneralResources.NewUsername" required />
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-dark form-control" value="@GeneralResources.ConfirmChangeUsername" />
+            </div>
+        }
+    </div>
+
+    <div id="dvChangePassword" class="shadow-bordered-div text-center mt-5">
+        @using (Ajax.BeginForm("ChangePassword", "Admin", new AjaxOptions { HttpMethod = "POST", OnSuccess = "successChangePassword" }))
+        {
+            <h4>@GeneralResources.ChangePassword</h4>
+            <div class="form-group">
+                <input type="password" name="OldPassword" class="form-control" placeholder="@GeneralResources.OldPassword" required />
+            </div>
+            <div class="form-group">
+                <input type="password" name="NewPassword" class="form-control" placeholder="@GeneralResources.NewPassword" required />
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-dark form-control" value="@GeneralResources.ConfirmChangePassword" />
+            </div>
+        }
+    </div>
+</div>

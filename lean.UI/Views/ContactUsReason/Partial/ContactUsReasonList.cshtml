@@ -1,0 +1,40 @@
+﻿@model IPagedList<ContactUsReason>
+@using GeneralResources = lean.UI.LocalResources.Resource;
+
+
+<div class="table-responsive mb-3 shadow" @(Model.Count == 0 ? "hidden" : "")>
+    <table class="table table-hover" id="tblContactUsReason">
+        <thead>
+            <tr>
+                <th><a href="#" class="plus" onclick="addContactUsReason()"><i class="fa fa-plus-circle"></i></a></th>
+                <th>@GeneralResources.Name</th>
+                <th>@GeneralResources.Edit</th>
+                <th>@GeneralResources.Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="td-small"><span class="row-index"></span></td>
+                    <td>@item.Name</td>
+                    <td class="td-small"><button class="btn btn-secondary" onclick="editContactUsReason('@item.Id')"><i class="fa fa-edit"></i></button> </td>
+                    <td class="td-small"><button class="btn btn-danger" onclick="deleteContactUsReason('@item.Id')"><i class="fa fa-trash"></i></button> </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+<div class="pagedList text-center" data-target="#contactUsReasonList">
+    @if (Model.Count > 0)
+    {
+        @Html.PagedListPager(Model, page => Url.Action("Index", "ContactUsReason", new { page = page }))
+    }
+</div>
+
+
+<div @(Model.Count > 0 ? "hidden" : "")>
+    @Html.Partial("~/Views/Shared/Partial/_NoDataPartial.cshtml", "addContactUsReason()")
+</div>
+

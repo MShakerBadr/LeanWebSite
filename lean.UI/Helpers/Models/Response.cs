@@ -1,0 +1,9 @@
+﻿namespace lean.UI.Helpers.Models
+{
+    public class Response
+    {
+        public bool Success { get; set; }
+        public string Message { get; set; }
+        public object Data { get; set; } = new object();
+    }
+}

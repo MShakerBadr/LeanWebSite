@@ -1,0 +1,104 @@
+﻿@using GeneralResources = lean.UI.LocalResources.Resource;
+
+<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+    <div class="sb-sidenav-menu">
+        <div class="nav">
+            <div class="sb-sidenav-menu-heading">The Lean Menu</div>
+
+            <a id="Dashboard" class="nav-link" href="@Url.Action("Home", "Admin")">
+                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;</div>
+                <span> @GeneralResources.Index</span>
+            </a>
+
+            <div class="group-container">
+                <a class="nav-link nav-link-group collapsed" href="#" data-toggle="collapse" data-target="#collapseLookups" aria-controls="collapseLookups" aria-expanded="false">
+                    <div class="sb-nav-link-icon"><i class="fa fa-layer-group"></i>&nbsp;&nbsp;</div>
+                    <span>@GeneralResources.Lookups</span>
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseLookups" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                        <a id="PropertyType" class="nav-link sub-link" href="@Url.Action("Index", "PropertyType")">@GeneralResources.PropertyType</a>
+                        <a id="UnitType" class="nav-link sub-link" href="@Url.Action("Index", "UnitType")">@GeneralResources.UnitType</a>
+                        <a id="Location" class="nav-link sub-link" href="@Url.Action("Index", "Location")">@GeneralResources.Location</a>
+                        <a id="AvailableJobs" class="nav-link sub-link" href="@Url.Action("Index", "AvailableJobs")">@GeneralResources.AvailableJobs</a>
+                        <a id="ContactUsReason" class="nav-link sub-link" href="@Url.Action("Index", "ContactUsReason")">@GeneralResources.ContactUsReason</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="group-container">
+                <a class="nav-link nav-link-group collapsed" href="#" data-toggle="collapse" data-target="#collapseGallery" aria-controls="collapseGallery" aria-expanded="false">
+                    <div class="sb-nav-link-icon"><i class="fa fa-layer-group"></i>&nbsp;&nbsp;</div>
+                    <span>@GeneralResources.ContentManagment</span>
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseGallery" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                        <a id="StaticContent" class="nav-link sub-link" href="@Url.Action("Index", "StaticContent")">@GeneralResources.StaticContent</a>
+                        <a id="HeaderFooterPages" class="nav-link sub-link" href="@Url.Action("Index", "Pages")">@GeneralResources.Pages</a>
+                        <a id="Slider" class="nav-link sub-link" href="@Url.Action("Index", "Slider")">@GeneralResources.Slider</a>
+                        <a id="Managment" class="nav-link sub-link" href="@Url.Action("Index", "Managment")">@GeneralResources.Managment</a>
+                        <a id="NewsAndEvents" class="nav-link sub-link" href="@Url.Action("Index", "NewsAndEvents")">@GeneralResources.NewsAndEvents</a>
+                        <a id="Gallery" class="nav-link sub-link" href="@Url.Action("Index", "Gallery")">@GeneralResources.GALLERY</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="group-container">
+                <a class="nav-link nav-link-group collapsed" href="#" data-toggle="collapse" data-target="#collapseRequests" aria-controls="collapseRequests" aria-expanded="false">
+                    <div class="sb-nav-link-icon"><i class="fa fa-layer-group"></i>&nbsp;&nbsp;</div>
+                    <span>@GeneralResources.Requests</span>
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseRequests" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                        <a id="ContactUsRequest" class="nav-link sub-link" href="@Url.Action("Index", "ContactUsRequest")">@GeneralResources.ContactUsRequest</a>
+                        <a id="JobRequests" class="nav-link sub-link" href="@Url.Action("Index", "JobRequests")">@GeneralResources.JobRequests</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="group-container">
+                <a class="nav-link nav-link-group collapsed" href="#" data-toggle="collapse" data-target="#collapseProjects" aria-controls="collapseProjects" aria-expanded="false">
+                    <div class="sb-nav-link-icon"><i class="fa fa-layer-group"></i>&nbsp;&nbsp;</div>
+                    <span>@GeneralResources.Pages</span>
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseProjects" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                        <a id="Projects" class="nav-link sub-link" href="@Url.Action("Index", "Projects")">@GeneralResources.PROJECTS</a>
+
+                        <a id="WhatWeDelivered" class="nav-link sub-link" href="@Url.Action("Home", "WhatWeDelivered")">@GeneralResources.WhatWeDelivered</a>
+
+                        <a id="Projects" class="nav-link sub-link" href="@Url.Action("Home", "WhyUs")">@GeneralResources.Whyus</a>
+                        <a id="Projects" class="nav-link sub-link" href="@Url.Action("Home", "Client")">@GeneralResources.Clients</a>
+                        <a id="Projects" class="nav-link sub-link" href="@Url.Action("Home", "AboutUS")">@GeneralResources.AboutUs</a>
+                        <a id="Projects" class="nav-link sub-link" href="@Url.Action("Home", "Product")">@GeneralResources.Product</a>
+                        <a id="Projects" class="nav-link sub-link" href="@Url.Action("Home", "WhatWeDelivered")">@GeneralResources.Services</a>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="sb-sidenav-footer">
+        <div class=""><b>@MySession.User.Role</b></div>
+    </div>
+</nav>
+
+
+
+<script>
+    $(function () {
+        // active current sub-nav
+        $('.nav-link').removeClass('active');
+        $('.nav-link-group').removeClass('active');
+        $('a#@ViewBag.Title').addClass('active');
+        // toggle target nav
+        $('a#@ViewBag.Title').closest('.group-container').find('.nav-link-group').trigger('click');
+        // active main-nav if opened tab in one of it's childrens
+        $('.group-container').find('.nav-link-group').removeClass('group-active');
+        $('a#@ViewBag.Title').closest('.group-container').find('.nav-link-group').addClass('group-active');
+    });
+</script>

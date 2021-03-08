@@ -1,0 +1,100 @@
+﻿@model WhatWeDelivered
+@using GeneralResources = lean.UI.LocalResources.Resource;
+
+@using (Ajax.BeginForm("Save", "WhatWeDelivered", new AjaxOptions { HttpMethod = "POST", OnSuccess = "successSavingWhatWeDelivered" }, new { }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.Id)
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group text-center">
+                <div class="img-collection">
+                    <div>
+                        <input type="hidden" name="ImageUrl" value="@Model.ImageUrl" accept=".jpg,.png,.jpeg" />
+                        <img width="200" height="200" class="img circular" src="@Model.ImageUrl" accept=".jpg,.jpeg,.png" capture />
+                    </div>
+                    <div class="mt-2">
+                        <input type="file" id="WhatWeDeliveredPhotoUpload" onchange="readURL(this)" hidden />
+                        <label for="WhatWeDeliveredPhotoUpload" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadPhoto</label>
+                        <label class="btn btn-danger" onclick="RemoveImage(this)"><i class="fa fa-times-circle" style=""></i>&nbsp;@GeneralResources.RemovePhoto</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.NameAr)
+                @Html.TextBoxFor(x => x.NameAr, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.NameAr, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.NameEn)
+                @Html.TextBoxFor(x => x.NameEn, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.NameEn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.LocationAr)
+                @Html.TextBoxFor(x => x.LocationAr, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.LocationAr, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.LocationEn)
+                @Html.TextBoxFor(x => x.LocationEn, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.LocationEn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.DescriptionAr)
+                @Html.TextAreaFor(x => x.DescriptionAr, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.DescriptionAr, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.DescriptionEn)
+                @Html.TextAreaFor(x => x.DescriptionEn, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.DescriptionEn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @*<div class="col-12">
+                <div class="form-group">
+
+                </div>
+            </div>*@
+        @if (Model.Id > 0)
+        {
+
+            <div class="col-12">
+                <div class="mt-2">
+                    <input type="file" id="uploadgalleyItems" data-target-id="@Model.Id" onchange="UploadWhatWeDeliveredAttachment(this)" accept=".jpg,.png,.jpeg" multiple hidden />
+                    <label for="uploadgalleyItems" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadNewsAndEventsgalleyImages</label>
+                    <div class="images-container">
+                        @Html.Partial("~/Views/WhatWeDelivered/Partial/LoaDeliveredAttachmentImages.cshtml", Model.WhatWeDeliveredGallery.Where(x => x.IsVideo == false))
+                    </div>
+                </div>
+                <hr />
+            </div>
+        }
+        else
+        {
+            <div class="col-12 text-center d-flex justify-content-center m-5">
+                <div class="patch-info p-3">save the Delivered First Then Add It's Gallery</div>
+            </div>
+        }
+    </div>
+
+    <div class="d-flex justify-content-end border-top">
+        <button type="submit" class="btn btn-secondary m-1">@GeneralResources.Save</button>
+        <button type="button" class="btn btn-danger m-1" data-dismiss="modal">@GeneralResources.Close</button>
+    </div>
+}
+
+@Html.Partial("~/Views/Shared/Partial/_JQValidationPartial.cshtml")

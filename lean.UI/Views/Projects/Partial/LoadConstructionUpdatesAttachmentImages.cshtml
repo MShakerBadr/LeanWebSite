@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ConstructionUpdatesGallery>
+
+@foreach (var img in Model)
+{
+    <div class="img-item">
+        <a class="fancybox" href="@img.AttachmentUrl" target="_blank">
+            <img class="sp-attachment-img" width="75" height="75" src="@img.AttachmentUrl" />
+        </a>
+        <i class="fa fa-times-circle remove" data-img-id="@img.Id" data-attachment-id="@img.ConstructionUpdatesId" onclick="DeleteConstructionUpdatesAttachment(this)" style="z-index:1;"></i>
+    </div>
+}

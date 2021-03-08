@@ -1,0 +1,1203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ABOUTTHELANDDEVELOPERS" xml:space="preserve">
+    <value>About The Land Developers</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>AboutUs</value>
+  </data>
+  <data name="AboutUsBannerPhotoUrl" xml:space="preserve">
+    <value>About Us Banner Photo Url</value>
+  </data>
+  <data name="AboutUsBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>About Us Banner Photo Url Is Required</value>
+  </data>
+  <data name="AboutUsIsRequired" xml:space="preserve">
+    <value>About Us Is Required</value>
+  </data>
+  <data name="AboutUsPhotoUrlIsRequired" xml:space="preserve">
+    <value>About Us Photo Url Is Required</value>
+  </data>
+  <data name="AboutUstAr" xml:space="preserve">
+    <value>About Us Arabic</value>
+  </data>
+  <data name="AboutUstEn" xml:space="preserve">
+    <value>About Us English</value>
+  </data>
+  <data name="AboutUstPhotoUrl" xml:space="preserve">
+    <value>About Us tPhoto Url</value>
+  </data>
+  <data name="AddNewProject" xml:space="preserve">
+    <value>Add New Project</value>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>Downtown Katameya</value>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>Building S1 B, 3rd floor,</value>
+  </data>
+  <data name="Address3" xml:space="preserve">
+    <value>First New Cairo,</value>
+  </data>
+  <data name="Address4" xml:space="preserve">
+    <value>Cairo Governorate</value>
+  </data>
+  <data name="Address5" xml:space="preserve">
+    <value>11865</value>
+  </data>
+  <data name="AddVideo" xml:space="preserve">
+    <value>Add Video Url</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="AllAppliedJobRequests" xml:space="preserve">
+    <value>All Applied Job Requests</value>
+  </data>
+  <data name="AllContactUsReasons" xml:space="preserve">
+    <value>All Contact Us Reasons</value>
+  </data>
+  <data name="AllContactUsRequestsProjectsCount" xml:space="preserve">
+    <value>Al lContact Us Requests Projects Count</value>
+  </data>
+  <data name="AllJobRequests" xml:space="preserve">
+    <value>All Job Requests</value>
+  </data>
+  <data name="AllLocations" xml:space="preserve">
+    <value>All Locations</value>
+  </data>
+  <data name="AllProjectsCount" xml:space="preserve">
+    <value>All Projects Count</value>
+  </data>
+  <data name="AllProjectTypes" xml:space="preserve">
+    <value>All Project Types</value>
+  </data>
+  <data name="AllPropertyTypes" xml:space="preserve">
+    <value>All Property Types</value>
+  </data>
+  <data name="AllUnitTypes" xml:space="preserve">
+    <value>All Unit Types</value>
+  </data>
+  <data name="AMENITIES" xml:space="preserve">
+    <value>AMENITIES</value>
+  </data>
+  <data name="ApplyForAJob" xml:space="preserve">
+    <value>Apply For A Job</value>
+  </data>
+  <data name="ARCHITECTURE" xml:space="preserve">
+    <value>ARCHITECTURE</value>
+  </data>
+  <data name="AREWE" xml:space="preserve">
+    <value>we are</value>
+  </data>
+  <data name="AttachmentUrl" xml:space="preserve">
+    <value>Attachment Url</value>
+  </data>
+  <data name="AttachmentUrlIsRequired" xml:space="preserve">
+    <value>Attachment Url Is Required</value>
+  </data>
+  <data name="AttchmentDescriptionAr" xml:space="preserve">
+    <value>Attchment Description Ar</value>
+  </data>
+  <data name="AttchmentDescriptionEn" xml:space="preserve">
+    <value>Attchment Description En</value>
+  </data>
+  <data name="AttchmentNameAr" xml:space="preserve">
+    <value>Attchment Name Arabic</value>
+  </data>
+  <data name="AttchmentNameEn" xml:space="preserve">
+    <value>Attchment Name English</value>
+  </data>
+  <data name="AttchmentNameIsRequired" xml:space="preserve">
+    <value>Attchment Name Is Required</value>
+  </data>
+  <data name="AttchmentUrl" xml:space="preserve">
+    <value>Attchment Url</value>
+  </data>
+  <data name="AttchmentUrlIsRequired" xml:space="preserve">
+    <value>Attchment Url Is Required</value>
+  </data>
+  <data name="AvailableJobs" xml:space="preserve">
+    <value>Available Jobs</value>
+  </data>
+  <data name="AvilableJob" xml:space="preserve">
+    <value>Avilable Job</value>
+  </data>
+  <data name="AWORDFROMTHECHAIRMAN" xml:space="preserve">
+    <value>A WORD FROM THE CHAIRMAN</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Back To List</value>
+  </data>
+  <data name="Banners" xml:space="preserve">
+    <value>Banners</value>
+  </data>
+  <data name="basicdata" xml:space="preserve">
+    <value>Basic Data</value>
+  </data>
+  <data name="BeUpdated" xml:space="preserve">
+    <value>Be updated with our latest news</value>
+  </data>
+  <data name="BeUpdatedWithoutLatestProjects" xml:space="preserve">
+    <value>Be Updated With Our Latest Projects and News</value>
+  </data>
+  <data name="Careers" xml:space="preserve">
+    <value>Careers</value>
+  </data>
+  <data name="ChairMan" xml:space="preserve">
+    <value>ChairMan</value>
+  </data>
+  <data name="ChairManNameAr" xml:space="preserve">
+    <value>Chair Man Name Arabic</value>
+  </data>
+  <data name="ChairManNameEn" xml:space="preserve">
+    <value>Chair Man Name English</value>
+  </data>
+  <data name="ChairManNameIsRequired" xml:space="preserve">
+    <value>Chair Man Name Is Required</value>
+  </data>
+  <data name="ChairManPhotoUrl" xml:space="preserve">
+    <value>Chair Man Photo </value>
+  </data>
+  <data name="ChairManPhotoUrlIsRequired" xml:space="preserve">
+    <value>Chair Man Photo Is Required</value>
+  </data>
+  <data name="ChairManWordAr" xml:space="preserve">
+    <value>Chair Man Word Arabic</value>
+  </data>
+  <data name="ChairManWordEn" xml:space="preserve">
+    <value>Chair Man Word English</value>
+  </data>
+  <data name="ChairManWordIsRequired" xml:space="preserve">
+    <value>Chair Man Word Is Required</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="ChangeUsername" xml:space="preserve">
+    <value>Change Username</value>
+  </data>
+  <data name="CheckOut" xml:space="preserve">
+    <value>Check Out</value>
+  </data>
+  <data name="ClickToAdd" xml:space="preserve">
+    <value>Click To Add</value>
+  </data>
+  <data name="Clients" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Commercial" xml:space="preserve">
+    <value>Commercial</value>
+  </data>
+  <data name="COMMERCIALpro" xml:space="preserve">
+    <value>COMMERCIAL</value>
+  </data>
+  <data name="CommercialProjectDescriptionAr" xml:space="preserve">
+    <value>Commercial Project Description Arabic</value>
+  </data>
+  <data name="CommercialProjectDescriptionEn" xml:space="preserve">
+    <value>Commercial Project Description English</value>
+  </data>
+  <data name="CommercialProjectDescriptionIsRequired" xml:space="preserve">
+    <value>Commercial Project Description Is Required</value>
+  </data>
+  <data name="CommercialProjects" xml:space="preserve">
+    <value>Commercial Projects</value>
+  </data>
+  <data name="CommercialProjectsCount" xml:space="preserve">
+    <value>Commercial Projects Count</value>
+  </data>
+  <data name="CompanyAddress" xml:space="preserve">
+    <value>Company Address</value>
+  </data>
+  <data name="CompanyLocationMapUrl" xml:space="preserve">
+    <value>Company Location Map Url</value>
+  </data>
+  <data name="CompanyLocationMapUrlIsRequired" xml:space="preserve">
+    <value>Company Location Map Url Is Required</value>
+  </data>
+  <data name="Concept" xml:space="preserve">
+    <value>Concept</value>
+  </data>
+  <data name="ConceptAr" xml:space="preserve">
+    <value>Concept Arabic</value>
+  </data>
+  <data name="ConceptEn" xml:space="preserve">
+    <value>Concept English</value>
+  </data>
+  <data name="ConceptImageUrl" xml:space="preserve">
+    <value>Concept Image Url</value>
+  </data>
+  <data name="ConceptIsRequired" xml:space="preserve">
+    <value>Concept Is Required</value>
+  </data>
+  <data name="ConfirmChangePassword" xml:space="preserve">
+    <value>Confirm Change Password</value>
+  </data>
+  <data name="ConfirmChangeUsername" xml:space="preserve">
+    <value>Confirm Change Username</value>
+  </data>
+  <data name="CONSTRUCTIONUPDATES" xml:space="preserve">
+    <value>CONSTRUCTION UPDATES</value>
+  </data>
+  <data name="ConstructionUpdatesDirectionUrl" xml:space="preserve">
+    <value>Construction Updates Direction Url</value>
+  </data>
+  <data name="ConstructionUpdatesDirectionUrlIsRequired" xml:space="preserve">
+    <value>Construction Updates Direction Url Is Required</value>
+  </data>
+  <data name="ConstructionUpdatesText" xml:space="preserve">
+    <value>Construction Updates </value>
+  </data>
+  <data name="ConstructionUpdatesTextAr" xml:space="preserve">
+    <value>Construction Updates Text Arabic</value>
+  </data>
+  <data name="ConstructionUpdatesTextEn" xml:space="preserve">
+    <value>Construction Updates Text English</value>
+  </data>
+  <data name="ConstructionUpdatesTextIsRequired" xml:space="preserve">
+    <value>Construction Updates Text Is Required</value>
+  </data>
+  <data name="CONTACT" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="ContactBannerPhotoUrl" xml:space="preserve">
+    <value>Contact Banner Photo Url</value>
+  </data>
+  <data name="ContactBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>Contact Banner Photo Url Is Required</value>
+  </data>
+  <data name="ContactMethods" xml:space="preserve">
+    <value>Contact Methods</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="ContactUsReason" xml:space="preserve">
+    <value>Contact Us Reason</value>
+  </data>
+  <data name="ContactUsRequest" xml:space="preserve">
+    <value>Contact Us Request</value>
+  </data>
+  <data name="ContentManagment" xml:space="preserve">
+    <value>Content Managment</value>
+  </data>
+  <data name="ConvenientLocation" xml:space="preserve">
+    <value>Convenient Location</value>
+  </data>
+  <data name="ConvenientLocationDirectionUrl" xml:space="preserve">
+    <value>Convenient Location Direction Url</value>
+  </data>
+  <data name="ConvenientLocationDirectionUrlIsRequired" xml:space="preserve">
+    <value>Convenient Location Direction Url Is Required</value>
+  </data>
+  <data name="ConvenientLocationTextAr" xml:space="preserve">
+    <value>Convenient Location Text Arabic</value>
+  </data>
+  <data name="ConvenientLocationTextEn" xml:space="preserve">
+    <value>Convenient Location Text English</value>
+  </data>
+  <data name="ConvenientLocationTextIsRequired" xml:space="preserve">
+    <value>Convenient Location Text Is Required</value>
+  </data>
+  <data name="CoverUrl" xml:space="preserve">
+    <value>Cover Url</value>
+  </data>
+  <data name="CoverUrlIsRequired" xml:space="preserve">
+    <value>Cover Url Is Required</value>
+  </data>
+  <data name="CvUrl" xml:space="preserve">
+    <value>Cv Url</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeletedSuccessfully" xml:space="preserve">
+    <value>Deleted Successfully</value>
+  </data>
+  <data name="Delivered" xml:space="preserve">
+    <value>Delivered</value>
+  </data>
+  <data name="DeliveredBannerPhotoUrl" xml:space="preserve">
+    <value>Delivered Banner Photo Url</value>
+  </data>
+  <data name="DeliveredBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>Delivered Banner Photo Url Is Required</value>
+  </data>
+  <data name="Deliveringtrust" xml:space="preserve">
+    <value>Delivering trust &amp; quality</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DescriptionAr" xml:space="preserve">
+    <value>Description Arabic</value>
+  </data>
+  <data name="DescriptionEn" xml:space="preserve">
+    <value>Description English</value>
+  </data>
+  <data name="DescriptionIsRequired" xml:space="preserve">
+    <value>Description Is Required</value>
+  </data>
+  <data name="Dir" xml:space="preserve">
+    <value>ltr</value>
+  </data>
+  <data name="DontHesiate" xml:space="preserve">
+    <value>Don’t Hesitate to Contact Us Anytime</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="DropdownMenuDir" xml:space="preserve">
+    <value>dropdown-menu-right</value>
+  </data>
+  <data name="Dwebsite" xml:space="preserve">
+    <value>3D web site</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailIsRequired" xml:space="preserve">
+    <value>Email Is Required</value>
+  </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>Enter your Email</value>
+  </data>
+  <data name="ErrorsOccurred" xml:space="preserve">
+    <value>Errors Occurred</value>
+  </data>
+  <data name="ErrorWhenSendRequest" xml:space="preserve">
+    <value>Error When Send Request</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="EVENTS" xml:space="preserve">
+    <value>EVENTS</value>
+  </data>
+  <data name="Event_New" xml:space="preserve">
+    <value>Event / New</value>
+  </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Explore</value>
+  </data>
+  <data name="FaceBookUrl" xml:space="preserve">
+    <value>FaceBook Url</value>
+  </data>
+  <data name="FaceBookUrlIsRequired" xml:space="preserve">
+    <value>FaceBook Url Is Required</value>
+  </data>
+  <data name="FAQs" xml:space="preserve">
+    <value>FAQs</value>
+  </data>
+  <data name="FeaturedProjects" xml:space="preserve">
+    <value>F e a t u r e d P r o j e c t s</value>
+  </data>
+  <data name="FeaturedProjectsCount" xml:space="preserve">
+    <value>Featured Projects Count</value>
+  </data>
+  <data name="FindOur" xml:space="preserve">
+    <value>Find Our</value>
+  </data>
+  <data name="FloorPlans" xml:space="preserve">
+    <value>Floor Plans</value>
+  </data>
+  <data name="followUs" xml:space="preserve">
+    <value>Follow Us</value>
+  </data>
+  <data name="Footer" xml:space="preserve">
+    <value>Footer</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>For more enquiries fill in the form and we will get in touch with you.</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="GALLERY" xml:space="preserve">
+    <value>GALLERY</value>
+  </data>
+  <data name="GalleryBannerPhotoUrl" xml:space="preserve">
+    <value>Gallery Banner Photo Url</value>
+  </data>
+  <data name="GalleryBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>Gallery Banner Photo Url Is Required</value>
+  </data>
+  <data name="GetAQuot" xml:space="preserve">
+    <value>Get A Quot</value>
+  </data>
+  <data name="GETDIRECTIONS" xml:space="preserve">
+    <value>GET DIRECTIONS</value>
+  </data>
+  <data name="GetIn" xml:space="preserve">
+    <value>Get in</value>
+  </data>
+  <data name="GetinTouch" xml:space="preserve">
+    <value>Get in Touch</value>
+  </data>
+  <data name="Getnotifications" xml:space="preserve">
+    <value>Get notifications about marketplace, updates and blog post.</value>
+  </data>
+  <data name="Header" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HomeConceptAr" xml:space="preserve">
+    <value>Home Concept Arabic</value>
+  </data>
+  <data name="HomeConceptEn" xml:space="preserve">
+    <value>Home Concept English</value>
+  </data>
+  <data name="HowWeProvide" xml:space="preserve">
+    <value>How We Provide</value>
+  </data>
+  <data name="ImageUrl" xml:space="preserve">
+    <value>Image Url</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="InstagramUrl" xml:space="preserve">
+    <value>Instagram Url</value>
+  </data>
+  <data name="InstagramUrlIsRequired" xml:space="preserve">
+    <value>Instagram Url Is Required</value>
+  </data>
+  <data name="Interseted" xml:space="preserve">
+    <value>Interested to Discuss Your Idea?</value>
+  </data>
+  <data name="IsEvent" xml:space="preserve">
+    <value>Is Event</value>
+  </data>
+  <data name="IsFooter" xml:space="preserve">
+    <value>Is Footer</value>
+  </data>
+  <data name="IsHeader" xml:space="preserve">
+    <value>Is Header</value>
+  </data>
+  <data name="IsHidden" xml:space="preserve">
+    <value>Is Hidden</value>
+  </data>
+  <data name="IsShow" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="IsSpecialProject" xml:space="preserve">
+    <value>Is Special Project</value>
+  </data>
+  <data name="IsVideo" xml:space="preserve">
+    <value>Is Video</value>
+  </data>
+  <data name="Job" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="JobIsRequired" xml:space="preserve">
+    <value>Job Is Required</value>
+  </data>
+  <data name="JobRequests" xml:space="preserve">
+    <value>Job Requests</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>En</value>
+  </data>
+  <data name="LATESTEVENTS" xml:space="preserve">
+    <value>LATEST EVENTS</value>
+  </data>
+  <data name="LATESTNEWS" xml:space="preserve">
+    <value>Lates News</value>
+  </data>
+  <data name="LinkedInUrl" xml:space="preserve">
+    <value>LinkedIn Url</value>
+  </data>
+  <data name="LinkedInUrlIsRequired" xml:space="preserve">
+    <value>LinkedInUrl Is Required</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="LocationAr" xml:space="preserve">
+    <value>Location Arabic</value>
+  </data>
+  <data name="LocationEn" xml:space="preserve">
+    <value>Location English</value>
+  </data>
+  <data name="LocationId" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="LocationIsRequired" xml:space="preserve">
+    <value>Location Is Required</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Lookups" xml:space="preserve">
+    <value>Lookups</value>
+  </data>
+  <data name="Mail" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="MaillIsRequired" xml:space="preserve">
+    <value>Mail Is Required</value>
+  </data>
+  <data name="Managment" xml:space="preserve">
+    <value>Managment</value>
+  </data>
+  <data name="MasterPlan" xml:space="preserve">
+    <value>Master Plan</value>
+  </data>
+  <data name="MasterPlanAr" xml:space="preserve">
+    <value>Master Plan Arabic</value>
+  </data>
+  <data name="MasterPlanEn" xml:space="preserve">
+    <value>Master Plan English</value>
+  </data>
+  <data name="MasterPlanImageUrl" xml:space="preserve">
+    <value>Master Plan Image Url</value>
+  </data>
+  <data name="MasterPlanImageUrlIsRequired" xml:space="preserve">
+    <value>Master Plan Image Url Is Required</value>
+  </data>
+  <data name="MasterPlanIsRequired" xml:space="preserve">
+    <value>Master Plan Is Required</value>
+  </data>
+  <data name="Media" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Mission" xml:space="preserve">
+    <value>Mission</value>
+  </data>
+  <data name="MissionAr" xml:space="preserve">
+    <value>Mission Arabic</value>
+  </data>
+  <data name="MissionEn" xml:space="preserve">
+    <value>Mission English</value>
+  </data>
+  <data name="MissionIsRequired" xml:space="preserve">
+    <value>Mission Is Required</value>
+  </data>
+  <data name="MobileNumber" xml:space="preserve">
+    <value>Mobile Number</value>
+  </data>
+  <data name="MobileNumberIsRequired" xml:space="preserve">
+    <value>Mobile Number Is Required</value>
+  </data>
+  <data name="MOREEVENTS" xml:space="preserve">
+    <value>MORE EVENTS</value>
+  </data>
+  <data name="MORENews" xml:space="preserve">
+    <value>More News</value>
+  </data>
+  <data name="MustGreatPlacesforSummer" xml:space="preserve">
+    <value>Must Great Places for Summer</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NameAr" xml:space="preserve">
+    <value>Name Arabic</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>Name English</value>
+  </data>
+  <data name="NameIsRequired" xml:space="preserve">
+    <value>Name Is Required</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="NewAppliedJobRequests" xml:space="preserve">
+    <value>New Applied Job Requests</value>
+  </data>
+  <data name="NewcontactUsRequestsProjectsCount" xml:space="preserve">
+    <value>New contact Us Requests Projects Count</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>News &amp; Media</value>
+  </data>
+  <data name="NewsAndEvents" xml:space="preserve">
+    <value>News And Events</value>
+  </data>
+  <data name="NewsBannerPhotoUrl" xml:space="preserve">
+    <value>News Banner Photo Url</value>
+  </data>
+  <data name="NewsBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>News Banner Photo Url Is Required</value>
+  </data>
+  <data name="NEWSEventes" xml:space="preserve">
+    <value>NEWS &amp;</value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>Newsletter</value>
+  </data>
+  <data name="NewsSubscrib" xml:space="preserve">
+    <value>NEWSSubscribe to Our Newsletter</value>
+  </data>
+  <data name="NewUsername" xml:space="preserve">
+    <value>New Username</value>
+  </data>
+  <data name="Objectives" xml:space="preserve">
+    <value>Objectives</value>
+  </data>
+  <data name="ObjectivesAr" xml:space="preserve">
+    <value>Objectives Arabic</value>
+  </data>
+  <data name="ObjectivesEn" xml:space="preserve">
+    <value>Objectives English</value>
+  </data>
+  <data name="ObjectivesIsRequired" xml:space="preserve">
+    <value>Objectives Is Required</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Old Password</value>
+  </data>
+  <data name="OldPasswordNotCorrect" xml:space="preserve">
+    <value>Old Password Not Correct</value>
+  </data>
+  <data name="OldUsername" xml:space="preserve">
+    <value>Old Username</value>
+  </data>
+  <data name="OldUsernameNotCorrect" xml:space="preserve">
+    <value>Old Username Not Correct</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>اخرى</value>
+  </data>
+  <data name="Our" xml:space="preserve">
+    <value>Our</value>
+  </data>
+  <data name="OurCareValue" xml:space="preserve">
+    <value>Our Care Values</value>
+  </data>
+  <data name="OurManagement" xml:space="preserve">
+    <value>Our Management</value>
+  </data>
+  <data name="OURMISSION" xml:space="preserve">
+    <value>OUR MISSION</value>
+  </data>
+  <data name="OurNewLuxuriousDevelopmentsDeliveredtoYourInbox" xml:space="preserve">
+    <value>Our New Luxurious Developments Delivered to Your Inbox</value>
+  </data>
+  <data name="OurObjectives" xml:space="preserve">
+    <value>Core Values</value>
+  </data>
+  <data name="OURVISION" xml:space="preserve">
+    <value>OUR VISION</value>
+  </data>
+  <data name="Pages" xml:space="preserve">
+    <value>Pages</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordChangedSuccessfully" xml:space="preserve">
+    <value>Password Changed Successfully</value>
+  </data>
+  <data name="PasswordIsRequired" xml:space="preserve">
+    <value>Password Is Required</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="PhoneRIsequired" xml:space="preserve">
+    <value>Phone Is Required</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="PhotoGallery" xml:space="preserve">
+    <value>Photo Gallery</value>
+  </data>
+  <data name="PhotoIsRequired" xml:space="preserve">
+    <value>Photo Is Required</value>
+  </data>
+  <data name="PhotoUrl" xml:space="preserve">
+    <value>Photo Url</value>
+  </data>
+  <data name="Portfolio" xml:space="preserve">
+    <value>Portfolio</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="PositionAr" xml:space="preserve">
+    <value>Position Arabic</value>
+  </data>
+  <data name="PositionEn" xml:space="preserve">
+    <value>Position English</value>
+  </data>
+  <data name="PositionIsRequired" xml:space="preserve">
+    <value>Position Is Required</value>
+  </data>
+  <data name="PRIVACYPOLICY" xml:space="preserve">
+    <value>PRIVACY POLICY</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="ProjectAmenities" xml:space="preserve">
+    <value>Project Amenities</value>
+  </data>
+  <data name="ProjectBannerPhotoUrl" xml:space="preserve">
+    <value>Project Banner Photo Url</value>
+  </data>
+  <data name="ProjectBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>Project Banner Photo Url Is Required</value>
+  </data>
+  <data name="ProjectDetailsBannerPhotoUrl" xml:space="preserve">
+    <value>Project Details Banner Photo Url</value>
+  </data>
+  <data name="ProjectDetailsBannerPhotoUrlIsRequired" xml:space="preserve">
+    <value>Project Details Banner Photo Url Is Required</value>
+  </data>
+  <data name="ProjectGallery" xml:space="preserve">
+    <value>Project Gallery</value>
+  </data>
+  <data name="ProjectPlans" xml:space="preserve">
+    <value>Project Plans</value>
+  </data>
+  <data name="PROJECTS" xml:space="preserve">
+    <value>Portofolio</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>Project Type</value>
+  </data>
+  <data name="ProjectTypeId" xml:space="preserve">
+    <value>Project Type </value>
+  </data>
+  <data name="ProjectTypeIsRequired" xml:space="preserve">
+    <value>Project Type Is Required</value>
+  </data>
+  <data name="ProjectTypes" xml:space="preserve">
+    <value>Project Types</value>
+  </data>
+  <data name="PropertyType" xml:space="preserve">
+    <value>Property Type</value>
+  </data>
+  <data name="PropertyTypeId" xml:space="preserve">
+    <value>Property Type </value>
+  </data>
+  <data name="PropertyTypeIdIsRequired" xml:space="preserve">
+    <value>Property Type IsRequired</value>
+  </data>
+  <data name="READMORE" xml:space="preserve">
+    <value>READ MORE</value>
+  </data>
+  <data name="REALESTATE" xml:space="preserve">
+    <value>REAL ESTATE</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+  <data name="ReasonIsRequired" xml:space="preserve">
+    <value>Reason Is Required</value>
+  </data>
+  <data name="RemovePhoto" xml:space="preserve">
+    <value>Remove Photo</value>
+  </data>
+  <data name="RemoveVideo" xml:space="preserve">
+    <value>Remove Video</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="RequestDate" xml:space="preserve">
+    <value>Request Date</value>
+  </data>
+  <data name="RequestDateIsRequired" xml:space="preserve">
+    <value>Request Date Is Required</value>
+  </data>
+  <data name="RequestForm" xml:space="preserve">
+    <value>Request Form</value>
+  </data>
+  <data name="Requests" xml:space="preserve">
+    <value>Requests</value>
+  </data>
+  <data name="ResdentialProjectsCount" xml:space="preserve">
+    <value>Resdential Projects Count</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="RESIDENTIAL" xml:space="preserve">
+    <value>RESIDENTIAL</value>
+  </data>
+  <data name="ResidentialProjectDescriptionAr" xml:space="preserve">
+    <value>Residential Project Description Arabic</value>
+  </data>
+  <data name="ResidentialProjectDescriptionEn" xml:space="preserve">
+    <value>Residential Project Description English</value>
+  </data>
+  <data name="ResidentialProjectDescriptionIsRequired" xml:space="preserve">
+    <value>Residential Project Description Is Required</value>
+  </data>
+  <data name="ResidentialProjects" xml:space="preserve">
+    <value>Residential Projects</value>
+  </data>
+  <data name="Residentials" xml:space="preserve">
+    <value>Residentials</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="SandSuccessfully" xml:space="preserve">
+    <value>Sent Successfully, Thanks for Communicating us </value>
+  </data>
+  <data name="SatCustomerDesc" xml:space="preserve">
+    <value>Established in Egypt, The LEAN Solutions is a top-notch, multi-utility software consulting firm, known for its innovative web design and best web development technologies.</value>
+  </data>
+  <data name="SatisfiedCustomers" xml:space="preserve">
+    <value>Satisfied Customers</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SavedSuccessfully" xml:space="preserve">
+    <value>Saved Successfully</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SEEMORE" xml:space="preserve">
+    <value>See More</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="ShowCommercialSection" xml:space="preserve">
+    <value>Show Commercial Section</value>
+  </data>
+  <data name="ShowConstructionUpdates" xml:space="preserve">
+    <value>Show Construction Updates</value>
+  </data>
+  <data name="ShowConvenientLocation" xml:space="preserve">
+    <value>Show Convenient Location</value>
+  </data>
+  <data name="ShowFeaturedProjects" xml:space="preserve">
+    <value>Show Featured Projects</value>
+  </data>
+  <data name="ShowLocalization" xml:space="preserve">
+    <value>Show Localization</value>
+  </data>
+  <data name="ShowMission" xml:space="preserve">
+    <value>Show Mission Section</value>
+  </data>
+  <data name="ShowObjectives" xml:space="preserve">
+    <value>Show Objectives Section</value>
+  </data>
+  <data name="ShowResdentialSection" xml:space="preserve">
+    <value>Show Resdential Section</value>
+  </data>
+  <data name="ShowVision" xml:space="preserve">
+    <value>Show Vision Section</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Slider</value>
+  </data>
+  <data name="SOCIALMEDIA" xml:space="preserve">
+    <value>SOCIAL MEDIA</value>
+  </data>
+  <data name="Special" xml:space="preserve">
+    <value>مميز</value>
+  </data>
+  <data name="Special_Other" xml:space="preserve">
+    <value>Special / Other</value>
+  </data>
+  <data name="StaticContent" xml:space="preserve">
+    <value>Static Content</value>
+  </data>
+  <data name="STRUCTURE" xml:space="preserve">
+    <value>STRUCTURE</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>Subscribe</value>
+  </data>
+  <data name="Subscription" xml:space="preserve">
+    <value>Subscription</value>
+  </data>
+  <data name="TabOrder" xml:space="preserve">
+    <value>Tab Order</value>
+  </data>
+  <data name="TabOrderIsRequired" xml:space="preserve">
+    <value>Tab Order Is Required</value>
+  </data>
+  <data name="TabUrl" xml:space="preserve">
+    <value>Tab Url</value>
+  </data>
+  <data name="TabUrlIsRequired" xml:space="preserve">
+    <value>Tab Url Is Required</value>
+  </data>
+  <data name="TermsandConditions" xml:space="preserve">
+    <value>Terms &amp; Conditions</value>
+  </data>
+  <data name="TextAr" xml:space="preserve">
+    <value>Text Arabic</value>
+  </data>
+  <data name="TextEn" xml:space="preserve">
+    <value>Text English</value>
+  </data>
+  <data name="TextIsRequired" xml:space="preserve">
+    <value>Text Is Required</value>
+  </data>
+  <data name="theLeanDesc" xml:space="preserve">
+    <value>After designing the website, the most important thing is developing it. The Web . After designing the website, the most important thing is developing it. The Web .</value>
+  </data>
+  <data name="ThereIsNoData" xml:space="preserve">
+    <value>There Is No Data</value>
+  </data>
+  <data name="TitleAr" xml:space="preserve">
+    <value> Title Arabic</value>
+  </data>
+  <data name="TitleArIsRequired" xml:space="preserve">
+    <value>Title Arabic Is Required</value>
+  </data>
+  <data name="TitleEn" xml:space="preserve">
+    <value>Title English</value>
+  </data>
+  <data name="TitleEnIsRequired" xml:space="preserve">
+    <value>Title English Is Required</value>
+  </data>
+  <data name="Touch" xml:space="preserve">
+    <value>Touch</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="UnitType" xml:space="preserve">
+    <value>Unit Type</value>
+  </data>
+  <data name="UnitTypeId" xml:space="preserve">
+    <value>Unit Type</value>
+  </data>
+  <data name="UploadNewsAndEventsgalleyImages" xml:space="preserve">
+    <value>Upload News And Events Galley Images</value>
+  </data>
+  <data name="UploadPhoto" xml:space="preserve">
+    <value>Upload Photo</value>
+  </data>
+  <data name="UploadVideo" xml:space="preserve">
+    <value>Upload Video</value>
+  </data>
+  <data name="US" xml:space="preserve">
+    <value>US</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>User name</value>
+  </data>
+  <data name="UsernameChangedSuccessfully" xml:space="preserve">
+    <value>Username Changed Successfully</value>
+  </data>
+  <data name="UsernameIsRequired" xml:space="preserve">
+    <value>Username Is Required</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="VideoGallery" xml:space="preserve">
+    <value>Video Gallery</value>
+  </data>
+  <data name="Video_Photo" xml:space="preserve">
+    <value>Video / Photo</value>
+  </data>
+  <data name="VIEW" xml:space="preserve">
+    <value>VIEW</value>
+  </data>
+  <data name="Vision" xml:space="preserve">
+    <value>Vision</value>
+  </data>
+  <data name="VisionAr" xml:space="preserve">
+    <value>Vision Arabic</value>
+  </data>
+  <data name="VisionEn" xml:space="preserve">
+    <value>Vision English</value>
+  </data>
+  <data name="VisionIsRequired" xml:space="preserve">
+    <value>Vision Is Required</value>
+  </data>
+  <data name="WanttoRequestAUnitItsAClickAway" xml:space="preserve">
+    <value>Want to Request A Unit? It's A Click Away!</value>
+  </data>
+  <data name="WeAre" xml:space="preserve">
+    <value>We Are</value>
+  </data>
+  <data name="WebsiteUrl3D" xml:space="preserve">
+    <value>Website Url 3D</value>
+  </data>
+  <data name="WebsiteUrl3DIsRequired" xml:space="preserve">
+    <value>Website Url 3D Is Required</value>
+  </data>
+  <data name="WhatWe" xml:space="preserve">
+    <value>What We</value>
+  </data>
+  <data name="WhatWeDelivered" xml:space="preserve">
+    <value>What We Do</value>
+  </data>
+  <data name="WhatWeDeliveredAr" xml:space="preserve">
+    <value>What We Delivered Arabic</value>
+  </data>
+  <data name="WhatWeDeliveredEn" xml:space="preserve">
+    <value>What We Delivered English</value>
+  </data>
+  <data name="WhatWeDeliveredIsRequired" xml:space="preserve">
+    <value>What We Delivered Is Required</value>
+  </data>
+  <data name="WHO" xml:space="preserve">
+    <value>Who</value>
+  </data>
+  <data name="Whyus" xml:space="preserve">
+    <value>Why Us</value>
+  </data>
+  <data name="YourRequestSentSuccessfully" xml:space="preserve">
+    <value>Your Request Sent Successfully</value>
+  </data>
+</root>

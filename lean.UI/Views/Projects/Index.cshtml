@@ -1,0 +1,22 @@
+﻿@model ProjectViewModel
+@{
+    ViewBag.Title = "Projects";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<script src="~/Content/js/pages/projects.js?v=@DateTime.Now.Day"></script>
+
+<div class="row">
+    <div class="col-12">
+        <div id="projectsFilter">
+            @Html.Partial("~/Views/Projects/Partial/ProjectsFilter.cshtml", Model.Filter)
+        </div>
+    </div>
+    <div class="col-12">
+        <div id="projectsList">
+            @Html.Partial("~/Views/Projects/Partial/ProjectsList.cshtml", Model.List)
+        </div>
+    </div>
+</div>
+

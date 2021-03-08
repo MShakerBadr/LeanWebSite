@@ -1,0 +1,47 @@
+﻿@model ProjectFilter
+@using GeneralResources = lean.UI.LocalResources.Resource;
+
+<div class="shadow-bordered-div">
+    <div class="d-flex justify-content-end pb-3">
+        <div class="add-btn-dv">
+            <a href="@Url.Action("ProjectData", "Projects")" class="btn btn-primary form-control"><i class="fa fa-plus"></i>&nbsp;@GeneralResources.AddNewProject</a>
+        </div>
+    </div>
+    <form id="ProjectsFilterForm" data-ajax="true" data-ajax-method="get" url="/Projects/Index" data-target="#projectsList" class="pagination-filter-form p-1">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="form-group">
+                    @Html.DropDownListFor(x => x.ProjectTypeId, ViewBag.ProjectTypes as SelectList, GeneralResources.AllProjectTypes, new { @type = "search", @class = "form-control m-1", @onchange = "$(this).closest('.pagination-filter-form').submit();" })
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="form-group">
+                    @Html.DropDownListFor(x => x.PropertyTypeId, ViewBag.PropertyTypes as SelectList, GeneralResources.AllPropertyTypes, new { @type = "search", @class = "form-control m-1", @onchange = "$(this).closest('.pagination-filter-form').submit();" })
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="form-group">
+                    @Html.DropDownListFor(x => x.LocationId, ViewBag.Locations as SelectList, GeneralResources.AllLocations, new { @type = "search", @class = "form-control m-1", @onchange = "$(this).closest('.pagination-filter-form').submit();" })
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="form-group">
+                    @Html.DropDownListFor(x => x.UnitTypeId, ViewBag.UnitTypes as SelectList, GeneralResources.AllUnitTypes, new { @type = "search", @class = "form-control m-1", @onchange = "$(this).closest('.pagination-filter-form').submit();" })
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+                <select id="IsSpecialProject" name="IsSpecialProject" class="form-control" type="search" onchange="$(this).closest('.pagination-filter-form').submit();">
+                    <option value="">@GeneralResources.Special_Other</option>
+                    <option value="true">@GeneralResources.Special</option>
+                    <option value="false">@GeneralResources.Other</option>
+                </select>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="form-group">
+                    <button class="btn btn-primary m-1"><i class="fa fa-search"></i>&nbsp;@GeneralResources.Search</button>
+                    <button type="button" class="btn btn-secondary m-1" onclick="ResetSearch(this)"><i class="fa fa-redo"></i>&nbsp;@GeneralResources.Reset</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

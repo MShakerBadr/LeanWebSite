@@ -1,0 +1,176 @@
+﻿@using Lean = lean.UI;
+@using GeneralResource = lean.UI.LocalResources.Resource;
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var context = new Lean.Context.LeanDbContext();
+    StaticContent staticContent = ViewBag.StaticContent != null ? (StaticContent)ViewBag.StaticContent : new StaticContent();
+    var _contactReasons = context.ContactUsReasons.ToList().ToSelectList<ContactUsReason>();
+    double Lat = 0, Long = 0;
+    if (staticContent.CompanyLocationMapUrl != null)
+    {
+        var arr = staticContent.CompanyLocationMapUrl.Split('@');
+        if (arr.Length > 1)
+        {
+            var latlong = arr[1].Split(',');
+            if (latlong.Length > 1)
+            {
+                Lat = double.Parse(latlong[0]);
+                Long = double.Parse(latlong[1]);
+            }
+        }
+    }
+}
+
+<!--           start content-->
+<div class="main-container">
+    <main class="main wrapper">
+        <!-- start intro-section-2 -->
+        <div class="intro-section-2 contact-page" style="background-image: url(../assets/img/contact.png);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="intro-title">
+                            <h2 class="title">
+                                @GeneralResource.CONTACT
+                                <span>
+                                    @GeneralResource.US
+                                </span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end  intro-section-2 -->
+        <!-- start contact-section -->
+
+        <div class="contact-sectin paddin-60-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="contact-content">
+                            <h3 class="contact-title">
+                                @GeneralResource.GetIn
+                                <span>
+                                    @GeneralResource.Touch
+                                </span>
+                            </h3>
+                            <p class="prag2">
+                                @GeneralResource.DontHesiate
+                            </p>
+
+                            <div class="contact-form-box">
+                                @using (Ajax.BeginForm("AddContactUsRequest", "ContactUsRequest"
+                                    , new AjaxOptions { HttpMethod = "POST", OnSuccess = "successAddingContactRequest" }
+                                    , new { @id = "formAddContactRequest", @class = "contact-form" }))
+                                {
+                                    <div class="form-group">
+                                        <input data-val="true" data-val-required="@GeneralResource.NameIsRequired" type="text" name="Name" id="Name" class="form-control" placeholder="@GeneralResource.Name" />
+                                        @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        <input data-val="true" type="text" name="Email" id="Email" data-val-required="@GeneralResource.EmailIsRequired" class="form-control" placeholder="@GeneralResource.Email" />
+                                        @Html.ValidationMessage("Email", "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        <input data-val="true" type="text" name="MobileNumber" id="MobileNumber" data-val-required="@GeneralResource.MobileNumberIsRequired" class="form-control" placeholder="@GeneralResource.Phone" aria-describedby="helpId" />
+                                        @Html.ValidationMessage("MobileNumber", "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.DropDownList("ContactUsReasonId", _contactReasons as SelectList
+                                                        , new
+                                                        {
+                                                            
+                                                         @class = "nice-select select-box",
+                                                            @data_val_required = GeneralResource.EmailIsRequired
+                                                                ,
+                                                            @data_val = "true"
+                                                        })
+                                        @Html.ValidationMessage("ContactUsReasonId", "", new { @class = "text-danger", @Id = "ContactUsReasonIdValidation" })
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="Message" placeholder="@GeneralResource.Message" id="textcontact" class="form-control"></textarea>
+                                    </div>
+                                    <button type="submit" class="contact-submit">@GeneralResource.Send</button>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div id="googleMap" class="map" style="height: 100%;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13682.769628972785!2d31.4570335!3d30.9790649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1564401111884!5m2!1sar!2seg"
+                                    width="100%"
+                                    height="100%"
+                                    frameborder="0"
+                                    style="border: 0;"
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- end contact-section -->
+    </main>
+</div>
+<!--           end content-->
+<script>
+    $(document).ready(function () {
+        $('#formAddContactRequest').attr('action', '/ContactUsRequest/AddContactUsRequest');
+    })
+
+
+    $('#formAddContactRequest').on('submit', function () {
+        $("#ContactUsReasonIdValidation").html("");
+        if ($(this).valid() && $("#ContactUsReasonId").val() !== "0") {
+            return true;
+        } else {
+            if ($("#ContactUsReasonId").val() === "0") {
+                $("#ContactUsReasonIdValidation").html('@GeneralResource.ContactUsReason')
+            }
+            return false;
+        }
+    });
+
+    $("#ContactUsReasonId").change(function () {
+        if ($(this).val() !== '0')
+            $("#ContactUsReasonIdValidation").html("");
+        else
+            $("#ContactUsReasonIdValidation").html('@GeneralResource.ContactUsReason');
+    });
+
+    function FDGDF() {
+
+    }
+
+
+    function successAddingContactRequest(data) {
+        if (data.Success) {
+            Success(data);
+        } else {
+            alert('!ERROR!');
+        }
+    }
+
+</script>
+
+@Html.Partial("~/Views/Shared/Partial/_JQValidationPartial.cshtml")
+<script>
+    $(document).ready(function () {
+        var position = new google.maps.LatLng('@Lat', '@Long');
+        var mapCanvas = document.getElementById("googleMap");
+        var map = new google.maps.Map(mapCanvas, {
+            center: position,
+            zoom: 15
+        });
+
+        var marker = new google.maps.Marker({
+            position: position,
+            map: map,
+        });
+    });
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbxwUMN_kazulCooTt8DOaNxEspjYLCH4"></script>

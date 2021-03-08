@@ -1,0 +1,86 @@
+﻿@model IEnumerable<lean.UI.Models.Entities.Clients>
+    @using lang=lean.UI.LocalResources
+@{
+    ViewBag.Title = "Clients";
+}
+
+
+
+<!-- start intro-section-2 -->
+<div class="intro-section-2" style="background-image: url(assets/img/intro-1.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="intro-title">
+                    <h2 class="title">
+                        @lang.Resource.Our
+                        <span>
+                            @lang.Resource.Clients
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end  intro-section-2 -->
+<!-- start clints-section -->
+<div class="clints-section paddin-60-0">
+    <div class="container">
+        <div class="row">
+            @{
+                for (int i = 0; i < Model.Count(); i += 4)
+                {
+                    var client1 = Model.ToList().Count > i ? Model.ToList()[i].imgUrl.Replace(@"\", @"/") : string.Empty;
+                    var client2 = Model.ToList().Count > i + 1 ? Model.ToList()[i + 1].imgUrl.Replace(@"\", @"/") : string.Empty;
+                    var client3 = Model.ToList().Count > i + 2 ? Model.ToList()[i + 2].imgUrl.Replace(@"\", @"/") : string.Empty;
+                    var client4 = Model.ToList().Count > i + 3 ? Model.ToList()[i + 3].imgUrl.Replace(@"\", @"/") : string.Empty;
+
+
+                    <div class="col-md-12">
+                        <div class="clint-card-box">
+                            @{ if (client1 != string.Empty)
+                                {
+                                    <div class="clint-card" data-aos="fade-up">
+                                        <img src="@client1" alt="img" class="img-fluid" />
+                                    </div>
+                                }
+
+                                if (client2 != string.Empty)
+                                {
+
+                                    <div class="clint-card" data-aos="fade-up">
+                                        <img src="@client2" alt="img" class="img-fluid" />
+                                    </div>
+                                }
+                                if (client3 != string.Empty)
+                                {
+
+                                    <div class="clint-card" data-aos="fade-up">
+                                        <img src="@client3" alt="img" class="img-fluid" />
+                                    </div>
+                                }
+                                if (client4 != string.Empty  )
+                                {
+
+                                    <div class="clint-card" data-aos="fade-up">
+                                        <img src="@client4" alt="img" class="img-fluid" />
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            }
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="more-button">
+                    <a href="#">
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,512 @@
+﻿@model Project
+@using GeneralResources = lean.UI.LocalResources.Resource;
+@{
+    ViewBag.Title = "Projects";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="~/Content/js/pages/projectsdata.js?v=@DateTime.Now.Day"></script>
+
+@*<div class="d-flex justify-content-end pb-3">
+        <div class="add-btn-dv">
+            <a href="@Url.Action("Index", "Projects")" class="btn btn-warning form-control"><i class="fa fa-backward"></i>&nbsp;@GeneralResources.BackToList</a>
+        </div>
+    </div>*@
+
+
+@using (Html.BeginForm("Save", "Projects", FormMethod.Post, new { @id = "ProjectForm", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.Id ,new { @Id = "ProjectID"})
+
+    <div class="shadow-bordered-div">
+        <h3 style="text-decoration:underline;">@GeneralResources.basicdata</h3>
+        <div class="row">
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.ProjectTypeId)
+                    @Html.DropDownListFor(x => x.ProjectTypeId, ViewBag.ProjectTypes as SelectList, GeneralResources.Select, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ProjectTypeId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.PropertyTypeId)
+                    @Html.DropDownListFor(x => x.PropertyTypeId, ViewBag.PropertyTypes as SelectList, GeneralResources.Select, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.PropertyTypeId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.UnitTypeId)
+                    @Html.DropDownListFor(x => x.UnitTypeId, ViewBag.UnitTypes as SelectList, GeneralResources.Select, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.UnitTypeId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.LocationId)
+                    @Html.DropDownListFor(x => x.LocationId, ViewBag.Locations as SelectList, GeneralResources.Select, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.LocationId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.TitleAr)
+                    @Html.TextBoxFor(x => x.TitleAr, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.TitleAr, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.TitleEn)
+                    @Html.TextBoxFor(x => x.TitleEn, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.TitleEn, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.WebsiteUrl3D)
+                    @Html.TextBoxFor(x => x.WebsiteUrl3D, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.WebsiteUrl3D, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="form-group checkbox">
+                    @Html.CheckBoxFor(x => x.IsSpecialProject)
+                    @Html.LabelFor(x => x.IsSpecialProject)
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="form-group checkbox">
+                    @Html.CheckBoxFor(x => x.IsHidden, new { })
+                    @Html.LabelFor(x => x.IsHidden)
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end border-top">
+            <button type="button" class="btn btn-success m-1" onclick="SubmitForm()">@GeneralResources.Save</button>
+            <button type="button" class="btn btn-danger m-1" onclick="window.location.href = '/Projects/Index'">@GeneralResources.Close</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-12">
+                    <div class="shadow-bordered-div p-4">
+                        <h3 style="text-decoration:underline;">Logo</h3>
+                        <div class="img-collection text-center">
+                            <div>
+                                <input type="hidden" name="Logo" value="@Model.Logo" />
+                                <img width="200" height="200" class="img circular" src="@Model.Logo" accept=".jpg,.jpeg,.png" capture />
+                            </div>
+                            <div class="mt-2">
+                                <input type="file" id="Logo" name="Logo" onchange="readURL(this)" hidden />
+                                <label for="Logo" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadPhoto</label>
+                                <label class="btn btn-danger" onclick="RemoveImage(this)"><i class="fa fa-times-circle" style=""></i>&nbsp;@GeneralResources.RemovePhoto</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="shadow-bordered-div p-4">
+                        <h3 style="text-decoration:underline;">@GeneralResources.CoverUrl</h3>
+                        <div class="img-collection text-center">
+                            <div>
+                                <input type="hidden" name="CoverUrl" value="@Model.CoverUrl" />
+                                <img width="200" height="200" class="img circular" src="@Model.CoverUrl" accept=".jpg,.jpeg,.png" capture />
+                            </div>
+                            <div class="mt-2">
+                                <input type="file" id="CoverUrlUpload" name="CoverUrlUpload" onchange="readURL(this)" hidden />
+                                <label for="CoverUrlUpload" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadPhoto</label>
+                                <label class="btn btn-danger" onclick="RemoveImage(this)"><i class="fa fa-times-circle" style=""></i>&nbsp;@GeneralResources.RemovePhoto</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="shadow-bordered-div">
+                <div class="form-group">
+                    <h3 style="text-decoration:underline;">@GeneralResources.Concept</h3>
+                    <div class="img-collection text-center">
+                        <div>
+                            <input type="hidden" name="ConceptImageUrl" value="@Model.ConceptImageUrl" />
+                            <img width="200" height="200" class="img circular" src="@Model.ConceptImageUrl" accept=".jpg,.jpeg,.png" capture />
+                        </div>
+                        <div class="mt-2">
+                            <input type="file" id="ConceptImageUrlUpload" name="ConceptImageUrlUpload" onchange="readURL(this)" hidden />
+                            <label for="ConceptImageUrlUpload" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadPhoto</label>
+                            <label class="btn btn-danger" onclick="RemoveImage(this)"><i class="fa fa-times-circle" style=""></i>&nbsp;@GeneralResources.RemovePhoto</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-12">
+                                @*@Html.LabelFor(x => x.ConceptAr, new { @class = "font-weight-bold" })
+                                    @Html.TextAreaFor(x => x.ConceptAr, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ConceptAr, "", new { @class = "text-danger" })*@
+
+                                @Html.LabelFor(x => x.ConceptAr)
+                                @Html.ValidationMessageFor(m => m.ConceptAr, "", new { @class = "text-danger" })
+                                @(Html.Kendo().EditorFor(m => m.ConceptAr)
+                                .Name("ConceptAr")
+                                .HtmlAttributes(new { style = "height:100px;", aria_label = "editor" })
+                                .Resizable(resizable => resizable.Content(true)
+                                .Toolbar(true))
+                                .Encode(true)
+                                .Value(Model.ConceptAr)
+                                .HtmlAttributes(new { @id = "ConceptAr" }))
+                            </div>
+                            <div class="col-12">
+                                @*@Html.LabelFor(x => x.ConceptEn, new { @class = "font-weight-bold" })
+                                    @Html.TextAreaFor(x => x.ConceptEn, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ConceptEn, "", new { @class = "text-danger" })*@
+
+                                @Html.LabelFor(x => x.ConceptEn)
+                                @Html.ValidationMessageFor(m => m.ConceptEn, "", new { @class = "text-danger" })
+                                @(Html.Kendo().EditorFor(m => m.ConceptEn)
+                                .Name("ConceptEn")
+                                .HtmlAttributes(new { style = "height:100px;", aria_label = "editor" })
+                                .Resizable(resizable => resizable.Content(true)
+                                .Toolbar(true))
+                                .Encode(true)
+                                .Value(Model.ConceptEn)
+                                .HtmlAttributes(new { @id = "ConceptEn" }))
+                            </div>
+                            <div class="col-12">
+                                @*@Html.LabelFor(x => x.ConceptAr, new { @class = "font-weight-bold" })
+                                    @Html.TextAreaFor(x => x.ConceptAr, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ConceptAr, "", new { @class = "text-danger" })*@
+
+                                @Html.LabelFor(x => x.HomeConceptAr)
+                                @Html.ValidationMessageFor(m => m.HomeConceptAr, "", new { @class = "text-danger" })
+                                @(Html.Kendo().EditorFor(m => m.HomeConceptAr)
+                                .Name("HomeConceptAr")
+                                .HtmlAttributes(new { style = "height:100px;", aria_label = "editor" })
+                                .Resizable(resizable => resizable.Content(true)
+                                .Toolbar(true))
+                                .Encode(true)
+                                .Value(Model.HomeConceptAr)
+                                .HtmlAttributes(new { @id = "HomeConceptAr" }))
+                            </div>
+                            <div class="col-12">
+                                @*@Html.LabelFor(x => x.ConceptEn, new { @class = "font-weight-bold" })
+                                    @Html.TextAreaFor(x => x.ConceptEn, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ConceptEn, "", new { @class = "text-danger" })*@
+
+                                @Html.LabelFor(x => x.HomeConceptEn)
+                                @Html.ValidationMessageFor(m => m.HomeConceptEn, "", new { @class = "text-danger" })
+                                @(Html.Kendo().EditorFor(m => m.HomeConceptEn)
+                                .Name("HomeConceptEn")
+                                .HtmlAttributes(new { style = "height:100px;", aria_label = "editor" })
+                                .Resizable(resizable => resizable.Content(true)
+                                .Toolbar(true))
+                                .Encode(true)
+                                .Value(Model.HomeConceptEn)
+                                .HtmlAttributes(new { @id = "HomeConceptEn" }))
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="shadow-bordered-div">
+                <h3 style="text-decoration:underline;">@GeneralResources.MasterPlan</h3>
+                <div class="img-collection text-center">
+                    <div>
+                        <input type="hidden" name="MasterPlanImageUrl" value="@Model.MasterPlanImageUrl" />
+                        <img width="200" height="200" class="img circular" src="@Model.MasterPlanImageUrl" accept=".jpg,.jpeg,.png" capture />
+                    </div>
+                    <div class="mt-2">
+                        <input type="file" id="MasterPlanImageUrlUpload" name="MasterPlanImageUrlUpload" onchange="readURL(this)" hidden />
+                        <label for="MasterPlanImageUrlUpload" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadPhoto</label>
+                        <label class="btn btn-danger" onclick="RemoveImage(this)"><i class="fa fa-times-circle" style=""></i>&nbsp;@GeneralResources.RemovePhoto</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-12">
+                            @*@Html.LabelFor(x => x.MasterPlanAr, new { @class = "font-weight-bold" })
+                                @Html.TextAreaFor(x => x.MasterPlanAr, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.MasterPlanAr, "", new { @class = "text-danger" })*@
+
+                            @Html.LabelFor(x => x.MasterPlanAr)
+                            @Html.ValidationMessageFor(m => m.MasterPlanAr, "", new { @class = "text-danger" })
+                            @(Html.Kendo().EditorFor(m => m.MasterPlanAr)
+                            .Name("MasterPlanAr")
+                            .HtmlAttributes(new { style = "height:100px;", aria_label = "editor" })
+                            .Resizable(resizable => resizable.Content(true)
+                            .Toolbar(true))
+                            .Encode(true)
+                            .Value(Model.MasterPlanAr)
+                            .HtmlAttributes(new { @id = "MasterPlanAr" }))
+                        </div>
+                        <div class="col-12">
+                            @*@Html.LabelFor(x => x.MasterPlanEn, new { @class = "font-weight-bold" })
+                                @Html.TextAreaFor(x => x.MasterPlanEn, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.MasterPlanEn, "", new { @class = "text-danger" })*@
+
+                            @Html.LabelFor(x => x.MasterPlanEn)
+                            @Html.ValidationMessageFor(m => m.MasterPlanEn, "", new { @class = "text-danger" })
+                            @(Html.Kendo().EditorFor(m => m.MasterPlanEn)
+                            .Name("MasterPlanEn")
+                            .HtmlAttributes(new { style = "height:100px;", aria_label = "editor" })
+                            .Resizable(resizable => resizable.Content(true)
+                            .Toolbar(true))
+                            .Encode(true)
+                            .Value(Model.MasterPlanEn)
+                            .HtmlAttributes(new { @id = "MasterPlanEn" }))
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="shadow-bordered-div">
+                <h3 style="text-decoration:underline;">@GeneralResources.ConvenientLocation</h3>
+                <div class="img-collection text-center">
+                    <div>
+                        <input type="hidden" name="ConvenientLocationAttachmentUrl" value="@Model.ConvenientLocationAttachmentUrl" />
+                        <img width="200" height="200" class="img circular" src="@Model.ConvenientLocationAttachmentUrl" accept=".jpg,.jpeg,.png" capture />
+                    </div>
+                    <div class="mt-2">
+                        <input type="file" id="ConvenientLocationAttachmentUrlUpload" name="ConvenientLocationAttachmentUrlUpload" onchange="readURL(this)" hidden />
+                        <label for="ConvenientLocationAttachmentUrlUpload" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadPhoto</label>
+                        <label class="btn btn-danger" onclick="RemoveImage(this)"><i class="fa fa-times-circle" style=""></i>&nbsp;@GeneralResources.RemovePhoto</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                        @*@Html.LabelFor(x => x.ConvenientLocationTextAr, new { @class = "font-weight-bold" })
+                            @Html.TextAreaFor(x => x.ConvenientLocationTextAr, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.ConvenientLocationTextAr, "", new { @class = "text-danger" })*@
+
+                        @Html.LabelFor(x => x.ConvenientLocationTextAr)
+                        @Html.ValidationMessageFor(m => m.ConvenientLocationTextAr, "", new { @class = "text-danger" })
+                        @(Html.Kendo().EditorFor(m => m.ConvenientLocationTextAr)
+                            .Name("ConvenientLocationTextAr")
+                            .HtmlAttributes(new { style = "height:100px;", aria_label = "editor" })
+                            .Resizable(resizable => resizable.Content(true)
+                            .Toolbar(true))
+                            .Encode(true)
+                            .Value(Model.ConvenientLocationTextAr)
+                            .HtmlAttributes(new { @id = "ConvenientLocationTextAr" }))
+                    </div>
+                    <div class="form-group">
+                        @*@Html.LabelFor(x => x.ConvenientLocationTextEn, new { @class = "font-weight-bold" })
+                            @Html.TextAreaFor(x => x.ConvenientLocationTextEn, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.ConvenientLocationTextEn, "", new { @class = "text-danger" })*@
+
+                        @Html.LabelFor(x => x.ConvenientLocationTextEn)
+                        @Html.ValidationMessageFor(m => m.ConvenientLocationTextEn, "", new { @class = "text-danger" })
+                        @(Html.Kendo().EditorFor(m => m.ConvenientLocationTextEn)
+                            .Name("ConvenientLocationTextEn")
+                            .HtmlAttributes(new { style = "height:100px;", aria_label = "editor" })
+                            .Resizable(resizable => resizable.Content(true)
+                            .Toolbar(true))
+                            .Encode(true)
+                            .Value(Model.ConvenientLocationTextEn)
+                            .HtmlAttributes(new { @id = "ConvenientLocationTextEn" }))
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        @Html.LabelFor(x => x.ConvenientLocationDirectionUrl, new { @class = "font-weight-bold" })
+                        @Html.TextBoxFor(x => x.ConvenientLocationDirectionUrl, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.ConvenientLocationDirectionUrl, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    // ----- Start ------- of Construction Updates
+
+    <div class="shadow-bordered-div">
+        <h3 style="text-decoration:underline;">@GeneralResources.ConstructionUpdatesText</h3>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-6">
+                    @Html.LabelFor(x => x.ConstructionUpdatesTextAr, new { @class = "font-weight-bold" })
+                    @Html.TextAreaFor(x => x.ConstructionUpdatesTextAr, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ConstructionUpdatesTextAr, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-6">
+                    @Html.LabelFor(x => x.ConstructionUpdatesTextEn, new { @class = "font-weight-bold" })
+                    @Html.TextAreaFor(x => x.ConstructionUpdatesTextEn, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ConstructionUpdatesTextEn, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-6">
+                    @Html.LabelFor(x => x.ConstructionUpdatesDirectionUrl, new { @class = "font-weight-bold" })
+                    @Html.TextBoxFor(x => x.ConstructionUpdatesDirectionUrl, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ConstructionUpdatesDirectionUrl, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="ConstructionUpdatesPartialDiv">
+                        @Html.Partial("~/Views/Projects/Partial/ConstructionUpdatesList.cshtml", new ConstructionUpdatesProject() {ProjectId =Model.Id ,constructionUpdates = Model.ConstructionUpdates != null ? Model.ConstructionUpdates.ToList(): new List<ConstructionUpdates> ()})
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    // ----- END------- of Construction Updates
+
+
+
+    // ----- Start ------- of Project Amenities
+
+    <div class="shadow-bordered-div">
+        <h3 style="text-decoration:underline;">@GeneralResources.ProjectAmenities</h3>
+        <div id="ProjectAmenitiesList">
+            @Html.Partial("~/Views/Projects/Partial/ProjectAmenities.cshtml", Model.ProjectAmenities != null ? Model.ProjectAmenities.ToList() : new List<ProjectAmenitie>())
+        </div>
+    </div>
+
+    // ----- END ------- of Project Amenities
+
+
+
+    // ----- Start ------- of ProjectPlans
+
+    <div class="shadow-bordered-div">
+        <h3 style="text-decoration:underline;">@GeneralResources.ProjectPlans</h3>
+        <div id="ProjectPlanesList">
+            @Html.Partial("~/Views/Projects/Partial/ProjectPlanes.cshtml", Model.ProjectPlanes != null ? Model.ProjectPlanes.ToList() : new List<ProjectPlane>())
+        </div>
+    </div>
+
+    // ----- END ------- of ProjectPlans
+
+    // ----- Start ------- of ProjectGallery
+
+    <div class="shadow-bordered-div">
+        <h3 style="text-decoration:underline;">@GeneralResources.ProjectGallery</h3>
+        <div id="ProjectGallerysList">
+            @Html.Partial("~/Views/Projects/Partial/ProjectGallery.cshtml", Model.ProjectGallery != null ? Model.ProjectGallery.ToList() : new List<ProjectGallery>())
+        </div>
+    </div>
+
+    // ----- END ------- of ProjectGallery
+}
+
+@Html.Partial("~/Views/Shared/Partial/_JQValidationPartial.cshtml")
+
+
+<script id="ProjectAmenitieRow" type="text/x-handlebars-template">
+    <tr>
+        <td>
+            <span class="row-index">{{Counter}}</span>
+            <input type="hidden" name="ProjectAmenitie[{{Index}}].Id" />
+            <input type="hidden" name="ProjectAmenitie[{{Index}}].ProjectId" value="@Model.Id" />
+        </td>
+        <td>
+            <div class="img-collection">
+                <div>
+                    <input type="hidden" name="ProjectAmenitie[{{Index}}].IsImgChanged" value="True" />
+                    <input type="hidden" name="ProjectAmenitie[{{Index}}].AttachmentUrl" />
+                    <img width="110" height="100" class="img circular" src="/Assets/imgs/default-photo.png" accept=".jpg,.jpeg,.png" capture />
+                </div>
+                <div class="mt-2">
+                    <input type="file" class="exclude" id="AmenitieAttachmentUrlUpload[{{Index}}]" name="AmenitieAttachmentUrlUpload" onchange="readURL(this)" hidden />
+                    <label for="AmenitieAttachmentUrlUpload[{{Index}}]" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadPhoto</label>
+                    <label class="btn btn-danger" onclick="RemoveImage(this)"><i class="fa fa-times-circle" style=""></i>&nbsp;@GeneralResources.RemovePhoto</label>
+                </div>
+            </div>
+        </td>
+        <td><input type="text" class="form-control required" name="ProjectAmenitie[{{Index}}].TextAr" value="" /></td>
+        <td><input type="text" class="form-control required" name="ProjectAmenitie[{{Index}}].TextEn" value="" /></td>
+        <td><textarea type="text" class="form-control" name="ProjectAmenitie[{{Index}}].DescriptionAr" value=""></textarea></td>
+        <td><textarea type="text" class="form-control" name="ProjectAmenitie[{{Index}}].DescriptionEn" value=""></textarea></td>
+        <td><input type="text" class="form-control required" name="ProjectAmenitie[{{Index}}].TabOrder" value="{{Counter}} " /></td>
+        <td class="td-small">
+            <button type="button" class="btn btn-danger" onclick="RemoveProjectAmenitieRow(this);"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+</script>
+
+
+
+<script id="ProjectPlaneRow" type="text/x-handlebars-template">
+    <tr>
+        <td>
+            <span class="row-index">{{Counter}}</span>
+            <input type="hidden" name="ProjectPlane[{{Index}}].Id" />
+            <input type="hidden" name="ProjectPlane[{{Index}}].ProjectId" value="@Model.Id" />
+        </td>
+        <td>
+            <div class="img-collection">
+                <div>
+                    <input type="hidden" name="ProjectPlane[{{Index}}].IsImgChanged" value="True" />
+                    <input type="hidden" name="ProjectPlane[{{Index}}].AttachmentUrl" />
+                    <img width="110" height="100" class="img circular" src="/Assets/imgs/default-photo.png" accept=".jpg,.jpeg,.png" capture />
+                </div>
+                <div class="mt-2">
+                    <input type="file" class="exclude" id="ProjectPlaneAttachments[{{Index}}]" name="ProjectPlaneAttachments" onchange="readURL(this)" hidden />
+                    <label for="ProjectPlaneAttachments[{{Index}}]" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadPhoto</label>
+                    <label class="btn btn-danger" onclick="RemoveImage(this)"><i class="fa fa-times-circle" style=""></i>&nbsp;@GeneralResources.RemovePhoto</label>
+                </div>
+            </div>
+        </td>
+        <td>
+            <input type="text" class="form-control required" name="ProjectPlane[{{Index}}].TextAr" value="" />
+        </td>
+        <td><input type="text" class="form-control required" name="ProjectPlane[{{Index}}].TextEn" value="" /></td>
+        <td><textarea type="text" class="form-control required" name="ProjectPlane[{{Index}}].DescriptionAr" value=""></textarea></td>
+        <td><textarea type="text" class="form-control required" name="ProjectPlane[{{Index}}].DescriptionEn" value=""></textarea></td>
+        <td><input type="text" class="form-control required" name="ProjectPlane[{{Index}}].TabOrder" value="{{Counter}} " /></td>
+        <td class="td-small">
+            <button type="button" class="btn btn-danger" onclick="RemoveProjectPlaneRow(this);"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+</script>
+
+
+
+<script id="ProjectGalleryRow" type="text/x-handlebars-template">
+    <tr>
+        <td>
+            <span class="row-index">{{Counter}}</span>
+            <input type="hidden" name="ProjectGallery[{{Index}}].Id" />
+            <input type="hidden" name="ProjectGallery[{{Index}}].ProjectId" value="@Model.Id" />
+        </td>
+        <td>
+            <div class="img-collection d-flex justify-content-around">
+                <div>
+                    <input type="hidden" name="ProjectGallery[{{Index}}].IsImgChanged" value="True" />
+                    <input type="hidden" name="ProjectGallery[{{Index}}].AttachmentUrl" />
+                    <img width="110" height="100" class="img circular" src="/Assets/imgs/default-photo.png" accept=".jpg,.jpeg,.png" capture />
+                </div>
+                <div class="mt-5">
+                    <input type="file" class="exclude" id="ProjectGalleryAttachments[{{Index}}]" name="ProjectGalleryAttachments" onchange="readURL(this)" hidden />
+                    <label for="ProjectGalleryAttachments[{{Index}}]" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadPhoto</label>
+                    <label class="btn btn-danger" onclick="RemoveImage(this)"><i class="fa fa-times-circle" style=""></i>&nbsp;@GeneralResources.RemovePhoto</label>
+                </div>
+            </div>
+        </td>
+        <td><input type="text" class="form-control required" name="ProjectGallery[{{Index}}].TabOrder" value="{{Counter}} " /></td>
+
+    </tr>
+</script>
+
+
+
+
+<script>
+    function updateFlag(element) {
+        $(element).closest('div.img-collection').find('input[name*=IsImgChanged]').val(true);
+    }
+</script>
+

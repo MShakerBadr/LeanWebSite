@@ -1,0 +1,45 @@
+﻿@model ContactUsRequest
+@using GeneralResources = lean.UI.LocalResources.Resource;
+
+<div class="row">
+    <div class="col-12">
+        <div class="form-group">
+            <label>@GeneralResources.Name</label>
+            <label class="form-control">@Model.Name</label>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group">
+            <label>@GeneralResources.Email</label>
+            <label class="form-control">@Model.Email</label>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group">
+            <label>@GeneralResources.MobileNumber</label>
+            <label class="form-control">@Model.MobileNumber</label>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group">
+            <label>@GeneralResources.ContactUsReason</label>
+            <label class="form-control">@(Model.ContactUsReason!=null?Model.ContactUsReason.Name:"")</label>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group">
+            <label>@GeneralResources.Message</label>
+            <label class="form-control">@Model.Message</label>
+        </div>
+    </div>
+    
+    <div class="col-12">
+    </div>
+</div>
+
+<div class="d-flex justify-content-end border-top">
+    <button type="button" class="btn btn-danger m-1" data-dismiss="modal">@GeneralResources.Close</button>
+</div>
+
+
+@Html.Partial("~/Views/Shared/Partial/_JQValidationPartial.cshtml")

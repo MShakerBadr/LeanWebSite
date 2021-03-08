@@ -1,0 +1,73 @@
+﻿@using  lean.UI.LocalResources;
+
+<!-- SESSION VARIABLES -->
+<script>
+    var USER_ID = '@(MySession.User != null ? MySession.User.Id : 0)';
+</script>
+
+
+<!-- LOCALIZATION VARIABLES -->
+<script>
+    let IsRTL = '@MySession.IsArabic' == 'True';
+
+    let YES = '@MySession.IsArabic' == 'True' ? 'نعم' : 'YES';
+    let CANCEL = '@MySession.IsArabic' == 'True' ? 'إلغاء' : 'CANCEL';
+    let ARE_YOU_SURE = '@MySession.IsArabic' == 'True' ? 'هل أنت متأكد' : 'ARE YOU SURE';
+
+    let YourRequestSentSuccessfully = '@Resource.YourRequestSentSuccessfully';
+    let ErrorSeningYourRequest = '@Resource.ErrorWhenSendRequest';
+
+    let AddWhatWeDelivered = '@MySession.IsArabic' == 'True' ? 'اضافة ما قدمناه' : 'Add What We Delivered';
+    let EditWhatWeDelivered = '@MySession.IsArabic' == 'True' ? 'تعديل ما قدمناه' : 'Edit What We Delivered';
+
+    let AddConstructionUpdates = '@MySession.IsArabic' == 'True' ? 'اضافة تحديثات البناء' : 'Add Construction Updates';
+    let EditConstructionUpdates= '@MySession.IsArabic' == 'True' ? 'تعديل تحديثات البناء' : 'Edit Construction Updates';
+
+    let AddUnitType = '@MySession.IsArabic' == 'True' ? 'اضافة نوع الوحدة' : 'Add Unit Type';
+    let EditUnitType = '@MySession.IsArabic' == 'True' ? 'تعديل نوع الوحدة' : 'Edit Unit Type';
+
+    let AddPropertyType = '@MySession.IsArabic' == 'True' ? 'اضافة نوع الملكية' : 'Add Property Type';
+    let EditPropertyType = '@MySession.IsArabic' == 'True' ? 'تعديل نوع الملكية' : 'Edit Property Type';
+
+    let AddProjectType = '@MySession.IsArabic' == 'True' ? 'اضافة نوع المشروع' : 'Add Project Type';
+    let EditProjectType = '@MySession.IsArabic' == 'True' ? 'تعديل نوع المشروع' : 'Edit Project Type';
+
+    let AddNewsAndEvents = '@MySession.IsArabic' == 'True' ? 'اضافة اخبار و احدث' : 'Add News And Events';
+    let EditNewsAndEvents = '@MySession.IsArabic' == 'True' ? 'تعديل اخبار و احدث ' : 'Edit News And Events';
+
+    let ViewContactUsRequest = '@MySession.IsArabic' == 'True' ? 'عرض طلب التواصل   ' : 'View Contact Us Request';
+
+    let ViewJobRequest = '@MySession.IsArabic' == 'True' ? 'عرض طلب الوظيفة ' : 'View Job Request';
+
+    let AddLocation = '@MySession.IsArabic' == 'True' ? 'اضافة  موقع' : 'Add Location';
+    let EditLocation = '@MySession.IsArabic' == 'True' ? 'تعديل موقع ' : 'Edit Location';
+
+    let AddAvailableJobs = '@MySession.IsArabic' == 'True' ? 'اضافة  الوظائف المتاحة' : 'Add Available Jobs';
+    let EditAvailableJobs = '@MySession.IsArabic' == 'True' ? 'تعديل الوظائف المتاحة ' : 'Edit Available Jobs';
+
+    let AddContactUsReason = '@MySession.IsArabic' == 'True' ? 'اضافة  سبب الاتصال بنا' : 'Add Contact Us Reason';
+    let EditContactUsReason = '@MySession.IsArabic' == 'True' ? 'تعديل سبب الاتصال بنا  ' : 'Edit Contact Us Reason';
+
+    let AddManagment = '@MySession.IsArabic' == 'True' ? 'اضافة  ادارة' : 'Add Managment';
+    let EditManagment = '@MySession.IsArabic' == 'True' ? 'تعديل ادارة ' : 'Edit Managment';
+
+    let AddGallery = '@MySession.IsArabic' == 'True' ? 'اضافة  معرض' : 'Add Gallery';
+    let EditGallery = '@MySession.IsArabic' == 'True' ? 'تعديل معرض ' : 'Edit Gallery';
+
+    let ContactUsReasonRequired = '@MySession.IsArabic' == 'True' ? 'سبب التواصل مطلوب' : 'Contact Us Reason Is Required';
+
+    let AddHeaderFooterPages = '@MySession.IsArabic' == 'True' ? 'إضافة صفحة' : 'Add Page';
+    let EditHeaderFooterPages = '@MySession.IsArabic' == 'True' ? 'التعديل على صفحة' : 'Edit Page';
+
+    let AddSlider = '@MySession.IsArabic' == 'True' ? 'اضافة صورة غلاف' : 'Add Slider';
+    let EditSlider = '@MySession.IsArabic' == 'True' ? 'تعديل صورة غلاف ' : 'Edit Slider';
+
+
+    //-----------------------------------------------------------------------------------------------------
+      let AddAboutUs= '@MySession.IsArabic' == 'True' ? 'اضافة تعريف بنا' : 'Add About us';
+    let EditAboutUs = '@MySession.IsArabic' == 'True' ? 'تعديل تعريف بنا' : 'Edit about us';
+
+    let AddProduct= '@MySession.IsArabic' == 'True' ? 'اضافة منتجات' : 'Add Product';
+    let EditProduct= '@MySession.IsArabic' == 'True' ? 'تعديل منتجات' : 'Edit Product';
+
+</script>

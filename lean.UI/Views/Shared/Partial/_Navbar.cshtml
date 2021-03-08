@@ -1,0 +1,29 @@
+﻿@using GeneralResources = lean.UI.LocalResources.Resource
+
+<a class="navbar-brand" href="#"><h4>The Lean</h4></a>
+
+<button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
+    <i class="fas fa-bars"></i>
+</button>
+
+<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"></form>
+<ul class="navbar-nav ml-auto ml-md-0">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+        <div class="dropdown-menu @GeneralResources.DropdownMenuDir" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="#">@MySession.User.FullName</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/Admin/Settings">@GeneralResources.Settings</a>
+            <a class="dropdown-item" href="#" onclick="javascript:document.getElementById('logoutForm').submit()">@GeneralResources.Logout</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("ChangeLanguage", "Base")" role="button"><i class="fas fa-globe fa-fw"></i></a>
+    </li>
+</ul>
+
+
+@using (Html.BeginForm("Logout", "Authorize", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+{
+    @Html.AntiForgeryToken()
+}

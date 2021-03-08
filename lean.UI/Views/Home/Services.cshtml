@@ -1,0 +1,157 @@
+﻿@model IEnumerable<WhatWeDelivered>
+@using Lang = lean.UI.LocalResources
+<!-- start intro-section-2 -->
+<div class="intro-section-2 services-page-intro" style="background-image: url(../assets/img/intro1.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="intro-title">
+                    <h2 class="title">
+                        @{if (!MySession.IsArabic)
+                            {
+                                @Lang.Resource.Our
+
+                            }}
+                        <span>
+                            @Lang.Resource.Services
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end  intro-section-2 -->
+
+<div class="servicesPage-section">
+    <div class="container">
+        <div class="row">
+
+            @{
+                decimal eachSegmentCount = Model.Count() / 3;
+                decimal First_Last_SegmentCount = Math.Floor(eachSegmentCount);
+                decimal SecondSegmentCount = Model.Count() - (First_Last_SegmentCount * 2);
+
+            }
+
+            <div class="col-lg-4 col-md-6">
+                @for (int i = 0; i < First_Last_SegmentCount; i++)
+                {
+
+                    if (i == 0)
+                    {
+                        <div class="services-box fristservices-col fristservices-box" data-aos="fade-up">
+                            <img src="@Model.ToList()[i].ImageUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
+                            <h5 class="services-title">
+                                @Model.ToList()[i].Name
+                            </h5>
+                            <p class="prag3">
+                                @Model.ToList()[i].Description
+                            </p>
+                            <a href="#" class="services-link gray-shadow">
+                                @Lang.Resource.READMORE
+                            </a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="services-box" data-aos="fade-up">
+                            <img src="@Model.ToList()[i].ImageUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
+                            <h5 class="services-title">
+                                @Model.ToList()[i].Name
+                            </h5>
+                            <p class="prag3">
+                                @Model.ToList()[i].Description
+                            </p>
+                            <a href="#" class="services-link blue-shadow2">
+                                @Lang.Resource.READMORE
+                            </a>
+                        </div>
+                    }
+
+
+
+                }
+            </div>
+            <div class="col-lg-4 col-md-6">
+                @for (int i = int.Parse(First_Last_SegmentCount.ToString()); i < (SecondSegmentCount + First_Last_SegmentCount); i++)
+                {
+
+                    if (i == int.Parse(First_Last_SegmentCount.ToString()))
+                    {
+
+                        <div class="services-box fristservices-col scound-services-box" data-aos="fade-up">
+                            <img src="@Model.ToList()[i].ImageUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
+                            <h5 class="services-title">
+                                @Model.ToList()[i].Name
+                            </h5>
+                            <p class="prag3">
+                                @Model.ToList()[i].Description
+                            </p>
+                            <a href="#" class="services-link orang-shadow">
+                                @Lang.Resource.READMORE
+                            </a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="services-box" data-aos="fade-up">
+                            <img src="@Model.ToList()[i].ImageUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
+                            <h5 class="services-title">
+                                @Model.ToList()[i].Name
+                            </h5>
+                            <p class="prag3">
+                                @Model.ToList()[i].Description
+                            </p>
+                            <a href="#" class="services-link pink-shadow">
+                                @Lang.Resource.READMORE
+                            </a>
+                        </div>
+                    }
+
+
+                }
+            </div>
+            <div class="col-lg-4 col-md-12 col-mdia-flex">
+                @for (int i = int.Parse((SecondSegmentCount + First_Last_SegmentCount).ToString()); i < Model.Count(); i++)
+                {
+
+                    if (i == int.Parse((SecondSegmentCount.ToString() + First_Last_SegmentCount.ToString())))
+                    {
+                        <div class="services-box fristservices-col fristservices-box" data-aos="fade-up">
+                            <img src="@Model.ToList()[i].ImageUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
+                            <h5 class="services-title">
+                                @Model.ToList()[i].Name
+                            </h5>
+                            <p class="prag3">
+                                @Model.ToList()[i].Description
+                            </p>
+                            <a href="#" class="services-link blue-shadow2">
+                                @Lang.Resource.READMORE
+                            </a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="services-box" data-aos="fade-up">
+                            <img src="@Model.ToList()[i].ImageUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
+                            <h5 class="services-title">
+                                @Model.ToList()[i].Name
+                            </h5>
+                            <p class="prag3">
+                                @Model.ToList()[i].Description
+                                <a href="#" class="services-link orang-shadow">
+                                    @Lang.Resource.READMORE
+                                </a>
+                        </div>
+                    }
+
+                }
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>

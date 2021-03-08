@@ -1,0 +1,21 @@
+﻿@model ProductViewModel
+@{
+    ViewBag.Title = "Products ";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="~/Content/js/pages/product.js?v=@DateTime.Now.Day"></script>
+
+<div class="row">
+    <div class="col-12">
+        <div id="whatWeDeliveredFilter">
+            @Html.Partial("~/Views/Product/Partial/ProductFilter.cshtml", Model.Filter)
+        </div>
+    </div>
+    <div class="col-12">
+        <div id="ProductList">
+            @Html.Partial("~/Views/Product/Partial/ProductList.cshtml", Model.list)
+        </div>
+    </div>
+</div>
+

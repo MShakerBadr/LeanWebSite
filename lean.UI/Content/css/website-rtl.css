@@ -1,0 +1,35 @@
+﻿@import url(fonts/kufi.css);
+@import url(fonts/naskh.css);
+
+.body div, h1, h2, h3, h4, h5, h6, a, p, label, span {
+    font-family: 'Droid Arabic Kufi', 'Droid Arabic Kufi', serif !important;
+}
+
+
+.list-inline-item:not(:last-child) {
+    margin-right: 0px;
+    margin-left: .5rem;
+}
+
+
+#mainNav .action-items .nav-item .search-input i {
+    left: unset;
+    right: 2px;
+}
+
+
+
+/* Small devices (landscape phones, less than 768px)*/
+@media only screen and (max-width: 768px) {
+    .inner-menue {
+        text-align: right;
+    }
+
+    #mainNav .inner-menue .navbar-toggler-right {
+        float: left;
+    }
+
+    #mainNav .inner-menue .navbar-brand {
+        font-size: 16px;
+    }
+}

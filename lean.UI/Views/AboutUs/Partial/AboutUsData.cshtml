@@ -1,0 +1,64 @@
+﻿@model AboutUs
+@using GeneralResources = lean.UI.LocalResources.Resource;
+
+@using (Ajax.BeginForm("Save", "AboutUs", new AjaxOptions { HttpMethod = "POST", OnSuccess = "successSavingAboutUs" },new { }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.Id)
+ 
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group text-center">
+                <div class="img-collection">
+                    <div>
+                        <input type="hidden" name="ImageUrl" value="@Model.ImgPath" />
+                        <img width="200" height="200" class="img circular" src="@Model.ImgPath" accept=".jpg,.jpeg,.png" capture />
+                    </div>
+                    <div class="mt-2">
+                        <input type="file" id="AboutUsPhotoUpload" onchange="readURL(this)" hidden />
+                        <label for="AboutUsPhotoUpload" class="btn btn-info"><i class="fa fa-cloud"></i>&nbsp;@GeneralResources.UploadPhoto</label>
+                        <label class="btn btn-danger" onclick="DeleteImag(this);RemoveImage(this);"><i class="fa fa-times-circle" style=""></i>&nbsp;@GeneralResources.RemovePhoto</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.TitleAr)
+                @Html.TextBoxFor(x => x.TitleAr, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.TitleAr, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.TitleEn)
+                @Html.TextBoxFor(x => x.TitleEn, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.TitleEn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+       
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.DescAr)
+                @Html.TextAreaFor(x => x.DescAr, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.DescAr, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.DescEn)
+                @Html.TextAreaFor(x => x.DescEn, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.DescEn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+     
+
+    </div>
+
+    <div class="d-flex justify-content-end border-top">
+        <button type="submit" class="btn btn-secondary m-1">@GeneralResources.Save</button>
+        <button type="button" class="btn btn-danger m-1" data-dismiss="modal">@GeneralResources.Close</button>
+    </div>
+}
+
+@Html.Partial("~/Views/Shared/Partial/_JQValidationPartial.cshtml")

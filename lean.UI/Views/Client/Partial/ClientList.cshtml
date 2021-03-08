@@ -1,0 +1,48 @@
+﻿@model IPagedList<Clients>
+@using GeneralResources = lean.UI.LocalResources.Resource;
+
+
+<div class="table-responsive mb-3 shadow" @(Model.Count == 0 ? "hidden" : "")>
+    <table class="table table-hover" id="tblWhatWeDelivereds">
+        <thead>
+            <tr>
+                <th><a href="#" class="plus" onclick="addWhatWeDelivered()"><i class="fa fa-plus-circle"></i></a></th>
+                <th>@GeneralResources.Photo</th>
+                @*<th>@GeneralResources.Name</th>
+                <th>@GeneralResources.Description</th>*@
+                <th>@GeneralResources.IsShow</th>
+                <th>@GeneralResources.Edit</th>
+                <th>@GeneralResources.Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="td-small"><span class="row-index"></span></td>
+                    <td class="patchs-row">
+                        <a class="a-img fancybox" href="@item.imgUrl">
+                            <img width="55" height="55" class="img circular" src="@item.imgUrl" />
+                        </a>
+                    </td>
+                    @*<td class="patchs-row">@item.Name</td>
+                    <td class="patchs-row">@item.Description</td>*@
+                    <td>@item.IsShow</td>
+                    <td class="td-small"><button class="btn btn-secondary" onclick="editWhatWeDelivered('@item.Id')"><i class="fa fa-edit"></i></button> </td>
+                    <td class="td-small"><button class="btn btn-danger" onclick="deleteWhatWeDelivered('@item.Id')"><i class="fa fa-trash"></i></button> </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="pagedList text-center" data-target="#WhatWeDeliveredsList">
+    @if (Model.Count > 0)
+    {
+        @Html.PagedListPager(Model, page => Url.Action("Home", "Client", new { page = page }))
+    }
+</div>
+
+
+<div @(Model.Count > 0 ? "hidden" : "")>
+    @Html.Partial("~/Views/Shared/Partial/_NoDataPartial.cshtml", "addWhatWeDelivered()")
+</div>
