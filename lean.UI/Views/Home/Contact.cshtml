@@ -29,28 +29,31 @@
     <main class="main wrapper">
         <!-- start intro-section-2 -->
         <div class="intro-section-2 contact-page" style="background-image: url(../assets/img/contact.png);">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="intro-title">
-                            <h2 class="title">
-                                @GeneralResource.CONTACT
-                                <span>
-                                    @GeneralResource.US
-                                </span>
-                            </h2>
+            <div class="overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="intro-title">
+                                <h2 class="title">
+                                    @GeneralResource.CONTACT
+                                    <span>
+                                        @GeneralResource.US
+                                    </span>
+                                </h2>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </div>
         <!-- end  intro-section-2 -->
         <!-- start contact-section -->
 
-        <div class="contact-sectin paddin-60-0">
+        <div class="contact-sectin">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-12 col-md-12">
                         <div class="contact-content">
                             <h3 class="contact-title">
                                 @GeneralResource.GetIn
@@ -67,50 +70,80 @@
                                     , new AjaxOptions { HttpMethod = "POST", OnSuccess = "successAddingContactRequest" }
                                     , new { @id = "formAddContactRequest", @class = "contact-form" }))
                                 {
-                                    <div class="form-group">
-                                        <input data-val="true" data-val-required="@GeneralResource.NameIsRequired" type="text" name="Name" id="Name" class="form-control" placeholder="@GeneralResource.Name" />
-                                        @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input data-val="true" data-val-required="@GeneralResource.NameIsRequired" type="text" name="Name" id="Name" class="form-control" placeholder="@GeneralResource.Name" />
+                                                @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input data-val="true" type="text" name="Email" id="Email" data-val-required="@GeneralResource.EmailIsRequired" class="form-control" placeholder="@GeneralResource.Email" />
+                                                @Html.ValidationMessage("Email", "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Mobile Number</label>
+                                                <input data-val="true" type="text" name="MobileNumber" id="MobileNumber" data-val-required="@GeneralResource.MobileNumberIsRequired" class="form-control" placeholder="@GeneralResource.Phone" aria-describedby="helpId" />
+                                                @Html.ValidationMessage("MobileNumber", "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Contact Us ReasonId</label>
+                                                @Html.DropDownList("ContactUsReasonId", _contactReasons as SelectList
+                                                                , new
+                                                                {
+
+                                                                 @class = "nice-select select-box",
+                                                                    @data_val_required = GeneralResource.EmailIsRequired
+                                                                        ,
+                                                                    @data_val = "true"
+                                                                })
+                                                @Html.ValidationMessage("ContactUsReasonId", "", new { @class = "text-danger", @Id = "ContactUsReasonIdValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Message</label>
+                                                <textarea name="Message" placeholder="@GeneralResource.Message" id="textcontact" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <button type="submit" class="contact-submit">@GeneralResource.Send</button>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <input data-val="true" type="text" name="Email" id="Email" data-val-required="@GeneralResource.EmailIsRequired" class="form-control" placeholder="@GeneralResource.Email" />
-                                        @Html.ValidationMessage("Email", "", new { @class = "text-danger" })
-                                    </div>
-                                    <div class="form-group">
-                                        <input data-val="true" type="text" name="MobileNumber" id="MobileNumber" data-val-required="@GeneralResource.MobileNumberIsRequired" class="form-control" placeholder="@GeneralResource.Phone" aria-describedby="helpId" />
-                                        @Html.ValidationMessage("MobileNumber", "", new { @class = "text-danger" })
-                                    </div>
-                                    <div class="form-group">
-                                        @Html.DropDownList("ContactUsReasonId", _contactReasons as SelectList
-                                                        , new
-                                                        {
-                                                            
-                                                         @class = "nice-select select-box",
-                                                            @data_val_required = GeneralResource.EmailIsRequired
-                                                                ,
-                                                            @data_val = "true"
-                                                        })
-                                        @Html.ValidationMessage("ContactUsReasonId", "", new { @class = "text-danger", @Id = "ContactUsReasonIdValidation" })
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea name="Message" placeholder="@GeneralResource.Message" id="textcontact" class="form-control"></textarea>
-                                    </div>
-                                    <button type="submit" class="contact-submit">@GeneralResource.Send</button>
+
+
+
+
+
+
                                 }
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div id="googleMap" class="map" style="height: 100%;">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13682.769628972785!2d31.4570335!3d30.9790649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1564401111884!5m2!1sar!2seg"
-                                    width="100%"
-                                    height="100%"
-                                    frameborder="0"
-                                    style="border: 0;"
-                                    allowfullscreen></iframe>
-                        </div>
+                    <div class="col-lg-12 col-md-12">
+
                     </div>
                 </div>
             </div>
+
+
+            <div id="googleMap" class="map" style="height: 100%;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13682.769628972785!2d31.4570335!3d30.9790649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1564401111884!5m2!1sar!2seg"
+                        
+                        frameborder="0"
+                        style="border: 0;"
+                        allowfullscreen></iframe>
+            </div>
+
+
         </div>
 
         <!-- end contact-section -->

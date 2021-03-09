@@ -2,24 +2,27 @@
 @using Lang = lean.UI.LocalResources
 <!-- start intro-section-2 -->
 <div class="intro-section-2 services-page-intro" style="background-image: url(../assets/img/intro1.png);">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="intro-title">
-                    <h2 class="title">
-                        @{if (!MySession.IsArabic)
-                            {
-                                @Lang.Resource.Our
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="intro-title">
+                        <h2 class="title">
+                            @{if (!MySession.IsArabic)
+                                {
+                                    @Lang.Resource.Our
 
-                            }}
-                        <span>
-                            @Lang.Resource.Services
-                        </span>
-                    </h2>
+                                }}
+                            <span>
+                                @Lang.Resource.Services
+                            </span>
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
 </div>
 <!-- end  intro-section-2 -->
 
@@ -153,5 +156,9 @@
 
 
         </div>
+    </div>
+
+    <div class="image_bottom">
+        <img src="~/assets/img/DropLinkshort.png" />
     </div>
 </div>

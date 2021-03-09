@@ -7,25 +7,28 @@
 
 
 <!-- start intro-section-2 -->
-<div class="intro-section-2" style="background-image: url(assets/img/intro-1.png);">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="intro-title">
-                    <h2 class="title">
-                        @lang.Resource.Our
-                        <span>
-                            @lang.Resource.Clients
-                        </span>
-                    </h2>
+<div class="intro-section-2" style="background-image: url(/assets/img/intro-1.png);">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="intro-title">
+                        <h2 class="title">
+                            @lang.Resource.Our
+                            <span>
+                                @lang.Resource.Clients
+                            </span>
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+  
 </div>
 <!-- end  intro-section-2 -->
 <!-- start clints-section -->
-<div class="clints-section paddin-60-0">
+<div class="clints-section">
     <div class="container">
         <div class="row">
             @{
@@ -60,7 +63,7 @@
                                         <img src="@client3" alt="img" class="img-fluid" />
                                     </div>
                                 }
-                                if (client4 != string.Empty  )
+                                if (client4 != string.Empty)
                                 {
 
                                     <div class="clint-card" data-aos="fade-up">
@@ -73,14 +76,19 @@
                 }
             }
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="more-button">
-                    <a href="#">
-                        <i class="fas fa-angle-down"></i>
-                    </a>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="more-button">
+                        <a href="#">
+                            <i class="fas fa-angle-down"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="image_bottom">
+        <img src="~/assets/img/DropLinkshort.png" />
     </div>
 </div>

@@ -22,10 +22,13 @@
                             <source src="~/assets/vedio.mp4" type="video/mp4">
                         </video>
                         <div class="slider-content" data-aos="fade-up">
-                            <h2 class="intro-title">
-                                @lang.Resource.WeAre
-                                <span>THE LEAN</span>
-                            </h2>
+                            <h1 class=" animated fadeInDownBig">hi there !</h1>
+                            <h2 class="intro-title animated fadeIn delay_1">@lang.Resource.WeAre <span id="typed" style="white-space:pre;"></span></h2>
+                            <div id="typed-strings" class="writerwordes">
+                                <p><i>the lean Company</i></p>
+                                <p><i>Software House</i></p>
+
+                            </div>
                             <p class="prag">
                                 @lang.Resource.theLeanDesc
                             </p>
@@ -36,10 +39,13 @@
                             <source src="~/assets/vedio.mp4" type="video/mp4">
                         </video>
                         <div class="slider-content" data-aos="fade-up">
-                            <h2 class="intro-title">
-                                @lang.Resource.WeAre
-                                <span>THE LEAN</span>
-                            </h2>
+                            <h1 class=" animated fadeInDownBig">hi there !</h1>
+                            <h2 class="intro-title animated fadeIn delay_1">@lang.Resource.WeAre <span id="typed_2" style="white-space:pre;"></span></h2>
+                            <div id="typed-strings_2" class="writerwordes">
+                                <p><i>the lean Company</i></p>
+                                <p><i>Software House</i></p>
+
+                            </div>
                             <p class="prag">
                                 @lang.Resource.theLeanDesc
                             </p>
@@ -59,6 +65,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title1" data-aos="fade-up">
+                    <h2 class="titlewhat">THE Lean</h2>
                     <h3 class="title">
                         @lang.Resource.WhatWeDelivered
                     </h3>
@@ -69,18 +76,18 @@
 
             @foreach (var item in services)
             {
-                <div class="col-lg-4 col-md-6 col-6">
+                <div class="col-lg-4 col-md-6 col-xs-12">
                     <div class="what-box">
                         <h6 class="boxwhat-title">
                             @item.Name
                         </h6>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="img-what-box" data-aos="fade-down">
                                     <img src="@item.ImageUrl" class="img-fluid" alt="img" />
                                 </div>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <p class="prag">
                                     @item.Description
                                 </p>
@@ -113,11 +120,16 @@
 <!-- end whatWeDo-section -->
 <!-- start portfolio-section -->
 
-<div class="portfolio-section paddin-60">
+<div class="portfolio-section ">
+    <div class="image_top">
+
+        <img src="~/assets/img/DropLinkshortbottom.png" />
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title3">
+                    @*<h1 class="titleLean">The Lean</h1>*@
                     <h4 class="title">
                         @lang.Resource.Our
                         <span>@lang.Resource.Portfolio</span>
@@ -189,15 +201,21 @@
             </div>
         </div>
     </div>
+
+    <div class="image_bottom">
+
+        <img src="~/assets/img/DropLinkshort.png" />
+    </div>
 </div>
 
 <!-- end portfolio-section -->
 <!-- start why-us-section -->
-<div class="why-us-section paddin-60">
+<div class="why-us-section">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title1" data-aos="fade-up">
+                    <h1 class="titlewhat">the lean</h1>
                     <h3 class="title">
                         @lang.Resource.Whyus
                     </h3>
@@ -207,13 +225,16 @@
         <div class="row">
             @foreach (var item in WhyUs)
             {
-                <div class="col-md-6">
-                    <div class="why-box" data-aos="zoom-in">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="why-box useusdev" data-aos="zoom-in">
                         <div class="row">
-                            <div class="col-3">
-                                <img src="@item.ImgUrl" alt="" class="img-fluid" />
+                            <div class="col-12">
+                                <div class="images">
+                                    <img src="@item.ImgUrl" alt="" class="img-fluid" />
+                                </div>
+                                
                             </div>
-                            <div class="col-8">
+                            <div class="col-12">
                                 <div class="why-box-content">
                                     <h4 class="why-title">
                                         @item.Title
@@ -230,73 +251,91 @@
 
         </div>
     </div>
+
+
 </div>
 <!-- end why-us-section -->
 <!-- satrt clients-section -->
-<div class="clients-section paddin-60">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title3">
-                    <h4 class="title">
-                        @{ if (!MySession.IsArabic) {
+<div class=" clients-section">
+    <div class="image_top">
 
-                                @lang.Resource.Our
-                                      }
+        <img src="~/assets/img/DropLinkshortbottom.png" />
+    </div>
+    <div class="Clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title3">
+                        <h4 class="title">
+                            @{ if (!MySession.IsArabic)
+                                {
+
+                                    @lang.Resource.Our
+                                }
+                            }
+                            <span>@lang.Resource.Clients</span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 d-flex" style="align-items: center;">
+                    <div class="clients-title-box">
+                        <h2 class="titleclients">
+                            @lang.Resource.SatisfiedCustomers
+                        </h2>
+                        <p class="prag2">
+                            @lang.Resource.SatCustomerDesc
+                        </p>
+                    </div>
+                </div>
+                @for (int i = 0; i < clients.Count; i += 2)
+                {
+                    var item = i <= clients.Count ? clients[i] as Clients : null;
+                    var item2 = i + 1 < clients.Count ? clients[i + 1] as Clients : null;
+                    <div class="col-lg-2 col-md-6">
+
+                        @if (item != null)
+                        {
+                            <div data-aos="fade-up" class="img-clint-box clint-box-1 ro1">
+                                <img src="@item.imgUrl" alt="img" class="img-fluid" />
+                            </div>
                         }
-                        <span>@lang.Resource.Clients</span>
-                    </h4>
+
+                        @if (item2 != null)
+                        {
+                            <div data-aos="fade-up" class="img-clint-box clint-box-2">
+                                <img src="@item2.imgUrl" alt="img" class="img-fluid" />
+                            </div>
+                        }
+
+                    </div>
+                }
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div data-aos="zoom-in" class="button-link1 see-more-button">
+                        <a href="#">
+                            @lang.Resource.SEEMORE
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 d-flex" style="align-items: center;">
-                <div class="clients-title-box">
-                    <h2 class="titleclients">
-                        @lang.Resource.SatisfiedCustomers
-                    </h2>
-                    <p class="prag2">
-                        @lang.Resource.SatCustomerDesc
-                    </p>
-                </div>
-            </div>
-            @for (int i = 0; i < clients.Count; i += 2)
-            {
-                var item = i <= clients.Count ? clients[i] as Clients : null;
-                var item2 = i + 1 < clients.Count ? clients[i + 1] as Clients : null;
-                <div class="col-lg-2 col-md-6">
-
-                    @if (item != null)
-                    {
-                        <div data-aos="fade-up" class="img-clint-box clint-box-1 ro1">
-                            <img src="@item.imgUrl" alt="img" class="img-fluid" />
-                        </div>
-                    }
-
-                    @if (item2 != null)
-                    {
-                        <div data-aos="fade-up" class="img-clint-box clint-box-2">
-                            <img src="@item2.imgUrl" alt="img" class="img-fluid" />
-                        </div>
-                    }
-
-                </div>
-            }
-
-
-
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div data-aos="zoom-in" class="button-link1 see-more-button">
-                    <a href="#">
-                        @lang.Resource.SEEMORE
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="image_bottom">
+        <img src="~/assets/img/DropLinkshort.png" />
     </div>
-</div>
-<!-- end clients-section -->
+
+    <!-- end clients-section -->
+
+
+
+
+
+
