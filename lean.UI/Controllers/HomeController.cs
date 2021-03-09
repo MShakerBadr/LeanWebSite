@@ -79,7 +79,7 @@ namespace lean.UI.Controllers
         public ActionResult WhatWeDeliverd()
         {
             ViewBag.WhatWeDelivered = _repo.GetQuery<StaticContent>().FirstOrDefault().WhatWeDelivered;
-            var whatweDelevired = _repo.GetAll<WhatWeDelivered>().ToList();
+            var whatweDelevired = _repo.GetAll<WhatWeDelivered>(x=>x.WhatWeDeliveredGallery).ToList();
             return View(whatweDelevired);
         }
     }

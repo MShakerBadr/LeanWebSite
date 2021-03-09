@@ -48,7 +48,10 @@
                         @foreach (var item in Model)
                         {
                             <div class="col-lg-4 col-md-6">
-                                <div class="portfoli-box" data-link="http://www.hms-care.com/shop" data-aos="fade-down" style="background-image: url('@item.ImageUrl.Replace(@"\", "/")');">
+                                <div class="portfoli-box" 
+                                     data-open="opneNew-@item.Id" 
+                                     data-aos="fade-down"
+                                     style="background-image: url('@item.ImageUrl.Replace(@"\", "/")');">
                                     <div class="portfoli-Boxcontent">
                                         <div class="portfoli-discription">
                                             <h5 class="project-title">
@@ -82,10 +85,41 @@
 
 <!-- end portfolioPage-section -->
 <!-- start pop-up-portfoli -->
-<div class="pop-up-portfoli">
+@*<div class="pop-up-portfoli">
     <div class="close-pop">
         <i class="fas fa-times"></i>
     </div>
     <iframe class="ifream-pop-up-portfoli" src="" style="height: 90%; width: 80%;" title="Iframe Example"></iframe>
-</div>
-<!-- end pop-up-portfoli -->
+</div>*@
+
+
+@foreach (var m in Model)
+{
+    <div class="pop-up-new2 pop-up-new2zedin" id="opneNew-@m.Id">
+        <div class="blog-popUp-conten pop-up-new2-box">
+            <div class="close-menu">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    @foreach (var item in m.WhatWeDeliveredGallery)
+                    {
+                        <div class="col-lg-4 col-md-6 col-12">
+
+                            <a class="fancy-img-box vedioGallery-popup hoverZoomLink"
+                               data-fancybox="gallery @m.Id"
+                               href="@item.AttachmentUrl.Replace(@"\", @"/")"
+                               tabindex="0"
+                               style="display: block;">
+
+                                <div class="gallery-img-box" style="background-image: url(@item.AttachmentUrl.Replace(@"\", @"/"));"></div>
+                            </a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
