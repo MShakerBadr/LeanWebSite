@@ -742,6 +742,7 @@ html[lang="ar"] .nav-bar .nav-ul .search-box {
     padding: 50px 0;
     margin-top: 0px;
     position: relative;
+    background:#fff;;
 }
 .whatWeDo-section .what-box {
   margin: 20px 0;
@@ -2931,6 +2932,9 @@ html[lang="ar"] .section-title-style:after {
 .Image_BAck_Location {
     position: absolute;
     bottom: 45px;
+    display:block;
+    width:100%;
+    background:#fff;
     
 }
     .Image_BAck_Location img {
@@ -3084,6 +3088,7 @@ html[lang="ar"] .section-title-style:after {
     z-index: 1;
     padding: 0 77px;
     padding-left: 0;
+    background:#fff;
 }
 
 
@@ -3254,4 +3259,8 @@ html[lang="ar"] .section-title-style:after {
         .servicesPage-section .services-box.fristservices-box {
             margin: 0px 0 40px !important;
         }
+    }
+
+    .slick-slider .slick-list, .slick-slider .slick-track{
+        background:#fff;
     }
