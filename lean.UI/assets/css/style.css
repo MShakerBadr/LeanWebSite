@@ -810,7 +810,7 @@ html[lang="ar"] .whatWeDo-section .what-box .boxwhat-title:after {
     padding: 15px;
     font-size: 16px;
     box-shadow: 2px 2px 5px #dae2ff;
-    max-height: 295px;
+    height: 295px;
     overflow-y: auto;
 }
 
