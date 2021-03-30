@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-   
+
 </div>
 <!-- end  intro-section-2 -->
 <!-- start portfolioPage-section -->
@@ -52,7 +52,15 @@
                             <div class="col-lg-4 col-md-6">
 
                                 <div class="back_prod_box">
-                                    <div class="portfoli-box" data-open="opneNew-@item.Id" data-link="http://www.hms-care.com/shop" data-aos="fade-down" style="background-image: url('@item.ImageUrl.Replace(@"\", "/")');">
+                                    @*<div class="portfoli-box" data-open="opneNew-@item.Id" data-link="http://www.hms-care.com/shop" data-aos="fade-down" style="background-image: url('@item.ImageUrl.Replace(@"\", "/")');">*@
+                                    <div class="portfoli-box" data-open="opneNew-@item.Id" data-link="http://www.hms-care.com/shop" data-aos="fade-down">
+
+                                        <div class="imagesssss">
+                                            <img src="@item.ImageUrl.Replace(@"\", "/")" />
+                                            @*<img src="~/assets/img/phonecare-295x1024.jpg" />*@
+                                        </div>
+
+
                                         <div class="portfoli-Boxcontent">
                                             <div class="portfoli-discription">
                                                 <h5 class="project-title">
@@ -64,21 +72,21 @@
                                             </div>
 
                                             @*<div class="portfoli-box"
-                                                 data-open="opneNew-@item.Id"
-                                                 data-aos="fade-down"
-                                                 style="background-image: url('@item.ImageUrl.Replace(@"\", "/")');">
-                                                <div class="portfoli-Boxcontent">
-                                                    <div class="portfoli-discription">
-                                                        <h5 class="project-title">
-                                                            @item.Name
-                                                        </h5>
-                                                        <h4 class="project-link">
-                                                            @lang.Resource.VIEW
-                                                        </h4>
+                                                     data-open="opneNew-@item.Id"
+                                                     data-aos="fade-down"
+                                                     style="background-image: url('@item.ImageUrl.Replace(@"\", "/")');">
+                                                    <div class="portfoli-Boxcontent">
+                                                        <div class="portfoli-discription">
+                                                            <h5 class="project-title">
+                                                                @item.Name
+                                                            </h5>
+                                                            <h4 class="project-link">
+                                                                @lang.Resource.VIEW
+                                                            </h4>
 
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>*@
+                                                </div>*@
 
                                         </div>
                                     </div>
@@ -110,37 +118,38 @@
 
 <!-- end portfolioPage-section -->
 <!-- start pop-up-portfoli -->
+@*
+    @foreach (var m in Model)
+    {
+        <div class="pop-up-new2 pop-up-new2zedin" id="opneNew-@m.Id">
+            <div class="blog-popUp-conten pop-up-new2-box">
+                <div class="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        @foreach (var item in m.WhatWeDeliveredGallery)
+                        {
+                            <div class="col-lg-4 col-md-6 col-12">
 
+                                <a class="fancy-img-box vedioGallery-popup hoverZoomLink"
+                                   data-fancybox="gallery @m.Id"
+                                   href="@item.AttachmentUrl.Replace(@"\", @"/")"
+                                   tabindex="0"
+                                   style="display: block;">
 
+                                    <div class="gallery-img-box">
+                                        <img src="~/assets/img/bombanow-309x1024.jpg" />
+                                        @*<img src="@item.AttachmentUrl.Replace(@"\", @"/")" />*@
+@*          </div>
+                                </a>
+                            </div>
+                        }
 
-
-@foreach (var m in Model)
-{
-    <div class="pop-up-new2 pop-up-new2zedin" id="opneNew-@m.Id">
-        <div class="blog-popUp-conten pop-up-new2-box">
-            <div class="close-menu">
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    @foreach (var item in m.WhatWeDeliveredGallery)
-                    {
-                        <div class="col-lg-4 col-md-6 col-12">
-
-                            <a class="fancy-img-box vedioGallery-popup hoverZoomLink"
-                               data-fancybox="gallery @m.Id"
-                               href="@item.AttachmentUrl.Replace(@"\", @"/")"
-                               tabindex="0"
-                               style="display: block;">
-
-                                <div class="gallery-img-box" style="background-image: url(@item.AttachmentUrl.Replace(@"\", @"/"));"></div>
-                            </a>
-                        </div>
-                    }
-
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-}
+    }
+*@  

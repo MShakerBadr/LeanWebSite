@@ -350,6 +350,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\animate.css" />
+    <Content Include="assets\img\bombanow-309x1024.jpg" />
     <Content Include="assets\img\DropLinkshort.png" />
     <Content Include="assets\img\DropLinkshortbottom.png" />
     <Content Include="assets\img\iconbgwrapperimg.png" />
