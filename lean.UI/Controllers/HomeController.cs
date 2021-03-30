@@ -23,7 +23,7 @@ namespace lean.UI.Controllers
             ViewBag.WhatWeDeliver = _repo.GetAll<WhatWeDelivered>().ToList();
             ViewBag.Portfolio = _repo.GetAll<Project>().ToList();
             ViewBag.WhyUs = _repo.GetQueryWhere<WhyUS>(w=>w.IsShow == true).ToList();
-            ViewBag.Clients = _repo.GetQueryWhere<Clients>(c => c.IsShow == true).ToList();
+            ViewBag.Clients = _repo.GetQueryWhere<Clients>(c => c.IsShow == true).Take(8).ToList();
 
 
            
@@ -71,7 +71,7 @@ namespace lean.UI.Controllers
         [HttpGet]
         public ActionResult Services()
         {
-            var services = _repo.GetAll<WhatWeDelivered>();
+            var services = _repo.GetAll<NewsAndEvents>();
             return View(services);
         }
 

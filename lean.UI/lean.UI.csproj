@@ -202,6 +202,7 @@
     <Compile Include="Context\LeanDbContext.cs" />
     <Compile Include="Controllers\ContactUsReasonController.cs" />
     <Compile Include="Controllers\ContactUsRequestController.cs" />
+    <Compile Include="Controllers\NewsAndEventsController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -807,6 +808,12 @@
     <Content Include="Views\ContactUsRequest\Partial\ContactUsRequestData.cshtml" />
     <Content Include="Views\ContactUsRequest\Partial\ContactUsRequestFilter.cshtml" />
     <Content Include="Views\ContactUsRequest\Partial\ContactUsRequestList.cshtml" />
+    <Content Include="Views\NewsAndEvents\Index.cshtml" />
+    <Content Include="Views\NewsAndEvents\Partial\LoadNewsAndEventsAttachmentImages.cshtml" />
+    <Content Include="Views\NewsAndEvents\Partial\LoadNewsAndEventsAttachmentVideos.cshtml" />
+    <Content Include="Views\NewsAndEvents\Partial\NewsAndEventsData.cshtml" />
+    <Content Include="Views\NewsAndEvents\Partial\NewsAndEventsFilter.cshtml" />
+    <Content Include="Views\NewsAndEvents\Partial\NewsAndEventsList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

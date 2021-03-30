@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WhatWeDelivered>
+﻿@model IEnumerable<NewsAndEvents>
 @using Lang = lean.UI.LocalResources
 <!-- start intro-section-2 -->
 <div class="intro-section-2 services-page-intro" style="background-image: url(../assets/img/intro1.png);">
@@ -44,7 +44,7 @@
                     if (i == 0)
                     {
                         <div class="services-box fristservices-col fristservices-box" data-aos="fade-up">
-                            <img src="@Model.ToList()[i].ImageUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
+                            <img src="@Model.ToList()[i].AttachmentUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
                             <h5 class="services-title">
                                 @Model.ToList()[i].Name
                             </h5>
@@ -59,7 +59,7 @@
                     else
                     {
                         <div class="services-box" data-aos="fade-up">
-                            <img src="@Model.ToList()[i].ImageUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
+                            <img src="@Model.ToList()[i].AttachmentUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
                             <h5 class="services-title">
                                 @Model.ToList()[i].Name
                             </h5>
@@ -84,7 +84,7 @@
                     {
 
                         <div class="services-box fristservices-col scound-services-box" data-aos="fade-up">
-                            <img src="@Model.ToList()[i].ImageUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
+                            <img src="@Model.ToList()[i].AttachmentUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
                             <h5 class="services-title">
                                 @Model.ToList()[i].Name
                             </h5>
@@ -99,7 +99,7 @@
                     else
                     {
                         <div class="services-box" data-aos="fade-up">
-                            <img src="@Model.ToList()[i].ImageUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
+                            <img src="@Model.ToList()[i].AttachmentUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
                             <h5 class="services-title">
                                 @Model.ToList()[i].Name
                             </h5>
@@ -122,7 +122,7 @@
                     if (i == int.Parse((SecondSegmentCount.ToString() + First_Last_SegmentCount.ToString())))
                     {
                         <div class="services-box fristservices-col fristservices-box" data-aos="fade-up">
-                            <img src="@Model.ToList()[i].ImageUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
+                            <img src="@Model.ToList()[i].AttachmentUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
                             <h5 class="services-title">
                                 @Model.ToList()[i].Name
                             </h5>
@@ -137,7 +137,7 @@
                     else
                     {
                         <div class="services-box" data-aos="fade-up">
-                            <img src="@Model.ToList()[i].ImageUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
+                            <img src="@Model.ToList()[i].AttachmentUrl" alt="img" class="img-fluid" data-aos="zoom-in" />
                             <h5 class="services-title">
                                 @Model.ToList()[i].Name
                             </h5>
