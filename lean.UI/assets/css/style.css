@@ -800,6 +800,7 @@ html[lang="ar"] .whatWeDo-section .what-box .boxwhat-title:after {
     padding: 15px;
     font-size: 16px;
     box-shadow: 2px 2px 5px #dae2ff;
+    min-height: 295px;
 }
 
 .portfolio-section {
@@ -1455,7 +1456,7 @@ html[lang="ar"] .clints-section .clint-card-box .clint-card {
   visibility: visible;
 }
 .portfolioPage-section .portfoli-box .portfoli-Boxcontent {
-  border-radius: 20px;
+  border-radius: 0;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1474,7 +1475,7 @@ html[lang="ar"] .clints-section .clint-card-box .clint-card {
         width: 100%;
     }
 .portfolioPage-section .portfoli-box .portfoli-Boxcontent .portfoli-discription .project-title {
-  font-size: 20px;
+  font-size: 18px;
   color: white;
   font-weight: 500;
   padding: 20px;
@@ -1578,6 +1579,7 @@ html[lang="ar"] .clints-section .clint-card-box .clint-card {
 }
 .products-section .products-box .img-products-box img {
   height: 275px;
+  height:auto;
 }
 
 @media (max-width: 992px) {
@@ -1771,7 +1773,7 @@ padding-top:60px;
         box-shadow: 0 30px 15px rgba(164, 164, 164, 0.5);
     }
 .servicesPage-section .services-box.fristservices-box {
-  margin: 127px 0 40px;
+  margin: 0px 0 40px;
 }
 .servicesPage-section .services-box.scound-services-box {
   margin: 30px 0 40px;
@@ -2761,20 +2763,21 @@ html[lang="ar"] .section-title-style:after {
 }
 
 .portfolioPage-section .back_prod_box {
-    border-radius: 20px;
+    border-radius: 10px;
     background: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
     z-index: 1;
 
     overflow: hidden;
     box-shadow: 7px 9px 18px 8px rgb(0 0 0 / 30%);
+    margin-bottom:15px;
 }
 .portfolioPage-section .portfoli-box {
     background-size: contain;
     margin: 0 0;
     position: relative;
     height: 215px;
-    border-radius: 20px;
+    border-radius: 0px;
     z-index: 1;
     overflow: hidden;
     box-shadow: none;
@@ -2866,13 +2869,15 @@ html[lang="ar"] .section-title-style:after {
     .whatWeDo-section .what-box .boxwhat-title {
         width: 100%;
         margin: auto;
-        margin-bottom: 60px;
+        margin-bottom: 0px;
         text-align: center;
     }
     .whatWeDo-section .what-box .prag {
         margin: 10px 0;
         width: 100%;
         text-align: center;
+        margin-top: 0;
+        min-height: auto;
     }
     .whatWeDo-section .what-box .img-what-box {
         padding: 10px;
@@ -3102,6 +3107,18 @@ html[lang="ar"] .section-title-style:after {
 
 
 @media(max-width:768px) {
+    .intro-section .intro-slider .circle-arrow i {
+        font-size: 52px;
+        color: white;
+        cursor: pointer;
+        background: #63c5eaa6;
+        width: 35px;
+        text-align: center;
+        height: 35px;
+        line-height: 35px;
+        border-radius: 50%;
+        font-size: 24px;
+    }
     .intro-slider-item .details {
         margin-top: 0px;
         padding-left: 0;
@@ -3113,8 +3130,15 @@ html[lang="ar"] .section-title-style:after {
             text-align:center
 
         }
-        .intro-slider-item .details p{
-            text-align:center;
+        .intro-slider-item .details p {
+            z-index: 9;
+            font-family: 'Roboto';
+            color: rgb(56, 56, 56);
+            width: 80%;
+            text-align: center;
+            font-size: 18px;
+            margin: auto;
+            margin-bottom: 25px;
         }
         .intro-slider-item .details a {
 
@@ -3124,14 +3148,14 @@ html[lang="ar"] .section-title-style:after {
             width: max-content;
         }
     .intro-section .intro-slider .slick-dots {
-        bottom: -45px;
+        bottom: 15px;
     }
         .intro-section .intro-slider .intro-slider-item {
             position: relative;
             z-index: 1;
             padding: 0 15px;
             padding-left: 0;
-            height: 320px;
+            height: 385px;
         }
     .intro-slider-item .imagess {
         margin-bottom: 215px;
@@ -3153,4 +3177,63 @@ html[lang="ar"] .section-title-style:after {
         color: #fff;
         margin-top: 0px
     }
+    .clients-section .image_top {
+        margin-top: -2px;
+    }
+    .clients-section .clients-title-box {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+    .prag2 {
+        font-size: 15px;
+        font-weight: 500;
+        color: #636363;
+    }
+    .prag2 {
+        font-size: 15px;
+        font-weight: 500;
+        color: #636363;
+    }
+    .footer-section .footer-ul-2 ul {
+        border-bottom: 1px solid white;
+        display: block;
+        justify-content: space-between;
+    }
+    .footer-section .footer-ul-2 ul li {
+        margin: 10px;
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    #page{
+        overflow-x:hidden;
+    }
 }
+
+
+
+.portfolioPage-section .portfoli-box .portfoli-Boxcontent{
+
+}
+.portfoli-box {
+    transition: 5s all ease-in-out;
+    position:relative;
+}
+    .portfoli-box .imagesssss {
+    }
+        .portfoli-box .imagesssss img {
+            display: block;
+            width: 100%;
+            position: absolute;
+            transition: 5s all ease-in-out;
+        }
+
+    .portfoli-box:hover .imagesssss img {
+        bottom: 0;
+        transition: 5s all ease-in-out;
+    }
