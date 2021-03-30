@@ -4,22 +4,32 @@
     StaticContent content = ViewBag.AboutUs != null ? (StaticContent)ViewBag.AboutUs : new StaticContent();
     List<AboutUs> aboutUsData = ViewBag.AboutUsData != null ? ViewBag.AboutUsData as List<AboutUs> : new List<AboutUs>();
 }
+
+
+
+
 <div class="intro-section-2 services-page-intro" style="background-image: url(../assets/img/SS.png);">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="intro-title">
-                    <h2 class="title">
-                        @GeneralResource.WHO
-                        <span>
-                            @GeneralResource.AREWE
-                        </span>
-                        
-                    </h2>
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="intro-title">
+                        <h2 class="title">
+                            @GeneralResource.WHO
+                            <span>
+                                @GeneralResource.AREWE
+                            </span>
+
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
+        @*<div class="image_bottom">
+            <img src="~/assets/img/sb.png" />
+        </div>*@
     </div>
+
 </div>
 <!-- end  intro-section-2 -->
 <!-- about-us-page -->
@@ -27,7 +37,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="../assets/img/ssss.png" alt="" class="img-fluid" />
+                <div class="images">
+                    <img src="../assets/img/ssss.png" alt="" class="img-fluid" />
+                </div>
+                
             </div>
             <div class="col-md-6 d-flex" style="align-items: center;">
                 <div class="about-us-content">
@@ -48,13 +61,16 @@
 <!-- about-us-page -->
 
 <div class="provide-section">
+    <div class="image_top">
+        <img src="~/assets/img/DropLinkshortbottom.png" />
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="provide-content">
                     <h3 class="provide-title">@GeneralResource.HowWeProvide<span> @GeneralResource.Our @GeneralResource.Services</span></h3>
                     <p class="prag2">
-                       @content.Objectives
+                        @content.Objectives
                     </p>
                 </div>
             </div>
@@ -63,14 +79,14 @@
             @foreach (var item in aboutUsData)
             {
 
-                <div class="col-lg-6 col-md-12">
+                <div class="col-lg-12 col-md-12">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <div class="img-provide-box">
                                 <img src="@item.ImgPath.Replace(@"\",@"/")" alt="" class="img-fluid" />
                             </div>
                         </div>
-                        <div class="col-9">
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                             <h2 class="provide-title-st">
                                 @item.Title
                             </h2>
@@ -83,7 +99,11 @@
                 </div>
             }
 
-          
+
         </div>
+    </div>
+
+    <div class="image_bottom">
+        <img src="~/assets/img/DropLinkshort.png" />
     </div>
 </div>

@@ -6,56 +6,72 @@
 
 <!-- start intro-section-2 -->
 <div class="intro-section-2" style="background-image: url(../assets/img/intro3.png);">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="intro-title">
-                    <h2 class="title">
-                        @{ if (!MySession.IsArabic)
-                            {
-                                @lang.Resource.Our
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="intro-title">
+                        <h2 class="title">
+                            @{ if (!MySession.IsArabic)
+                                {
+                                    @lang.Resource.Our
+                                }
                             }
-                        }
-                        <span>
-                            @lang.Resource.Product
-                        </span>
-                    </h2>
+                            <span>
+                                @lang.Resource.Product
+                            </span>
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+ 
 </div>
 <!-- end  intro-section-2 -->
 <!-- start products-section -->
-<div class="products-section paddin-60">
+<div class="products-section">
     <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
 
-        @foreach (var item in Model)
-        {
-            <div class="products-box" data-aos="fade-up">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="products-box-content">
-                            <h3 class="products-title">
-                                @item.Title
-                            </h3>
-                            <p class="prag2">
-                                @item.Desc
-                            </p>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="products-box" data-aos="fade-up">
+                        <div class="col-lg-12">
+                            <div class="row">
+
+                                <div class="col-md-8">
+                                    <div class="products-box-content">
+                                        <h3 class="products-title">
+                                            @item.Title
+                                        </h3>
+                                        <p class="prag2">
+                                            @item.Desc
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 order-1md">
+                                    <div class="img-products-box">
+                                        <img src="@item.ImgPath.Replace(@"\", @"/")" alt="" class="img-fluid" />
+                                    </div>
+
+                                </div>
+
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 order-1md">
-                        <div class="img-products-box">
-                            <img src="@item.ImgPath.Replace(@"\", @"/")" alt="" class="img-fluid" />
-                        </div>
+
 
                     </div>
-
                 </div>
 
-            </div>
-        }
 
+            }
+        </div>
+    </div>
+
+    <div class="image_bottom">
+        <img src="~/assets/img/DropLinkshort.png" />
     </div>
 </div>
 <!-- end products-section -->

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -347,6 +348,10 @@
     <Compile Include="Services\_BaseService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\img\DropLinkshort.png" />
+    <Content Include="assets\img\DropLinkshortbottom.png" />
+    <Content Include="assets\img\iconbgwrapperimg.png" />
     <Content Include="assets\css\nice-select.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\img\01.png" />
@@ -409,6 +414,7 @@
     <Content Include="assets\img\hosting 1.png" />
     <Content Include="assets\img\hotel 1.png" />
     <Content Include="assets\img\icone.png" />
+    <Content Include="assets\img\inner.png" />
     <Content Include="assets\img\innovate 1.png" />
     <Content Include="assets\img\internship.png" />
     <Content Include="assets\img\intro-1.png" />
@@ -450,6 +456,7 @@
     <Content Include="assets\img\revamp 1.png" />
     <Content Include="assets\img\safy.png" />
     <Content Include="assets\img\Sales_Marketing_800x534 1.png" />
+    <Content Include="assets\img\sb.png" />
     <Content Include="assets\img\schedule.png" />
     <Content Include="assets\img\school 1.png" />
     <Content Include="assets\img\sdadsadsa.png" />
@@ -472,6 +479,8 @@
     <Content Include="assets\img\wwwwwww.png" />
     <Content Include="assets\js\jquery.nice-select.min.js" />
     <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\typed.js" />
+    <Content Include="assets\js\wow.min.js" />
     <Content Include="assets\vedio.mp4" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -862,6 +871,7 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

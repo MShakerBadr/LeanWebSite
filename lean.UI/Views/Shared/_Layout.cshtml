@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/assets/css/nice-select.css" />
+    <link href="~/assets/css/animate.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/assets/css/style.css" />
     @if (MySession.IsArabic)
@@ -135,7 +136,7 @@
                                         </form>
                                         <div class="close-pop-botton">
                                             <span>
-                                               @LangResource.Resource.Close
+                                                @LangResource.Resource.Close
                                             </span>
                                         </div>
                                     </div>
@@ -212,13 +213,144 @@
             </main>
         </div>
         <!-- End Content-->
+
+        <div class="newsLetter">
+            <div class="icon-effect-w3 wow bounceInUp">
+                <span class="fa fa-envelope"></span>
+            </div>
+            <h1>Stay Updated!</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="footer-title">
+                                    <h5 class="title">
+                                        @LangResource.Resource.NewsSubscrib
+                                        @LangResource.Resource.BeUpdatedWithoutLatestProjects
+                                    </h5>
+                                  
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="footer-form-box footer-form2">
+                                    @using (@Html.BeginForm("AddEmailNotificationRequest"
+                                                                    , "ContactUsRequest"
+                                                                    , FormMethod.Post, new { @class = "footer-form" }))
+                                    {
+
+                                        <div class="form-group">
+                                            <input type="email" name="Email" placeholder="@LangResource.Resource.EnterEmail" />
+                                            <button class="footer-submit" type="submit">@LangResource.Resource.Subscribe</button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Footer-->
         <div class="footer-container">
             <footer class="wrapper">
                 <div class="footer-section paddin-60">
-                    <div class="container-fluid">
+                    <div class="container">
                         <div class="row">
-                            <div class="col-lg-2 col-md-3">
+
+                            <div class="col-lg-12 col-md-12">
+                                <div class="contact">
+                                    <h1>Contact Us !</h1>
+                                    @*<div class="footer-title">
+                                        <h5 class="title">
+                                            @LangResource.Resource.Interseted
+                                        </h5>
+                                        <h5 class="title">
+                                            @LangResource.Resource.GetAQuot
+                                        </h5>
+                                    </div>*@
+                                    <div class="footer-form-box">
+                                        @using (Ajax.BeginForm("AddContactUsRequest", "ContactUsRequest", null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "successAddingContactRequest" }
+                                        , new { @id = "formAddContactRequest", @class = "footer-form" }))
+                                        {
+
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label> Name</label>
+                                                    <input type="text" data-val="true"
+                                                           id="Name"
+                                                           name="Name"
+                                                           data-val-required="@LangResource.Resource.NameIsRequired"
+                                                           placeholder="@LangResource.Resource.Name"
+                                                           class="form-control" />
+                                                    @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label> Email</label>
+                                                    <input data-val="true"
+                                                           type="email"
+                                                           name="Email"
+                                                           pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+                                                           id="Email"
+                                                           data-val-required="@LangResource.Resource.NameIsRequired"
+                                                           class="form-control"
+                                                           placeholder="@LangResource.Resource.Email" />
+                                                    @Html.ValidationMessage("Email", "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <label> Mobile Number</label>
+                                                        <input data-val="true"
+                                                               type="text"
+                                                               name="MobileNumber"
+                                                               id="MobileNumber"
+                                                               data-val-required="@LangResource.Resource.MobileNumberIsRequired"
+                                                               class="form-control"
+                                                               placeholder="@LangResource.Resource.Phone"
+                                                               aria-describedby="helpId" />
+                                                        @Html.ValidationMessage("MobileNumber", "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label> contact Reasons</label>
+                                                    @Html.DropDownList("ContactUsReasonId", _contactReasons as SelectList
+                                                                , new
+                                                                     {
+                                                                         @class = "select-box"
+                                                                        ,
+                                                                         @data_val_required = LangResource.Resource.EmailIsRequired
+                                                                        ,
+                                                                         @data_val = "true"
+                                                                     })
+                                                    @Html.ValidationMessage("ContactUsReasonId", "", new { @class = "text-danger", @Id = "ContactUsReasonIdValidation" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <button class="footer-submit" type="submit">@LangResource.Resource.Send</button>
+                                            </div>
+                                        </div>
+                                            
+
+                                            
+
+                                            
+
+                                            
+                                            
+                                        }
+
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="col-lg-12 col-md-12">
                                 <div class="right-box">
                                     <div class="logo-box">
                                         <a href="#" class="logo-link">
@@ -238,101 +370,13 @@
                                         </ul>
                                     </div>
                                 </div>
+
                             </div>
-                            <div class="col-lg-3 col-md-4">
-                                <div class="footer-title">
-                                    <h5 class="title">
-                                        @LangResource.Resource.Interseted
-                                    </h5>
-                                    <h5 class="title">
-                                        @LangResource.Resource.GetAQuot
-                                    </h5>
-                                </div>
-                                <div class="footer-form-box">
-                                    @using (Ajax.BeginForm("AddContactUsRequest", "ContactUsRequest", null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "successAddingContactRequest" }
-                                    , new { @id = "formAddContactRequest", @class = "footer-form" }))
-                                    {
-                                        <div class="form-group">
-                                            <input type="text" data-val="true"
-                                                   id="Name"
-                                                   name="Name"
-                                                   data-val-required="@LangResource.Resource.NameIsRequired"
-                                                   placeholder="@LangResource.Resource.Name"
-                                                   class="form-control" />
-                                            @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input data-val="true"
-                                                   type="email"
-                                                   name="Email"
-                                                   pattern="^[a-zA-Z0-9._+-]+@("@")[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
-                                                   id="Email"
-                                                   data-val-required="@LangResource.Resource.NameIsRequired"
-                                                   class="form-control"
-                                                   placeholder="@LangResource.Resource.Email" />
-                                            @Html.ValidationMessage("Email", "", new { @class = "text-danger" })
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="form-group">
-                                                <input data-val="true"
-                                                       type="text"
-                                                       name="MobileNumber"
-                                                       id="MobileNumber"
-                                                       data-val-required="@LangResource.Resource.MobileNumberIsRequired"
-                                                       class="form-control"
-                                                       placeholder="@LangResource.Resource.Phone"
-                                                       aria-describedby="helpId" />
-                                                @Html.ValidationMessage("MobileNumber", "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.DropDownList("ContactUsReasonId", _contactReasons as SelectList
-                                                        , new
-                                                             {
-                                                                 @class = "select-box"
-                                                                ,
-                                                                 @data_val_required = LangResource.Resource.EmailIsRequired
-                                                                ,
-                                                                 @data_val = "true"
-                                                             })
-                                            @Html.ValidationMessage("ContactUsReasonId", "", new { @class = "text-danger", @Id = "ContactUsReasonIdValidation" })
-                                        </div>
-                                        <button class="footer-submit" type="submit">@LangResource.Resource.Send</button>
-                                    }
-
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-1"></div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="footer-title">
-                                    <h5 class="title">
-                                        @LangResource.Resource.NewsSubscrib
-                                    </h5>
-                                    <h5 class="title">
-                                        @LangResource.Resource.BeUpdatedWithoutLatestProjects
-                                    </h5>
-                                </div>
-
-                                <div class="footer-form-box footer-form2">
-                                    @using (@Html.BeginForm("AddEmailNotificationRequest"
-                                                                    , "ContactUsRequest"
-                                                                    , FormMethod.Post, new { @class = "footer-form" }))
-                                    {
-
-                                        <div class="form-group">
-                                            <input type="email" name="Email" placeholder="@LangResource.Resource.EnterEmail" />
-                                            <button class="footer-submit" type="submit">@LangResource.Resource.Subscribe</button>
-                                        </div>
-                                    }
-                                </div>
-
+                            <div class="col-lg-12" style="">
                                 <div class="socile-box">
-                                    <h5 class="title">
+                                    @*<h5 class="title">
                                         @LangResource.Resource.followUs
-                                    </h5>
+                                    </h5>*@
 
                                     <ul class="list-unstyled">
                                         <li>
@@ -358,6 +402,8 @@
                                     </ul>
                                 </div>
                             </div>
+                            
+
 
 
                         </div>
@@ -374,7 +420,7 @@
                                         </li>
                                         <li>
                                             <a href="#">
-                                               @LangResource.Resource.PRIVACYPOLICY
+                                                @LangResource.Resource.PRIVACYPOLICY
                                             </a>
                                         </li>
                                         <li>
@@ -417,9 +463,9 @@
     <script src="~/assets/js/script.js"></script>
     <script src="~/Content/js/site.js"></script>
     <script src="~/Content/lib/toastr/toastr.min.js"></script>
-    
-    
-    
+
+
+
     <script>
     $(document).ready(function () {
         $('#formAddContactRequest').attr('action', '/ContactUsRequest/AddContactUsRequest');
@@ -456,6 +502,62 @@
     </script>
 
 
+
+    <script src="~/assets/js/typed.js"></script>
+    <script>
+        $(function () {
+
+            $("#typed").typed({
+                // strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
+                stringsElement: $('#typed-strings'),
+                typeSpeed: 30,
+                backDelay: 700,
+                loop: true,
+                contentType: 'html', // or text
+                // defaults to false for infinite loop
+                loopCount: false,
+                callback: function () { foo(); },
+                resetCallback: function () { newTyped(); }
+            });
+
+            $(".reset").click(function () {
+                $("#typed").typed('reset');
+            });
+
+        });
+        function newTyped() { /* A new typed object */ }
+
+        function foo() { console.log("Callback"); }
+    </script>
+
+    <script>
+        $(function () {
+
+            $("#typed_2").typed({
+                // strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
+                stringsElement: $('#typed-strings_2'),
+                typeSpeed: 30,
+                backDelay: 700,
+                loop: true,
+                contentType: 'html', // or text
+                // defaults to false for infinite loop
+                loopCount: false,
+                callback: function () { foo(); },
+                resetCallback: function () { newTyped(); }
+            });
+
+            $(".reset").click(function () {
+                $("#typed_2").typed('reset');
+            });
+
+        });
+        function newTyped() { /* A new typed object */ }
+
+        function foo() { console.log("Callback"); }
+    </script>
+
+    <script src="~/assets/js/wow.min.js"></script>
+    <script>new WOW().init();</script>
 
 </body>
 </html>

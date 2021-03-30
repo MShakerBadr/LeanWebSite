@@ -5,27 +5,30 @@
     string WhatWeDelivered = ViewBag.WhatWeDelivered != null ? ViewBag.WhatWeDelivered : string.Empty;
 }
 <!-- start intro-section-2 -->
-<div class="intro-section-2" style=" background-image: url(../assets/img/slider-portfolio.png);">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="intro-title intro-sectio-gray">
-                    <h2 class="title">
-                        @lang.Resource.Our
-                        <span>
-                            @lang.Resource.Portfolio
-                        </span>
-                    </h2>
+<div class="intro-section-2" style="background-image: url(../assets/img/back2.png);">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="intro-title intro-sectio-gray">
+                        <h2 class="title">
+                            @lang.Resource.Our
+                            <span>
+                                @lang.Resource.Portfolio
+                            </span>
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+   
 </div>
 <!-- end  intro-section-2 -->
 <!-- start portfolioPage-section -->
 
-<div class="portfolioPage-section paddin-60-0">
-    <div class="container-fluid">
+<div class="portfolioPage-section ">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="portfoli-title-box">
@@ -38,28 +41,45 @@
                 </div>
             </div>
         </div>
+
         @if (Model != null)
         {
-
-
             <div class="row" style="justify-content: center;">
-                <div class="col-lg-10 col-md-12">
+                <div class="col-lg-12 col-md-12">
                     <div class="row">
                         @foreach (var item in Model)
                         {
                             <div class="col-lg-4 col-md-6">
-                                <div class="portfoli-box" 
-                                     data-open="opneNew-@item.Id" 
-                                     data-aos="fade-down"
-                                     style="background-image: url('@item.ImageUrl.Replace(@"\", "/")');">
-                                    <div class="portfoli-Boxcontent">
-                                        <div class="portfoli-discription">
-                                            <h5 class="project-title">
-                                                @item.Name
-                                            </h5>
-                                            <h4 class="project-link">
-                                                @lang.Resource.VIEW
-                                            </h4>
+
+                                <div class="back_prod_box">
+                                    <div class="portfoli-box" data-open="opneNew-@item.Id" data-link="http://www.hms-care.com/shop" data-aos="fade-down" style="background-image: url('@item.ImageUrl.Replace(@"\", "/")');">
+                                        <div class="portfoli-Boxcontent">
+                                            <div class="portfoli-discription">
+                                                <h5 class="project-title">
+                                                    @item.Name
+                                                </h5>
+                                                <h4 class="project-link">
+                                                    @lang.Resource.VIEW
+                                                </h4>
+                                            </div>
+
+                                            @*<div class="portfoli-box"
+                                                 data-open="opneNew-@item.Id"
+                                                 data-aos="fade-down"
+                                                 style="background-image: url('@item.ImageUrl.Replace(@"\", "/")');">
+                                                <div class="portfoli-Boxcontent">
+                                                    <div class="portfoli-discription">
+                                                        <h5 class="project-title">
+                                                            @item.Name
+                                                        </h5>
+                                                        <h4 class="project-link">
+                                                            @lang.Resource.VIEW
+                                                        </h4>
+
+                                                    </div>
+                                                </div>
+                                            </div>*@
+
                                         </div>
                                     </div>
                                 </div>
@@ -71,6 +91,8 @@
                 </div>
             </div>
         }
+
+
         <div class="row">
             <div class="col-md-12">
                 <div class="more-button">
@@ -81,16 +103,14 @@
             </div>
         </div>
     </div>
+    <div class="image_bottom">
+        <img src="~/assets/img/DropLinkshort.png" />
+    </div>
 </div>
 
 <!-- end portfolioPage-section -->
 <!-- start pop-up-portfoli -->
-@*<div class="pop-up-portfoli">
-    <div class="close-pop">
-        <i class="fas fa-times"></i>
-    </div>
-    <iframe class="ifream-pop-up-portfoli" src="" style="height: 90%; width: 80%;" title="Iframe Example"></iframe>
-</div>*@
+
 
 
 
