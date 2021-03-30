@@ -1,0 +1,22 @@
+﻿@model NewsAndEventsViewModel
+@{
+    ViewBag.Title = "NewsAndEvents";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<script src="~/Content/js/pages/newsandevents.js?v=@DateTime.Now.Day"></script>
+
+<div class="row">
+    <div class="col-12">
+        <div id="newsAndEventsFilter">
+            @Html.Partial("~/Views/NewsAndEvents/Partial/NewsAndEventsFilter.cshtml", Model.Filter)
+        </div>
+    </div>
+    <div class="col-12">
+        <div id="NewsAndEventsList">
+            @Html.Partial("~/Views/NewsAndEvents/Partial/NewsAndEventsList.cshtml", Model.List)
+        </div>
+    </div>
+</div>
+

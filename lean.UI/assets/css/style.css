@@ -782,12 +782,21 @@ html[lang="ar"] .whatWeDo-section .what-box .boxwhat-title:after {
     display: block;
     width: 100%;
     box-shadow: 0 0 5px #eaefff;
+    height: 200px;
+    overflow: hidden;
+    transition: all .4s ease-in-out;
 }
     .whatWeDo-section .what-box .img-what-box img {
         height: auto;
-        width: 80%;
-        margin: 10%;
+        width: 100%;
+        margin: auto;
         display: block;
+        transition:all .4s ease-in-out;
+    }
+
+    .whatWeDo-section .what-box .img-what-box:hover img{
+        position:absolute;
+        bottom:0;
     }
 .whatWeDo-section .what-box .prag {
     color: #162f42;
@@ -800,7 +809,8 @@ html[lang="ar"] .whatWeDo-section .what-box .boxwhat-title:after {
     padding: 15px;
     font-size: 16px;
     box-shadow: 2px 2px 5px #dae2ff;
-    min-height: 295px;
+    max-height: 295px;
+    overflow-y: auto;
 }
 
 .portfolio-section {
@@ -1382,7 +1392,7 @@ html[lang="ar"] .clints-section .clint-card-box .clint-card {
     padding: 20px;
     justify-content: center;
     min-height: 150px;
-    box-shadow: -25px 24px 11px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 15px 11px rgba(0, 0, 0, 0.3);
     margin: 0 0 24px 0px;
     flex-basis: 100%;
   }
@@ -1475,6 +1485,7 @@ html[lang="ar"] .clints-section .clint-card-box .clint-card {
         width: 100%;
     }
 .portfolioPage-section .portfoli-box .portfoli-Boxcontent .portfoli-discription .project-title {
+
   font-size: 18px;
   color: white;
   font-weight: 500;
@@ -3236,4 +3247,11 @@ html[lang="ar"] .section-title-style:after {
     .portfoli-box:hover .imagesssss img {
         bottom: 0;
         transition: 5s all ease-in-out;
+    }
+
+
+    @media(max-width:768px){
+        .servicesPage-section .services-box.fristservices-box {
+            margin: 0px 0 40px !important;
+        }
     }
