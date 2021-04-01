@@ -788,15 +788,16 @@ html[lang="ar"] .whatWeDo-section .what-box .boxwhat-title:after {
 }
     .whatWeDo-section .what-box .img-what-box img {
         height: auto;
-        width: 100%;
+       /* width: 100%;*/
+       width:max-content;
         margin: auto;
         display: block;
         transition:all .4s ease-in-out;
     }
 
     .whatWeDo-section .what-box .img-what-box:hover img{
-        position:absolute;
-        bottom:0;
+       /* position:absolute;
+        bottom:0;*/
     }
 .whatWeDo-section .what-box .prag {
     color: #162f42;
@@ -908,6 +909,7 @@ html[lang="ar"] .whatWeDo-section .what-box .boxwhat-title:after {
 /*  position: relative;
   background-image: url("../img/Why Us.png");*/
   z-index: 1;
+  background:#fff;
 }
     .why-us-section .section-title1 .title {
    
@@ -1001,7 +1003,7 @@ html[lang="ar"] .whatWeDo-section .what-box .boxwhat-title:after {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 200px;
+  height: auto;
 }
     .clients-section .img-clint-box img {
         max-width: 100%;
@@ -3238,10 +3240,16 @@ html[lang="ar"] .section-title-style:after {
     .portfoli-box .imagesssss {
     }
         .portfoli-box .imagesssss img {
-            display: block;
+          /*  display: block;
             width: 100%;
             position: absolute;
+            transition: 5s all ease-in-out;*/
+
+            display: block;
+            width: max-content;
+            /* position: absolute; */
             transition: 5s all ease-in-out;
+            margin: auto;
         }
 
     .portfoli-box:hover .imagesssss img {
@@ -3255,3 +3263,181 @@ html[lang="ar"] .section-title-style:after {
             margin: 0px 0 40px !important;
         }
     }
+
+
+
+.WHyUSContent {
+    margin-top: -55px;
+}
+    .WHyUSContent .images {
+        position:relative;
+    }
+
+        .WHyUSContent .images:before {
+            content: '';
+            width: 25%;
+            height: 5px;
+            background: #01aeef;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: linear-gradient( 90deg, #393939 0%, #01aeef 100%);
+        }
+        .WHyUSContent .images:after {
+            content: '';
+            width: 5px;
+            height: 25%;
+            background: #01aeef;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient( 180deg, #393939 0%, #01aeef 100%);
+        }
+        .WHyUSContent .images img {
+            display: block;
+            width: 100%;
+            padding: 15px;
+        }
+           
+    .WHyUSContent .Discription {
+        padding:15px;
+    }
+        .WHyUSContent .Discription h2 {
+            color: rgb(1, 174, 239);
+            text-decoration: none;
+            white-space: normal;
+            text-align: left;
+            font-weight: 700;
+            font-size: 60px;
+            margin: 15px 0;
+            text-transform: capitalize;
+        }
+        .WHyUSContent .Discription p {
+            z-index: 9;
+            font-family: 'Roboto';
+            color: rgb(56, 56, 56);
+            width: 100%;
+            text-align: left;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        .WHyUSContent .Discription a {
+            display: block;
+            width: max-content;
+            padding: 5px 25px;
+            margin: 0;
+            color: #fff;
+            background: linear-gradient( 0deg, #61d8f1 0%, #01aeef 100%);
+            border-radius: 25px;
+        }
+        .WHyUSContent .Discription a:hover {
+        }
+
+
+.online_shopping {
+    background: url('../img/online-store-header.51d264eff63b-2.png');
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    height: 585px;
+}
+    .online_shopping .overlay {
+       
+    }
+    .online_shopping .overlay {
+    }
+
+        .online_shopping .overlay .Online_content {
+            display: flex;
+            width: 55%;
+            background: #fff0;
+            margin-left: 21%;
+            /* justify-content: center; */
+            /* align-items: center; */
+            height: 100;
+            position: relative;
+            top: 255px;
+        }
+            .online_shopping .overlay .Online_content ul {
+                padding: 0;
+            }
+            .online_shopping .overlay .Online_content ul li {
+                list-style: none;
+                margin-bottom:5px;
+            }
+                .online_shopping .overlay .Online_content ul li p {
+                    color: #06203c;
+                }
+                .online_shopping .overlay .Online_content ul li p span {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    background: #dee0e0;
+                    color: #06203c;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 30px;
+                }
+
+
+
+
+
+
+
+                @media(max-width:768px){
+                    .online_shopping .overlay .Online_content {
+                        display: flex;
+                        width: 100%;
+                        background: #fff0;
+                        margin-left: 0;
+                        /* justify-content: center; */
+                        /* align-items: center; */
+                        height: 100;
+                        position: relative;
+                        top: 255px;
+                    }
+                }
+
+
+
+
+
+
+
+html[lang="ar"] .intro-slider-item .details h2{
+    text-align:right;
+}
+html[lang="ar"] .intro-slider-item .details p {
+    text-align: right;
+}
+
+
+html[lang="ar"] .WHyUSContent .Discription h2 {
+    text-align: right;
+}
+html[lang="ar"] .WHyUSContent .Discription p {
+    text-align: right;
+}
+
+
+html[lang="ar"] .online_shopping .overlay .Online_content ul li p {
+    color: #06203c;
+    margin-bottom: 0;
+}
+html[lang="ar"] .online_shopping .overlay .Online_content {
+    display: flex;
+    width: 55%;
+    background: #fff0;
+    margin-right: 21%;
+    margin-left: 0;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 100;
+    position: relative;
+    top: 255px;
+    z-index: 99999999999999;
+    background: #ffffffb8;
+}
