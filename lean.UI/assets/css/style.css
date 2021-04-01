@@ -742,6 +742,7 @@ html[lang="ar"] .nav-bar .nav-ul .search-box {
     padding: 50px 0;
     margin-top: 0px;
     position: relative;
+    background:#fff;;
 }
 .whatWeDo-section .what-box {
   margin: 20px 0;
@@ -810,7 +811,7 @@ html[lang="ar"] .whatWeDo-section .what-box .boxwhat-title:after {
     padding: 15px;
     font-size: 16px;
     box-shadow: 2px 2px 5px #dae2ff;
-    max-height: 295px;
+    height: 295px;
     overflow-y: auto;
 }
 
@@ -1829,6 +1830,10 @@ padding-top:60px;
             background: #162f42;
             color: #fff;
             box-shadow: 3px 11px 14px rgb(212 212 212) !important;
+                display: block;
+    width: max-content;
+    margin: auto;
+    margin-top: 15px;
         }
 .servicesPage-section .services-box .services-link:hover {
   color: #636363;
@@ -2933,6 +2938,9 @@ html[lang="ar"] .section-title-style:after {
 .Image_BAck_Location {
     position: absolute;
     bottom: 45px;
+    display:block;
+    width:100%;
+    background:#fff;
     
 }
     .Image_BAck_Location img {
@@ -3086,6 +3094,7 @@ html[lang="ar"] .section-title-style:after {
     z-index: 1;
     padding: 0 77px;
     padding-left: 0;
+    background:#fff;
 }
 
 
@@ -3264,6 +3273,7 @@ html[lang="ar"] .section-title-style:after {
         }
     }
 
+<<<<<<< HEAD
 
 
 .WHyUSContent {
@@ -3441,3 +3451,8 @@ html[lang="ar"] .online_shopping .overlay .Online_content {
     z-index: 99999999999999;
     background: #ffffffb8;
 }
+=======
+    .slick-slider .slick-list, .slick-slider .slick-track{
+        background:#fff;
+    }
+>>>>>>> c6c15200c43d809345ab2caf9db388145f57d029
